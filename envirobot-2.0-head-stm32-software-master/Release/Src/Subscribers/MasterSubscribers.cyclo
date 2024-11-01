@@ -1,4 +1,4 @@
-../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = unsigned char]	8
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = unsigned char]	10
 ../Src/Subscribers/MasterSubscribers.cpp:13:1:MasterSubscribers::MasterSubscribers()	1
 ../Src/Subscribers/MasterSubscribers.cpp:22:6:void MasterSubscribers::Init(Registers*, LEDS*)	1
 ../Src/Subscribers/MasterSubscribers.cpp:372:9:uint8_t MasterSubscribers::FindSubscriberIndex(uint8_t, bool*)	3

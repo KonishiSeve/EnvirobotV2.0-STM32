@@ -53,6 +53,11 @@ void User::AddOSThreads(void) {
 	osThreadNew(UserTask, &class_instances_argument, &UserTask_attributes);
 }
 
+#define MODULE_NUMBER	4
+#define PUB_CPG			0x01
+//Register map
+#define REG_CPG_SETPOINTS		0x0500
+
 static void UserTask(void *argument) {
 	// == retrieving class instances == //
 	class_instances* class_instances_pointer = (class_instances*)argument;
@@ -65,7 +70,25 @@ static void UserTask(void *argument) {
 	Sensors* sensors = class_instances_pointer->sensors;
 	LEDS* leds = class_instances_pointer->leds;
 
+	// === Registers Setup === //
+	static int8_t setpoints[MODULE_NUMBER];
+	registers->AddRegister<int8_t>(REG_CPG_SETPOINTS);
+	registers->SetRegisterAsArray(REG_CPG_SETPOINTS, MODULE_NUMBER);
+	registers->AddRegisterPointer<int8_t>(REG_CPG_SETPOINTS, setpoints);
+
+	// === Publisher Setup === //
+	publishers->AddPublisher(PUB_CPG);
+	publishers->SetPublisherPrescaler(PUB_CPG, 1);
+	publishers->LinkToInterface(PUB_CPG, CANFD1);
+	publishers->SetPublishAddress(PUB_CPG, CANFD1, ALL);
+
+	publishers->AddTopic(PUB_CPG, REG_CPG_SETPOINTS);
+	publishers->ActivateTopic(PUB_CPG, REG_CPG_SETPOINTS);
+
+	publishers->ActivatePublisher(PUB_CPG);
+
 	for(;;) {
+		publishers->SpinPublisher(PUB_CPG);
 		leds->SetLED(LED_USER3, GPIO_PIN_SET);
 		osDelay(500);
 		leds->SetLED(LED_USER3, GPIO_PIN_RESET);

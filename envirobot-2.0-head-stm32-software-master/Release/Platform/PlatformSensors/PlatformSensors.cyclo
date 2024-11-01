@@ -1,4 +1,4 @@
-../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = float]	8
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = float]	10
 ../Src/Sensors/Sensors.hpp:339:6:bool Sensors::AddSensorData(uint8_t, uint16_t, bool) [with T = float]	2
 ../Platform/PlatformSensors/PlatformSensors.cpp:6:1:PlatformSensors::PlatformSensors()	1
 ../Platform/PlatformSensors/PlatformSensors.cpp:17:6:void PlatformSensors::Init(Sensors*, Registers*, Publishers*, LEDS*)	1
