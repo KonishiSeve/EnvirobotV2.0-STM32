@@ -1,6 +1,6 @@
 Src/Protocols/Communication/FDCAN/CANProtocol.o: \
  ../Src/Protocols/Communication/FDCAN/CANProtocol.cpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/FDCAN/CANProtocol.hpp \
+ ../Src/Protocols/Communication/FDCAN/CANProtocol.hpp \
  ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h \
  ../Drivers/CMSIS/Include/core_cm7.h \
  ../Drivers/CMSIS/Include/cmsis_version.h \
@@ -42,10 +42,10 @@ Src/Protocols/Communication/FDCAN/CANProtocol.o: \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/Core/TemplateCommunicationProtocol.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/Core/CommunicationProtocol.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/CommunicationConfiguration.h
-D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/FDCAN/CANProtocol.hpp:
+ ../Src/Protocols/Communication/Core/TemplateCommunicationProtocol.hpp \
+ ../Src/Protocols/Communication/Core/CommunicationProtocol.hpp \
+ ../Configuration/Configurations/CommunicationConfiguration.h
+../Src/Protocols/Communication/FDCAN/CANProtocol.hpp:
 ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h:
 ../Drivers/CMSIS/Include/core_cm7.h:
 ../Drivers/CMSIS/Include/cmsis_version.h:
@@ -87,6 +87,6 @@ D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/FDCAN/CANProtocol.hp
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/Core/TemplateCommunicationProtocol.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/Core/CommunicationProtocol.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/CommunicationConfiguration.h:
+../Src/Protocols/Communication/Core/TemplateCommunicationProtocol.hpp:
+../Src/Protocols/Communication/Core/CommunicationProtocol.hpp:
+../Configuration/Configurations/CommunicationConfiguration.h:

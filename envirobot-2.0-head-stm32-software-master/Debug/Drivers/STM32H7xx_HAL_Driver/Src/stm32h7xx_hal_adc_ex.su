@@ -1,7 +1,11 @@
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h:2843:22:LL_ADC_SetCalibrationOffsetFactor	0	static
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h:2909:22:LL_ADC_SetCalibrationLinearFactor	0	static
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h:2949:26:LL_ADC_GetCalibrationLinearFactor	0	static
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h:5342:22:LL_ADC_SetChannelSamplingTime	4	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c:126:19:HAL_ADCEx_Calibration_Start	24	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c:200:10:HAL_ADCEx_Calibration_GetValue	0	static
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c:216:19:HAL_ADCEx_LinearCalibration_GetValue	24	static
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c:261:19:HAL_ADCEx_Calibration_SetValue	12	static
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c:216:19:HAL_ADCEx_LinearCalibration_GetValue	32	static
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c:261:19:HAL_ADCEx_Calibration_SetValue	16	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c:312:19:HAL_ADCEx_LinearCalibration_SetValue	32	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c:403:19:HAL_ADCEx_LinearCalibration_FactorLoad	32	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c:449:19:HAL_ADCEx_InjectedStart	16	static

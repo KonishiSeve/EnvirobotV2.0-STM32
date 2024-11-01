@@ -42,3 +42,18 @@ private:
 	Sensors* sensors;
 	LEDS* leds;
 };
+
+// === User Code === //
+
+typedef struct class_instances {
+	Registers* registers;
+	MasterSubscribers* subscribers;
+	Communication* communication;
+	Services* services;
+	Publishers* publishers;
+	HardwareDelay* hardware_delay;
+	Sensors* sensors;
+	LEDS* leds;
+} class_instances;
+
+static void UserTask(void *argument);

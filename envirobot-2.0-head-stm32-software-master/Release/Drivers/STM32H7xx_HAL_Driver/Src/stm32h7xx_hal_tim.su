@@ -83,7 +83,7 @@
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:2633:19:HAL_TIM_OnePulse_Init	16	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:3023:19:HAL_TIM_Encoder_Init	24	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:7056:6:TIM_OC2_SetConfig	16	static
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:4056:19:HAL_TIM_OC_ConfigChannel	16	static
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:4056:19:HAL_TIM_OC_ConfigChannel	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:4256:19:HAL_TIM_PWM_ConfigChannel	16	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:7517:6:TIM_TI1_SetConfig	16	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:4155:19:HAL_TIM_IC_ConfigChannel	24	static
@@ -91,9 +91,9 @@
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:7824:6:TIM_ETR_SetConfig	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:5275:19:HAL_TIM_ConfigOCrefClear	16	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:5433:19:HAL_TIM_ConfigClockSource	16	static
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:7373:26:TIM_SlaveTimer_SetConfig	16	static
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:5624:19:HAL_TIM_SlaveConfigSynchro	16	static
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:7373:26:TIM_SlaveTimer_SetConfig.constprop	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:5664:19:HAL_TIM_SlaveConfigSynchro_IT	16	static
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:5624:19:HAL_TIM_SlaveConfigSynchro	16	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:7856:6:TIM_CCxChannelCmd	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:792:19:HAL_TIM_OC_Start	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c:1459:19:HAL_TIM_PWM_Start	0	static

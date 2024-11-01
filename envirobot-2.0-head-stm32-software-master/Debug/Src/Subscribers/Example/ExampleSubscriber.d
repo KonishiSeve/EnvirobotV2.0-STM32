@@ -1,11 +1,6 @@
 Src/Subscribers/Example/ExampleSubscriber.o: \
  ../Src/Subscribers/Example/ExampleSubscriber.cpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Subscribers/Example/ExampleSubscriber.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/Configuration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Subscribers/Core/Subscriber.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegistersConfiguration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/CommunicationConfiguration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Registers/Registers.hpp \
+ ../Src/Subscribers/Example/ExampleSubscriber.hpp \
  ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h \
  ../Drivers/CMSIS/Include/core_cm7.h \
  ../Drivers/CMSIS/Include/cmsis_version.h \
@@ -47,15 +42,24 @@ Src/Subscribers/Example/ExampleSubscriber.o: \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
+ ../Src/Subscribers/Core/Subscriber.hpp ../Src/Registers/Registers.hpp \
+ ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+ ../Core/Inc/FreeRTOSConfig.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Registers/RegistersDefinition.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapRegisters.h
-D:/Code/Envirobot2_0_STM32_Head/Src/Subscribers/Example/ExampleSubscriber.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/Configuration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Subscribers/Core/Subscriber.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegistersConfiguration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/CommunicationConfiguration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Registers/Registers.hpp:
+ ../Configuration/Configurations/RegistersConfiguration.h \
+ ../Configuration/Definitions/RegistersDefinition.h \
+ ../Configuration/RegisterMaps/RegisterMapRegisters.h \
+ ../Configuration/Configuration.h \
+ ../Configuration/Configurations/CommunicationConfiguration.h
+../Src/Subscribers/Example/ExampleSubscriber.hpp:
 ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h:
 ../Drivers/CMSIS/Include/core_cm7.h:
 ../Drivers/CMSIS/Include/cmsis_version.h:
@@ -97,6 +101,21 @@ D:/Code/Envirobot2_0_STM32_Head/Src/Registers/Registers.hpp:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
+../Src/Subscribers/Core/Subscriber.hpp:
+../Src/Registers/Registers.hpp:
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
+../Core/Inc/FreeRTOSConfig.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
+../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Registers/RegistersDefinition.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapRegisters.h:
+../Configuration/Configurations/RegistersConfiguration.h:
+../Configuration/Definitions/RegistersDefinition.h:
+../Configuration/RegisterMaps/RegisterMapRegisters.h:
+../Configuration/Configuration.h:
+../Configuration/Configurations/CommunicationConfiguration.h:

@@ -1,5 +1,6 @@
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h:5342:22:LL_ADC_SetChannelSamplingTime	12	static
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h:5707:22:LL_ADC_SetAnalogWDMonitChannels	12	static
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h:6816:26:LL_ADC_IsEnabled	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h:6948:26:LL_ADC_REG_IsConversionOngoing	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:1095:13:HAL_ADC_MspInit	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:1112:13:HAL_ADC_MspDeInit	0	static

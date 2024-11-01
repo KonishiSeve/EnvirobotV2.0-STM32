@@ -1,0 +1,4 @@
+../Platform/PlatformLEDs/PlatformLEDs.cpp:8:6:void StartupLEDS(LEDS*)	2
+../Platform/PlatformLEDs/PlatformLEDs.cpp:22:6:void IDFoundLEDS(LEDS*)	1
+../Platform/PlatformLEDs/PlatformLEDs.cpp:33:6:void WaterDetectedLEDS(LEDS*)	1
+../Platform/PlatformLEDs/PlatformLEDs.cpp:45:6:void CommunicationLED(LEDS*, uint8_t)	2

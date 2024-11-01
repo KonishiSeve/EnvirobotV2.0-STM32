@@ -1,6 +1,6 @@
 Src/MotionGenerator/MotionGenerator.o: \
  ../Src/MotionGenerator/MotionGenerator.cpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/MotionGenerator/MotionGenerator.hpp \
+ ../Src/MotionGenerator/MotionGenerator.hpp \
  ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h \
  ../Drivers/CMSIS/Include/core_cm7.h \
  ../Drivers/CMSIS/Include/cmsis_version.h \
@@ -53,34 +53,32 @@ Src/MotionGenerator/MotionGenerator.o: \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Registers/Registers.hpp \
- ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegistersConfiguration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Registers/RegistersDefinition.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapRegisters.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Publishers/Publishers.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/Core/CommunicationProtocol.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/CommunicationConfiguration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Communication/Communication.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Communication/CommunicationDefinition.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Subscribers/MasterSubscribers.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Subscribers/Core/Subscriber.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/Configuration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/LEDS/LEDS.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/GPIO/GPIO.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapLEDs.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/LEDsConfiguration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapSubscribers.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapCommunication.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/PublishersConfiguration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/SensorsConfiguration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapPublishers.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Services/Services.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Services/ServicesDefinition.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/MotionGeneratorConfiguration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapMotionGenerator.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapController.h
-D:/Code/Envirobot2_0_STM32_Head/Src/MotionGenerator/MotionGenerator.hpp:
+ ../Src/Registers/Registers.hpp \
+ ../Configuration/Configurations/RegistersConfiguration.h \
+ ../Configuration/Definitions/RegistersDefinition.h \
+ ../Configuration/RegisterMaps/RegisterMapRegisters.h \
+ ../Src/Publishers/Publishers.hpp \
+ ../Src/Protocols/Communication/Core/CommunicationProtocol.hpp \
+ ../Configuration/Configurations/CommunicationConfiguration.h \
+ ../Src/Communication/Communication.hpp \
+ ../Src/Subscribers/MasterSubscribers.hpp \
+ ../Src/Subscribers/Core/Subscriber.hpp ../Configuration/Configuration.h \
+ ../Src/LEDS/LEDS.hpp ../Src/GPIO/GPIO.hpp \
+ ../Configuration/RegisterMaps/RegisterMapLEDs.h \
+ ../Configuration/Configurations/LEDsConfiguration.h \
+ ../Configuration/Definitions/CommunicationDefinition.h \
+ ../Configuration/RegisterMaps/RegisterMapSubscribers.h \
+ ../Platform/PlatformLEDs/PlatformLEDs.hpp \
+ ../Configuration/RegisterMaps/RegisterMapCommunication.h \
+ ../Configuration/Configurations/PublishersConfiguration.h \
+ ../Configuration/Configurations/SensorsConfiguration.h \
+ ../Configuration/RegisterMaps/RegisterMapPublishers.h \
+ ../Src/Services/Services.hpp \
+ ../Configuration/Definitions/ServicesDefinition.h \
+ ../Configuration/Configurations/MotionGeneratorConfiguration.h \
+ ../Configuration/RegisterMaps/RegisterMapMotionGenerator.h \
+ ../Configuration/RegisterMaps/RegisterMapController.h
+../Src/MotionGenerator/MotionGenerator.hpp:
 ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h:
 ../Drivers/CMSIS/Include/core_cm7.h:
 ../Drivers/CMSIS/Include/cmsis_version.h:
@@ -133,30 +131,30 @@ D:/Code/Envirobot2_0_STM32_Head/Src/MotionGenerator/MotionGenerator.hpp:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Registers/Registers.hpp:
-../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegistersConfiguration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Registers/RegistersDefinition.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapRegisters.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Publishers/Publishers.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/Core/CommunicationProtocol.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/CommunicationConfiguration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Communication/Communication.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Communication/CommunicationDefinition.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Subscribers/MasterSubscribers.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Subscribers/Core/Subscriber.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/Configuration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/LEDS/LEDS.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/GPIO/GPIO.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapLEDs.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/LEDsConfiguration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapSubscribers.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapCommunication.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/PublishersConfiguration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/SensorsConfiguration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapPublishers.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Services/Services.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Services/ServicesDefinition.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/MotionGeneratorConfiguration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapMotionGenerator.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapController.h:
+../Src/Registers/Registers.hpp:
+../Configuration/Configurations/RegistersConfiguration.h:
+../Configuration/Definitions/RegistersDefinition.h:
+../Configuration/RegisterMaps/RegisterMapRegisters.h:
+../Src/Publishers/Publishers.hpp:
+../Src/Protocols/Communication/Core/CommunicationProtocol.hpp:
+../Configuration/Configurations/CommunicationConfiguration.h:
+../Src/Communication/Communication.hpp:
+../Src/Subscribers/MasterSubscribers.hpp:
+../Src/Subscribers/Core/Subscriber.hpp:
+../Configuration/Configuration.h:
+../Src/LEDS/LEDS.hpp:
+../Src/GPIO/GPIO.hpp:
+../Configuration/RegisterMaps/RegisterMapLEDs.h:
+../Configuration/Configurations/LEDsConfiguration.h:
+../Configuration/Definitions/CommunicationDefinition.h:
+../Configuration/RegisterMaps/RegisterMapSubscribers.h:
+../Platform/PlatformLEDs/PlatformLEDs.hpp:
+../Configuration/RegisterMaps/RegisterMapCommunication.h:
+../Configuration/Configurations/PublishersConfiguration.h:
+../Configuration/Configurations/SensorsConfiguration.h:
+../Configuration/RegisterMaps/RegisterMapPublishers.h:
+../Src/Services/Services.hpp:
+../Configuration/Definitions/ServicesDefinition.h:
+../Configuration/Configurations/MotionGeneratorConfiguration.h:
+../Configuration/RegisterMaps/RegisterMapMotionGenerator.h:
+../Configuration/RegisterMaps/RegisterMapController.h:

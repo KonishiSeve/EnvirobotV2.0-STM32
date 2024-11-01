@@ -9,7 +9,7 @@
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:1740:19:HAL_FDCAN_ResetClockCalibrationState	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:1776:10:HAL_FDCAN_GetClockCalibrationCounter	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:1807:19:HAL_FDCAN_ConfigFilter	12	static
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:1919:19:HAL_FDCAN_ConfigGlobalFilter	12	static
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:1919:19:HAL_FDCAN_ConfigGlobalFilter	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:1959:19:HAL_FDCAN_ConfigExtendedIdMask	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:1993:19:HAL_FDCAN_ConfigRxFifoOverwrite	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:2036:19:HAL_FDCAN_ConfigFifoWatermark	0	static
@@ -34,7 +34,7 @@
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:2579:19:HAL_FDCAN_Start	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:2610:19:HAL_FDCAN_Stop	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:592:19:HAL_FDCAN_DeInit	8	static
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:2692:19:HAL_FDCAN_AddMessageToTxFifoQ	16	static
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:2692:19:HAL_FDCAN_AddMessageToTxFifoQ	24	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:2770:19:HAL_FDCAN_AddMessageToTxBuffer	16	static,ignoring_inline_asm
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:2838:19:HAL_FDCAN_EnableTxBufferRequest	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c:2865:10:HAL_FDCAN_GetLatestTxFifoQRequestBuffer	0	static

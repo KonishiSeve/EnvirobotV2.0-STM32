@@ -1,7 +1,7 @@
 ////////////////////////////
 /// Global Configuration ///
 ////////////////////////////
-#define USE_MOTION_GENERATOR
+//#define USE_MOTION_GENERATOR
 //#define USE_SENSORS
 #define USE_LEDS
 

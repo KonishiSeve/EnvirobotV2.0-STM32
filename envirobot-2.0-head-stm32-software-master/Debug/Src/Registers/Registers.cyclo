@@ -1,0 +1,17 @@
+../Src/Registers/Registers.cpp:73:3:static bool Registers::AddBaseRegisters()::<lambda(void*, uint16_t, uint32_t**, uint16_t*)>::_FUN(void*, uint16_t, uint32_t**, uint16_t*)	1
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = long unsigned int]	8
+../Src/Registers/Registers.cpp:13:1:Registers::Registers()	1
+../Src/Registers/Registers.cpp:60:6:void Registers::Init()	1
+../Src/Registers/Registers.cpp:100:24:RegisterConfiguration* Registers::FindRegisterConfiguration(uint16_t, bool*)	3
+../Src/Registers/Registers.cpp:88:10:Register Registers::FindRegister(uint16_t, bool*)	1
+../Src/Registers/Registers.cpp:118:6:bool Registers::AddRegisterSemaphore(uint16_t, void**)	2
+../Src/Registers/Registers.cpp:139:6:bool Registers::GroupRegisterCallbacks(uint16_t, uint16_t)	3
+../Src/Registers/Registers.cpp:167:6:bool Registers::SetRegisterAsSingle(uint16_t)	2
+../Src/Registers/Registers.cpp:189:6:bool Registers::SetRegisterAsArray(uint16_t, uint16_t)	2
+../Src/Registers/Registers.cpp:210:6:bool Registers::SetRegisterAsVector(uint16_t)	1
+../Src/Registers/Registers.cpp:221:6:bool Registers::SetRegisterPermissions(uint16_t, uint8_t)	2
+../Src/Registers/Registers.cpp:242:6:bool Registers::IsRegistered(uint16_t)	1
+../Src/Registers/Registers.cpp:256:9:uint8_t Registers::GetTypeSize(uint8_t)	2
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterConfiguration&}; _Tp = RegisterConfiguration; _Alloc = std::allocator<RegisterConfiguration>]	6
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterCallbacks<long unsigned int>&}; _Tp = RegisterCallbacks<long unsigned int>; _Alloc = std::allocator<RegisterCallbacks<long unsigned int> >]	6
+../Src/Registers/Registers.cpp:68:6:void Registers::AddBaseRegisters()	11

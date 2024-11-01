@@ -30,11 +30,11 @@
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c:1818:19:HAL_TIMEx_ConfigCommutEvent	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c:1877:19:HAL_TIMEx_ConfigCommutEvent_IT	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c:1940:19:HAL_TIMEx_ConfigCommutEvent_DMA	8	static
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c:1990:19:HAL_TIMEx_MasterConfigSynchronization	12	static
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c:1990:19:HAL_TIMEx_MasterConfigSynchronization	16	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c:2063:19:HAL_TIMEx_ConfigBreakDeadTime	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c:2150:19:HAL_TIMEx_ConfigBreakInput	20	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c:2334:19:HAL_TIMEx_RemapConfig	0	static
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c:2428:20:HAL_TIMEx_TISelection	8	static
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c:2428:20:HAL_TIMEx_TISelection	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c:2473:19:HAL_TIMEx_GroupChannel5	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c:2657:13:HAL_TIMEx_CommutCallback	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c:2778:6:TIMEx_DMACommutationCplt	8	static

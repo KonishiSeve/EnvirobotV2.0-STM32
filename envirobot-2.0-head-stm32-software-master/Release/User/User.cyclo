@@ -1,0 +1,4 @@
+../User/User.cpp:56:13:void UserTask(void*)	1
+../User/User.cpp:10:1:User::User(Registers*, MasterSubscribers*, Communication*, Services*, Publishers*, HardwareDelay*, Sensors*, LEDS*)	1
+../User/User.cpp:28:6:void User::Init()	1
+../User/User.cpp:33:6:void User::AddOSThreads()	3

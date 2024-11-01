@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (10.3-2021.10)
+# Toolchain: GNU Tools for STM32 (12.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -9,7 +9,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include Src/User/subdir.mk
+-include User/subdir.mk
 -include Src/Subscribers/Example/subdir.mk
 -include Src/Subscribers/Core/subdir.mk
 -include Src/Subscribers/subdir.mk
@@ -24,6 +24,8 @@ RM := rm -rf
 -include Src/LEDs/subdir.mk
 -include Src/HardwareDelay/subdir.mk
 -include Src/Communication/subdir.mk
+-include Platform/PlatformSensors/subdir.mk
+-include Platform/PlatformLEDs/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/subdir.mk
@@ -40,6 +42,9 @@ endif
 ifneq ($(strip $(C++_DEPS)),)
 -include $(C++_DEPS)
 endif
+ifneq ($(strip $(CCM_DEPS)),)
+-include $(CCM_DEPS)
+endif
 ifneq ($(strip $(C_UPPER_DEPS)),)
 -include $(C_UPPER_DEPS)
 endif
@@ -51,6 +56,12 @@ ifneq ($(strip $(S_DEPS)),)
 endif
 ifneq ($(strip $(S_UPPER_DEPS)),)
 -include $(S_UPPER_DEPS)
+endif
+ifneq ($(strip $(CXXM_DEPS)),)
+-include $(CXXM_DEPS)
+endif
+ifneq ($(strip $(C++M_DEPS)),)
+-include $(C++M_DEPS)
 endif
 ifneq ($(strip $(C_DEPS)),)
 -include $(C_DEPS)
@@ -94,8 +105,8 @@ all: main-build
 main-build: Envirobot_STM32_Head.elf secondary-outputs
 
 # Tool invocations
-Envirobot_STM32_Head.elf Envirobot_STM32_Head.map: $(OBJS) $(USER_OBJS) D:\Code\Envirobot2_0_STM32_Head\STM32H750VBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "Envirobot_STM32_Head.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\Code\Envirobot2_0_STM32_Head\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Envirobot_STM32_Head.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Envirobot_STM32_Head.elf Envirobot_STM32_Head.map: $(OBJS) $(USER_OBJS) C:\Users\skonishi\Desktop\FrameworkV2\envirobot-2.0-head-stm32-software-master\STM32H750VBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "Envirobot_STM32_Head.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\skonishi\Desktop\FrameworkV2\envirobot-2.0-head-stm32-software-master\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Envirobot_STM32_Head.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

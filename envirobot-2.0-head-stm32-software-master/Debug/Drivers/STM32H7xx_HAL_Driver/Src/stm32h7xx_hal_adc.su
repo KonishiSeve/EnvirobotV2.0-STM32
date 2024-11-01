@@ -1,3 +1,6 @@
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h:4188:22:LL_ADC_REG_SetSequencerRanks	4	static
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h:5342:22:LL_ADC_SetChannelSamplingTime	4	static
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h:5707:22:LL_ADC_SetAnalogWDMonitChannels	4	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:1095:13:HAL_ADC_MspInit	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:1112:13:HAL_ADC_MspDeInit	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:1572:19:HAL_ADC_PollForConversion	24	static
@@ -11,8 +14,8 @@
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:2361:6:HAL_ADC_IRQHandler	24	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:3814:6:ADC_DMAConvCplt	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:3910:6:ADC_DMAError	8	static
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:2819:19:HAL_ADC_ConfigChannel	32	static,ignoring_inline_asm
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:3133:19:HAL_ADC_AnalogWDGConfig	12	static,ignoring_inline_asm
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:2819:19:HAL_ADC_ConfigChannel	24	static,ignoring_inline_asm
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:3133:19:HAL_ADC_AnalogWDGConfig	16	static,ignoring_inline_asm
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:3495:10:HAL_ADC_GetState	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:3509:10:HAL_ADC_GetError	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c:3539:19:ADC_ConversionStop	16	static

@@ -11,6 +11,7 @@
 #include <stm32h750xx.h>
 #include <stm32h7xx_hal.h>
 #include "cmsis_os.h"
+#include <typeinfo>
 
 #include "Configurations/RegistersConfiguration.h"
 #include "Definitions/RegistersDefinition.h"

@@ -1,0 +1,16 @@
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = float]	8
+../Src/Sensors/Sensors.hpp:339:6:bool Sensors::AddSensorData(uint8_t, uint16_t, bool) [with T = float]	2
+../Platform/PlatformSensors/PlatformSensors.cpp:6:1:PlatformSensors::PlatformSensors()	1
+../Platform/PlatformSensors/PlatformSensors.cpp:17:6:void PlatformSensors::Init(Sensors*, Registers*, Publishers*, LEDS*)	1
+../Platform/PlatformSensors/PlatformSensors.cpp:30:7:float PlatformSensors::ReadVoltage3_3V(uint32_t)	1
+../Platform/PlatformSensors/PlatformSensors.cpp:117:3:static float PlatformSensors::AddVoltageSensor(ADC_HandleTypeDef*, ADC_HandleTypeDef*)::<lambda(void*)>::_FUN(void*)	1
+../Platform/PlatformSensors/PlatformSensors.cpp:79:9:uint8_t PlatformSensors::GetADCResolution(ADC_HandleTypeDef*)	3
+../Platform/PlatformSensors/PlatformSensors.cpp:136:6:void PlatformSensors::ActivateVoltageSensor()	1
+../Platform/PlatformSensors/PlatformSensors.cpp:161:6:void PlatformSensors::SetupVoltageSensorPublisher()	1
+../Src/Registers/Registers.hpp:621:6:bool Registers::ReadRegister(uint16_t, T*, uint16_t*, bool) [with T = float]	25
+../Platform/PlatformSensors/PlatformSensors.cpp:50:7:float PlatformSensors::ReadVoltage5V(uint32_t)	3
+../Platform/PlatformSensors/PlatformSensors.cpp:126:3:static float PlatformSensors::AddVoltageSensor(ADC_HandleTypeDef*, ADC_HandleTypeDef*)::<lambda(void*)>::_FUN(void*)	1
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const I2CAccess&}; _Tp = I2CAccess; _Alloc = std::allocator<I2CAccess>]	6
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const SensorFunction<float>&}; _Tp = SensorFunction<float>; _Alloc = std::allocator<SensorFunction<float> >]	6
+../Src/Sensors/Sensors.hpp:443:6:bool Sensors::AddCodeSequence(uint8_t, uint16_t, void*, T (*)(void*), uint16_t) [with T = float]	8
+../Platform/PlatformSensors/PlatformSensors.cpp:94:6:void PlatformSensors::AddVoltageSensor(ADC_HandleTypeDef*, ADC_HandleTypeDef*)	1

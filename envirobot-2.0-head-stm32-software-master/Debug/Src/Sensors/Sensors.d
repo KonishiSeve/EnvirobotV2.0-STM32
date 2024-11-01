@@ -1,5 +1,5 @@
 Src/Sensors/Sensors.o: ../Src/Sensors/Sensors.cpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Sensors/Sensors.hpp \
+ ../Src/Sensors/Sensors.hpp \
  ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h \
  ../Drivers/CMSIS/Include/core_cm7.h \
  ../Drivers/CMSIS/Include/cmsis_version.h \
@@ -41,20 +41,6 @@ Src/Sensors/Sensors.o: ../Src/Sensors/Sensors.cpp \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Registers/Registers.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegistersConfiguration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Registers/RegistersDefinition.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapRegisters.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Publishers/Publishers.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/Core/CommunicationProtocol.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/CommunicationConfiguration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Communication/Communication.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Communication/CommunicationDefinition.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Subscribers/MasterSubscribers.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Subscribers/Core/Subscriber.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/Configuration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/LEDS/LEDS.hpp \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../Core/Inc/FreeRTOSConfig.h \
@@ -66,21 +52,30 @@ Src/Sensors/Sensors.o: ../Src/Sensors/Sensors.cpp \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/GPIO/GPIO.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapLEDs.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/LEDsConfiguration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapSubscribers.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapCommunication.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/PublishersConfiguration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/SensorsConfiguration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapPublishers.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/HardwareDelay/HardwareDelay.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapSensors.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/Hardware/MS5803.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/Hardware/PCA9633.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/Hardware/LTC2947.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/Hardware/DS2778.h
-D:/Code/Envirobot2_0_STM32_Head/Src/Sensors/Sensors.hpp:
+ ../Src/Registers/Registers.hpp \
+ ../Configuration/Configurations/RegistersConfiguration.h \
+ ../Configuration/Definitions/RegistersDefinition.h \
+ ../Configuration/RegisterMaps/RegisterMapRegisters.h \
+ ../Src/Publishers/Publishers.hpp \
+ ../Src/Protocols/Communication/Core/CommunicationProtocol.hpp \
+ ../Configuration/Configurations/CommunicationConfiguration.h \
+ ../Src/Communication/Communication.hpp \
+ ../Src/Subscribers/MasterSubscribers.hpp \
+ ../Src/Subscribers/Core/Subscriber.hpp ../Configuration/Configuration.h \
+ ../Src/LEDS/LEDS.hpp ../Src/GPIO/GPIO.hpp \
+ ../Configuration/RegisterMaps/RegisterMapLEDs.h \
+ ../Configuration/Configurations/LEDsConfiguration.h \
+ ../Configuration/Definitions/CommunicationDefinition.h \
+ ../Configuration/RegisterMaps/RegisterMapSubscribers.h \
+ ../Platform/PlatformLEDs/PlatformLEDs.hpp \
+ ../Configuration/RegisterMaps/RegisterMapCommunication.h \
+ ../Configuration/Configurations/PublishersConfiguration.h \
+ ../Configuration/Configurations/SensorsConfiguration.h \
+ ../Configuration/RegisterMaps/RegisterMapPublishers.h \
+ ../Src/HardwareDelay/HardwareDelay.hpp \
+ ../Configuration/Definitions/SensorsDefinition.h \
+ ../Configuration/RegisterMaps/RegisterMapSensors.h
+../Src/Sensors/Sensors.hpp:
 ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h:
 ../Drivers/CMSIS/Include/core_cm7.h:
 ../Drivers/CMSIS/Include/cmsis_version.h:
@@ -122,20 +117,6 @@ D:/Code/Envirobot2_0_STM32_Head/Src/Sensors/Sensors.hpp:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
-../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Registers/Registers.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegistersConfiguration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Registers/RegistersDefinition.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapRegisters.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Publishers/Publishers.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/Core/CommunicationProtocol.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/CommunicationConfiguration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Communication/Communication.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Communication/CommunicationDefinition.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Subscribers/MasterSubscribers.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Subscribers/Core/Subscriber.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/Configuration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/LEDS/LEDS.hpp:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
@@ -147,17 +128,28 @@ D:/Code/Envirobot2_0_STM32_Head/Src/LEDS/LEDS.hpp:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/GPIO/GPIO.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapLEDs.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/LEDsConfiguration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapSubscribers.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapCommunication.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/PublishersConfiguration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/SensorsConfiguration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapPublishers.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/HardwareDelay/HardwareDelay.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/RegisterMaps/RegisterMapSensors.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/Hardware/MS5803.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/Hardware/PCA9633.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/Hardware/LTC2947.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/Hardware/DS2778.h:
+../Src/Registers/Registers.hpp:
+../Configuration/Configurations/RegistersConfiguration.h:
+../Configuration/Definitions/RegistersDefinition.h:
+../Configuration/RegisterMaps/RegisterMapRegisters.h:
+../Src/Publishers/Publishers.hpp:
+../Src/Protocols/Communication/Core/CommunicationProtocol.hpp:
+../Configuration/Configurations/CommunicationConfiguration.h:
+../Src/Communication/Communication.hpp:
+../Src/Subscribers/MasterSubscribers.hpp:
+../Src/Subscribers/Core/Subscriber.hpp:
+../Configuration/Configuration.h:
+../Src/LEDS/LEDS.hpp:
+../Src/GPIO/GPIO.hpp:
+../Configuration/RegisterMaps/RegisterMapLEDs.h:
+../Configuration/Configurations/LEDsConfiguration.h:
+../Configuration/Definitions/CommunicationDefinition.h:
+../Configuration/RegisterMaps/RegisterMapSubscribers.h:
+../Platform/PlatformLEDs/PlatformLEDs.hpp:
+../Configuration/RegisterMaps/RegisterMapCommunication.h:
+../Configuration/Configurations/PublishersConfiguration.h:
+../Configuration/Configurations/SensorsConfiguration.h:
+../Configuration/RegisterMaps/RegisterMapPublishers.h:
+../Src/HardwareDelay/HardwareDelay.hpp:
+../Configuration/Definitions/SensorsDefinition.h:
+../Configuration/RegisterMaps/RegisterMapSensors.h:

@@ -1,6 +1,6 @@
 Src/Protocols/Communication/UART/UARTProtocol.o: \
  ../Src/Protocols/Communication/UART/UARTProtocol.cpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/UART/UARTProtocol.hpp \
+ ../Src/Protocols/Communication/UART/UARTProtocol.hpp \
  ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h \
  ../Drivers/CMSIS/Include/core_cm7.h \
  ../Drivers/CMSIS/Include/cmsis_version.h \
@@ -42,11 +42,11 @@ Src/Protocols/Communication/UART/UARTProtocol.o: \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/Core/TemplateCommunicationProtocol.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/Core/CommunicationProtocol.hpp \
- D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/CommunicationConfiguration.h \
- D:/Code/Envirobot2_0_STM32_Head/Src/Communication/CommunicationDefinition.h
-D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/UART/UARTProtocol.hpp:
+ ../Src/Protocols/Communication/Core/TemplateCommunicationProtocol.hpp \
+ ../Src/Protocols/Communication/Core/CommunicationProtocol.hpp \
+ ../Configuration/Configurations/CommunicationConfiguration.h \
+ ../Configuration/Definitions/CommunicationDefinition.h
+../Src/Protocols/Communication/UART/UARTProtocol.hpp:
 ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h:
 ../Drivers/CMSIS/Include/core_cm7.h:
 ../Drivers/CMSIS/Include/cmsis_version.h:
@@ -88,7 +88,7 @@ D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/UART/UARTProtocol.hp
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/Core/TemplateCommunicationProtocol.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Protocols/Communication/Core/CommunicationProtocol.hpp:
-D:/Code/Envirobot2_0_STM32_Head/Src/Configuration/CommunicationConfiguration.h:
-D:/Code/Envirobot2_0_STM32_Head/Src/Communication/CommunicationDefinition.h:
+../Src/Protocols/Communication/Core/TemplateCommunicationProtocol.hpp:
+../Src/Protocols/Communication/Core/CommunicationProtocol.hpp:
+../Configuration/Configurations/CommunicationConfiguration.h:
+../Configuration/Definitions/CommunicationDefinition.h:

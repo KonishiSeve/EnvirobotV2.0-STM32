@@ -23,7 +23,7 @@
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:2588:13:HAL_UART_RxCpltCallback	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:2603:13:HAL_UART_RxHalfCpltCallback	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:2618:13:HAL_UART_ErrorCallback	0	static
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:3798:13:UART_DMAError	8	static
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:3798:13:UART_DMAError	16	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:3838:13:UART_DMAAbortOnError	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:2633:13:HAL_UART_AbortCpltCallback	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:1901:19:HAL_UART_Abort_IT	16	static,ignoring_inline_asm
@@ -39,8 +39,8 @@
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:2238:6:HAL_UART_IRQHandler	24	static,ignoring_inline_asm
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:4201:13:UART_RxISR_8BIT	8	static,ignoring_inline_asm
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:4278:13:UART_RxISR_16BIT	8	static,ignoring_inline_asm
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:4357:13:UART_RxISR_8BIT_FIFOEN	40	static,ignoring_inline_asm
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:4505:13:UART_RxISR_16BIT_FIFOEN	40	static,ignoring_inline_asm
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:4357:13:UART_RxISR_8BIT_FIFOEN	32	static,ignoring_inline_asm
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:4505:13:UART_RxISR_16BIT_FIFOEN	32	static,ignoring_inline_asm
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:3764:13:UART_DMARxHalfCplt	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:3707:13:UART_DMAReceiveCplt	8	static,ignoring_inline_asm
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:2728:6:HAL_UART_ReceiverTimeout_Config	0	static
@@ -54,10 +54,10 @@
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:2977:10:HAL_UART_GetError	0	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:3023:19:UART_SetConfig	40	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:3287:6:UART_AdvFeatureConfig	8	static
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:3413:19:UART_WaitOnFlagUntilTimeout	24	static,ignoring_inline_asm
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:3413:19:UART_WaitOnFlagUntilTimeout	32	static,ignoring_inline_asm
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:1121:19:HAL_UART_Transmit	40	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:1210:19:HAL_UART_Receive	40	static
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:3361:19:UART_CheckIdleState	32	static
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:3361:19:UART_CheckIdleState	24	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:307:19:HAL_UART_Init	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:380:19:HAL_HalfDuplex_Init	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c:453:19:HAL_LIN_Init	16	static
