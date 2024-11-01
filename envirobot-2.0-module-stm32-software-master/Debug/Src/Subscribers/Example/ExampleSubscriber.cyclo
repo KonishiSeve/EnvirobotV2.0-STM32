@@ -1,0 +1,2 @@
+../Src/Subscribers/Example/ExampleSubscriber.cpp:38:6:virtual void ExampleSubscriber::ReceiveINT8(SubscriberInput, const int8_t*)	1
+../Src/Subscribers/Example/ExampleSubscriber.cpp:10:1:ExampleSubscriber::ExampleSubscriber()	1

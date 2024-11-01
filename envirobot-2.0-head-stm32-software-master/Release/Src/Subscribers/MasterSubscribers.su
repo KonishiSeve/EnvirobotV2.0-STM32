@@ -1,0 +1,43 @@
+../Src/Registers/Registers.hpp:220:9:uint8_t Registers::GetTypeID(bool*) [with T = unsigned char]	8	static
+../Src/Subscribers/MasterSubscribers.cpp:13:1:MasterSubscribers::MasterSubscribers()	0	static
+../Src/Subscribers/MasterSubscribers.cpp:22:6:void MasterSubscribers::Init(Registers*, LEDS*)	8	static
+../Src/Subscribers/MasterSubscribers.cpp:372:9:uint8_t MasterSubscribers::FindSubscriberIndex(uint8_t, bool*)	24	static
+../Src/Subscribers/MasterSubscribers.cpp:123:6:bool MasterSubscribers::SetSubscriberStatus(uint8_t, bool)	32	static
+../Src/Subscribers/MasterSubscribers.cpp:140:6:bool MasterSubscribers::ActivateSubscriber(uint8_t)	0	static
+../Src/Subscribers/MasterSubscribers.cpp:150:6:bool MasterSubscribers::DeactivateSubscriber(uint8_t)	0	static
+../Src/Subscribers/MasterSubscribers.cpp:38:3:static bool MasterSubscribers::AddRegisters()::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	8	static
+../Src/Subscribers/MasterSubscribers.cpp:342:6:bool MasterSubscribers::AddressAccepted(uint8_t, uint8_t)	32	static
+../Src/Subscribers/MasterSubscribers.cpp:262:6:bool MasterSubscribers::UnsubscribeFromAllRemoteRegisters(uint8_t)	24	static
+../Src/Subscribers/MasterSubscribers.cpp:324:6:bool MasterSubscribers::ClearFilters(uint8_t)	24	static
+../Src/Subscribers/MasterSubscribers.cpp:62:3:static bool MasterSubscribers::AddRegisters()::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	8	static
+../Src/Subscribers/MasterSubscribers.cpp:301:6:bool MasterSubscribers::RemoveFilter(uint8_t, uint8_t)	32	static
+../Src/Subscribers/MasterSubscribers.cpp:407:6:bool MasterSubscribers::RemoteRegisterSubscriptionAvailable(Register, SubscriberInterface)	56	static
+../Src/Subscribers/MasterSubscribers.cpp:462:9:uint8_t MasterSubscribers::FindRemoteRegisterIndex(uint8_t, Register, SubscriberInterface, bool*)	40	static
+../Src/Subscribers/MasterSubscribers.cpp:394:6:bool MasterSubscribers::SubscribedToRemoteRegister(uint8_t, Register, SubscriberInterface)	32	static
+../Src/Subscribers/MasterSubscribers.cpp:437:10:Register MasterSubscribers::FindRemoteRegister(Register, SubscriberInterface, bool*)	48	static
+../Src/Subscribers/MasterSubscribers.cpp:241:6:bool MasterSubscribers::UnsubscribeFromRemoteRegister(uint8_t, uint8_t)	56	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_vector.h:333:7:std::_Vector_base<_Tp, _Alloc>::~_Vector_base() [with _Tp = Register; _Alloc = std::allocator<Register>]	8	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_vector.h:333:7:std::_Vector_base<_Tp, _Alloc>::~_Vector_base() [with _Tp = SubscriberInterface; _Alloc = std::allocator<SubscriberInterface>]	8	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_vector.h:333:7:std::_Vector_base<_Tp, _Alloc>::~_Vector_base() [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	8	static
+../Src/Subscribers/MasterSubscribers.hpp:28:8:SubscriberConfiguration::~SubscriberConfiguration()	8	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_uninitialized.h:1000:5:_ForwardIterator std::__relocate_a_1(_InputIterator, _InputIterator, _ForwardIterator, _Allocator&) [with _InputIterator = SubscriberConfiguration*; _ForwardIterator = SubscriberConfiguration*; _Allocator = std::allocator<SubscriberConfiguration>]	24	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {Subscriber* const&}; _Tp = Subscriber*; _Alloc = std::allocator<Subscriber*>]	40	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const Register&}; _Tp = Register; _Alloc = std::allocator<Register>]	40	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const SubscriberInterface&}; _Tp = SubscriberInterface; _Alloc = std::allocator<SubscriberInterface>]	40	static
+../Src/Subscribers/MasterSubscribers.cpp:216:6:bool MasterSubscribers::SubscribeToRemoteRegister(uint8_t, Register, SubscriberInterface)	48	static
+../Src/Subscribers/MasterSubscribers.cpp:180:6:bool MasterSubscribers::SubscribeToRemoteRegister(uint8_t, Register)	32	static
+../Src/Subscribers/MasterSubscribers.cpp:198:6:bool MasterSubscribers::SubscribeToRemoteRegister(uint8_t, uint8_t, SubscriberInterface)	48	static
+../Src/Subscribers/MasterSubscribers.cpp:163:6:bool MasterSubscribers::SubscribeToRemoteRegister(uint8_t, uint8_t)	8	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const unsigned char&}; _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	40	static
+../Src/Subscribers/MasterSubscribers.cpp:280:6:bool MasterSubscribers::AddFilter(uint8_t, uint8_t)	32	static
+../Src/Subscribers/MasterSubscribers.cpp:50:3:static bool MasterSubscribers::AddRegisters()::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	8	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const RegisterConfiguration&}; _Tp = RegisterConfiguration; _Alloc = std::allocator<RegisterConfiguration>]	40	static
+../Src/Registers/Registers.hpp:175:6:bool Registers::AddRegister(uint16_t) [with T = unsigned char]	40	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const RegisterCallbacks<unsigned char>&}; _Tp = RegisterCallbacks<unsigned char>; _Alloc = std::allocator<RegisterCallbacks<unsigned char> >]	40	static
+../Src/Registers/Registers.hpp:347:6:bool Registers::AddWriteCallback(uint16_t, void*, bool (*)(void*, uint16_t, T*, uint16_t)) [with T = unsigned char]	56	static
+../Src/Subscribers/MasterSubscribers.cpp:33:6:void MasterSubscribers::AddRegisters()	8	static
+../Src/Subscribers/MasterSubscribers.hpp:28:8:SubscriberConfiguration::SubscriberConfiguration(const SubscriberConfiguration&)	16	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const SubscriberConfiguration&}; _Tp = SubscriberConfiguration; _Alloc = std::allocator<SubscriberConfiguration>]	40	static
+../Src/Subscribers/MasterSubscribers.cpp:77:6:bool MasterSubscribers::AddSubscriber(uint8_t, Subscriber*)	72	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_algobase.h:395:2:static _OI std::__copy_move<true, false, std::random_access_iterator_tag>::__copy_m(_II, _II, _OI) [with _II = SubscriberConfiguration*; _OI = SubscriberConfiguration*]	48	static
+../Src/Subscribers/MasterSubscribers.cpp:104:6:bool MasterSubscribers::RemoveSubscriber(uint8_t)	24	static

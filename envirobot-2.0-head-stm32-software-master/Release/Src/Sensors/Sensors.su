@@ -1,0 +1,118 @@
+../Src/Sensors/Sensors.cpp:121:4:static bool Sensors::AddRegisters()::<lambda(void*, uint16_t, uint8_t**, uint16_t*)>::_FUN(void*, uint16_t, uint8_t**, uint16_t*)	16	static
+../Src/Registers/Registers.hpp:220:9:uint8_t Registers::GetTypeID(bool*) [with T = float]	8	static
+../Src/Registers/Registers.hpp:220:9:uint8_t Registers::GetTypeID(bool*) [with T = long unsigned int]	8	static
+../Src/Registers/Registers.hpp:220:9:uint8_t Registers::GetTypeID(bool*) [with T = short unsigned int]	8	static
+../Src/Registers/Registers.hpp:220:9:uint8_t Registers::GetTypeID(bool*) [with T = unsigned char]	8	static
+../Src/Sensors/Sensors.cpp:13:1:Sensors::Sensors()	24	static
+../Src/Sensors/Sensors.cpp:98:6:void Sensors::Init(Registers*, Publishers*, HardwareDelay*, LEDS*)	8	static
+../Src/Sensors/Sensors.cpp:288:6:bool Sensors::SetReadingStatus(bool)	24	static
+../Src/Sensors/Sensors.cpp:130:3:static bool Sensors::AddRegisters()::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	0	static
+../Src/Sensors/Sensors.cpp:314:6:bool Sensors::ActivateReading()	0	static
+../Src/Sensors/Sensors.cpp:323:6:bool Sensors::DeactivateReading()	0	static
+../Src/Sensors/Sensors.cpp:420:6:bool Sensors::DeactivateAllSensorGroups()	16	static
+../Src/Sensors/Sensors.cpp:151:3:static bool Sensors::AddRegisters()::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	0	static
+../Src/Sensors/Sensors.cpp:1125:6:void Sensors::DetectSensors(uint32_t, uint32_t)	48	static
+../Src/Sensors/Sensors.cpp:214:3:static bool Sensors::AddRegisters()::<lambda(void*, uint16_t, uint32_t*, uint16_t)>::_FUN(void*, uint16_t, uint32_t*, uint16_t)	8	static
+../Src/Sensors/Sensors.hpp:73:8:SensorData::SensorData(const SensorData&)	16	static
+../Src/Sensors/Sensors.cpp:1923:6:bool Sensors::RegularInterfaceTermination(I2CInterface*)	0	static
+../Src/Sensors/Sensors.cpp:1964:6:bool Sensors::RegularGroupTermination(I2CInterface*, SensorGroup*)	12	static
+../Src/Sensors/Sensors.cpp:1994:6:bool Sensors::PendingGroupTermination(I2CInterface*, SensorGroup*)	20	static
+../Src/Sensors/Sensors.cpp:1942:6:void Sensors::ProccessGroupTermination(I2CInterface*, SensorGroup*)	16	static
+../Src/Sensors/Sensors.cpp:2028:9:uint8_t Sensors::FindInterfaceIndex(uint8_t, bool*)	16	static
+../Src/Sensors/Sensors.cpp:2011:15:I2CInterface* Sensors::FindInterface(uint8_t, bool*)	16	static
+../Src/Sensors/Sensors.cpp:271:6:bool Sensors::SetInterfaceTimeout(uint8_t, uint32_t)	32	static
+../Src/Sensors/Sensors.cpp:2048:9:uint8_t Sensors::FindInterfaceIndexWithHandle(I2C_HandleTypeDef*, bool*)	16	static
+../Src/Sensors/Sensors.cpp:2114:14:SensorGroup* Sensors::FindSensorGroupPath(uint8_t, I2CInterface**, bool*)	20	static
+../Src/Sensors/Sensors.cpp:2068:14:SensorGroup* Sensors::FindSensorGroup(uint8_t, bool*)	0	static
+../Src/Sensors/Sensors.cpp:438:6:bool Sensors::SetSensorGroupPrescaler(uint8_t, uint16_t)	32	static
+../Src/Sensors/Sensors.cpp:203:3:static bool Sensors::AddRegisters()::<lambda(void*, uint16_t, uint16_t*, uint16_t)>::_FUN(void*, uint16_t, uint16_t*, uint16_t)	0	static
+../Src/Sensors/Sensors.cpp:378:6:bool Sensors::SetSensorGroupStatus(uint8_t, bool)	32	static
+../Src/Sensors/Sensors.cpp:402:6:bool Sensors::ActivateSensorGroup(uint8_t)	0	static
+../Src/Sensors/Sensors.cpp:411:6:bool Sensors::DeactivateSensorGroup(uint8_t)	0	static
+../Src/Sensors/Sensors.cpp:140:3:static bool Sensors::AddRegisters()::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	0	static
+../Src/Sensors/Sensors.cpp:559:6:bool Sensors::DeactivateAllSensors(uint8_t)	24	static
+../Src/Sensors/Sensors.cpp:172:3:static bool Sensors::AddRegisters()::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	0	static
+../Src/Sensors/Sensors.cpp:2138:9:Sensor* Sensors::FindSensorPath(uint8_t, I2CInterface**, SensorGroup**, bool*)	28	static
+../Src/Sensors/Sensors.cpp:2079:9:Sensor* Sensors::FindSensor(uint8_t, bool*)	16	static
+../Src/Sensors/Sensors.cpp:503:6:bool Sensors::AddSensorCallback(uint8_t, void*, void (*)(void*))	32	static
+../Src/Sensors/Sensors.cpp:522:6:bool Sensors::SetSensorStatus(uint8_t, bool)	32	static
+../Src/Sensors/Sensors.cpp:539:6:bool Sensors::ActivateSensor(uint8_t)	0	static
+../Src/Sensors/Sensors.cpp:549:6:bool Sensors::DeactivateSensor(uint8_t)	0	static
+../Src/Sensors/Sensors.cpp:161:3:static bool Sensors::AddRegisters()::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	0	static
+../Src/Sensors/Sensors.cpp:580:6:bool Sensors::SetSensorMemoryAddressSize(uint8_t, uint16_t)	32	static
+../Src/Sensors/Sensors.cpp:613:19:HAL_StatusTypeDef Sensors::ConfigureSensor(uint8_t, uint8_t*, uint16_t, uint32_t)	56	static
+../Src/Sensors/Sensors.cpp:599:19:HAL_StatusTypeDef Sensors::ConfigureSensor(uint8_t, uint8_t, uint32_t)	24	static
+../Src/Sensors/Sensors.cpp:667:19:HAL_StatusTypeDef Sensors::ConfigureSensor(uint8_t, uint16_t, uint8_t*, uint16_t, uint32_t)	64	static
+../Src/Sensors/Sensors.cpp:652:19:HAL_StatusTypeDef Sensors::ConfigureSensor(uint8_t, uint16_t, uint8_t, uint32_t)	24	static
+../Src/Sensors/Sensors.cpp:1150:6:bool Sensors::ForcePresence(uint8_t)	24	static
+../Src/Sensors/Sensors.cpp:923:6:bool Sensors::DeactivateAllSensorData(uint8_t)	24	static
+../Src/Sensors/Sensors.cpp:193:3:static bool Sensors::AddRegisters()::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	0	static
+../Src/Sensors/Sensors.cpp:2091:13:SensorData* Sensors::FindSensorData(uint8_t, uint16_t, bool*)	16	static
+../Src/Sensors/Sensors.cpp:866:6:bool Sensors::IsSensorDataActive(uint8_t, uint16_t)	16	static
+../Src/Sensors/Sensors.cpp:884:6:bool Sensors::SetSensorDataStatus(uint8_t, uint16_t, bool)	32	static
+../Src/Sensors/Sensors.cpp:902:6:bool Sensors::ActivateSensorData(uint8_t, uint16_t)	0	static
+../Src/Sensors/Sensors.cpp:913:6:bool Sensors::DeactivateSensorData(uint8_t, uint16_t)	0	static
+../Src/Sensors/Sensors.cpp:182:3:static bool Sensors::AddRegisters()::<lambda(void*, uint16_t, uint16_t*, uint16_t)>::_FUN(void*, uint16_t, uint16_t*, uint16_t)	0	static
+../Src/Sensors/Sensors.cpp:2163:6:bool Sensors::IsSensorPending(I2CInterface*, uint8_t)	8	static
+../Src/Sensors/Sensors.cpp:2179:6:bool Sensors::IsSensorRequested(I2CInterface*, uint8_t)	32	static
+../Src/Sensors/Sensors.cpp:2199:6:bool Sensors::MoveToNextGroup(I2CInterface*, bool)	8	static
+../Src/Sensors/Sensors.cpp:2216:6:bool Sensors::MoveToNextSensor(I2CInterface*, SensorGroup*, bool)	24	static
+../Src/Sensors/Sensors.cpp:2235:6:bool Sensors::MoveToNextData(Sensor*, bool)	16	static
+../Src/Sensors/Sensors.cpp:2263:6:bool Sensors::MoveToNextSequence(SensorData*, bool)	24	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_vector.h:333:7:std::_Vector_base<_Tp, _Alloc>::~_Vector_base() [with _Tp = I2CAccess; _Alloc = std::allocator<I2CAccess>]	8	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_vector.h:678:7:std::vector<_Tp, _Alloc>::~vector() [with _Tp = SensorData; _Alloc = std::allocator<SensorData>]	16	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_vector.h:678:7:std::vector<_Tp, _Alloc>::~vector() [with _Tp = Sensor; _Alloc = std::allocator<Sensor>]	16	static
+../Src/Sensors/Sensors.hpp:120:8:I2CInterface::~I2CInterface()	16	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_uninitialized.h:1000:5:_ForwardIterator std::__relocate_a_1(_InputIterator, _InputIterator, _ForwardIterator, _Allocator&) [with _InputIterator = I2CInterface*; _ForwardIterator = I2CInterface*; _Allocator = std::allocator<I2CInterface>]	32	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_uninitialized.h:1000:5:_ForwardIterator std::__relocate_a_1(_InputIterator, _InputIterator, _ForwardIterator, _Allocator&) [with _InputIterator = SensorGroup*; _ForwardIterator = SensorGroup*; _Allocator = std::allocator<SensorGroup>]	24	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_uninitialized.h:1000:5:_ForwardIterator std::__relocate_a_1(_InputIterator, _InputIterator, _ForwardIterator, _Allocator&) [with _InputIterator = Sensor*; _ForwardIterator = Sensor*; _Allocator = std::allocator<Sensor>]	24	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_vector.h:1430:7:std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = ReadRequest; _Alloc = std::allocator<ReadRequest>]	40	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_vector.h:1430:7:std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = Sensor*; _Alloc = std::allocator<Sensor*>]	8	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_vector.h:1092:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::at(std::vector<_Tp, _Alloc>::size_type) [with _Tp = RegisterCallbacks<unsigned char>; _Alloc = std::allocator<RegisterCallbacks<unsigned char> >]	16	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const I2CAccess&}; _Tp = I2CAccess; _Alloc = std::allocator<I2CAccess>]	40	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_vector.h:1187:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = I2CAccess; _Alloc = std::allocator<I2CAccess>]	16	static
+../Src/Sensors/Sensors.cpp:960:6:bool Sensors::AddMemoryWriteSequence(uint8_t, uint16_t, uint16_t, uint8_t*, uint16_t)	120	static
+../Src/Sensors/Sensors.cpp:945:6:bool Sensors::AddMemoryWriteSequence(uint8_t, uint16_t, uint16_t, uint8_t)	24	static
+../Src/Sensors/Sensors.cpp:994:6:bool Sensors::AddMemoryReadSequence(uint8_t, uint16_t, uint16_t, uint16_t)	112	static
+../Src/Sensors/Sensors.cpp:1039:6:bool Sensors::AddWriteSequence(uint8_t, uint16_t, uint8_t*, uint16_t)	112	static
+../Src/Sensors/Sensors.cpp:1025:6:bool Sensors::AddWriteSequence(uint8_t, uint16_t, uint8_t)	24	static
+../Src/Sensors/Sensors.cpp:1071:6:bool Sensors::AddReadSequence(uint8_t, uint16_t, uint16_t)	112	static
+../Src/Sensors/Sensors.cpp:1101:6:bool Sensors::AddDelaySequence(uint8_t, uint16_t, uint32_t)	112	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {Sensor* const&}; _Tp = Sensor*; _Alloc = std::allocator<Sensor*>]	40	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_vector.h:1187:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = Sensor*; _Alloc = std::allocator<Sensor*>]	8	static
+../Src/Sensors/Sensors.cpp:1393:6:void Sensors::ProcessAccess(I2CInterface*, SensorGroup*, Sensor*, SensorData*, I2CAccess*)	56	dynamic
+../Src/Sensors/Sensors.cpp:1207:6:void Sensors::ReadNextSensor(uint8_t)	80	static
+../Src/Sensors/Sensors.cpp:1806:6:void Sensors::ExitRegular(I2CInterface*)	104	static
+../Src/Sensors/Sensors.cpp:1912:6:void Sensors::ExitPending(I2CInterface*)	16	static
+../Src/Sensors/Sensors.cpp:1519:6:void Sensors::ProccessReceivedData(I2CInterface*)	64	static
+../Src/Sensors/Sensors.cpp:1501:6:void Sensors::ReceiveSensorData(I2C_HandleTypeDef*)	24	static
+../Src/Sensors/Sensors.cpp:1166:6:void Sensors::Spin()	24	static
+../Src/Sensors/Sensors.cpp:1751:6:void Sensors::ReceiveDelayInterrupt(uint8_t)	40	static
+../Src/Sensors/Sensors.cpp:1738:6:static void Sensors::HardwareDelayISR(void*, uint8_t)	16	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const RegisterConfiguration&}; _Tp = RegisterConfiguration; _Alloc = std::allocator<RegisterConfiguration>]	40	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_vector.h:1187:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = RegisterConfiguration; _Alloc = std::allocator<RegisterConfiguration>]	16	static
+../Src/Registers/Registers.hpp:175:6:bool Registers::AddRegister(uint16_t) [with T = float]	40	static
+../Src/Registers/Registers.hpp:175:6:bool Registers::AddRegister(uint16_t) [with T = short unsigned int]	40	static
+../Src/Registers/Registers.hpp:175:6:bool Registers::AddRegister(uint16_t) [with T = unsigned char]	40	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const RegisterCallbacks<unsigned char>&}; _Tp = RegisterCallbacks<unsigned char>; _Alloc = std::allocator<RegisterCallbacks<unsigned char> >]	40	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\stl_vector.h:1187:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = RegisterCallbacks<unsigned char>; _Alloc = std::allocator<RegisterCallbacks<unsigned char> >]	16	static
+../Src/Registers/Registers.hpp:347:6:bool Registers::AddWriteCallback(uint16_t, void*, bool (*)(void*, uint16_t, T*, uint16_t)) [with T = unsigned char]	48	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const RegisterCallbacks<short unsigned int>&}; _Tp = RegisterCallbacks<short unsigned int>; _Alloc = std::allocator<RegisterCallbacks<short unsigned int> >]	40	static
+../Src/Registers/Registers.hpp:347:6:bool Registers::AddWriteCallback(uint16_t, void*, bool (*)(void*, uint16_t, T*, uint16_t)) [with T = short unsigned int]	56	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const RegisterCallbacks<long unsigned int>&}; _Tp = RegisterCallbacks<long unsigned int>; _Alloc = std::allocator<RegisterCallbacks<long unsigned int> >]	40	static
+../Src/Sensors/Sensors.cpp:116:6:void Sensors::AddRegisters()	48	static
+../Src/Sensors/Sensors.hpp:85:8:Sensor::Sensor(const Sensor&)	24	static
+../Src/Sensors/Sensors.hpp:101:8:SensorGroup::SensorGroup(const SensorGroup&)	24	static
+../Src/Sensors/Sensors.hpp:120:8:I2CInterface::I2CInterface(const I2CInterface&)	24	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const I2CInterface&}; _Tp = I2CInterface; _Alloc = std::allocator<I2CInterface>]	40	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const SensorGroup&}; _Tp = SensorGroup; _Alloc = std::allocator<SensorGroup>]	40	static
+../Src/Sensors/Sensors.cpp:335:6:bool Sensors::AddSensorGroup(uint8_t, uint8_t, bool)	64	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const Sensor&}; _Tp = Sensor; _Alloc = std::allocator<Sensor>]	40	static
+../Src/Sensors/Sensors.cpp:457:6:bool Sensors::AddSensor(uint8_t, uint8_t, uint16_t)	72	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {float}; _Tp = float; _Alloc = std::allocator<float>]	40	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const RegisterCallbacks<float>&}; _Tp = RegisterCallbacks<float>; _Alloc = std::allocator<RegisterCallbacks<float> >]	40	static
+../Src/Registers/Registers.hpp:268:6:bool Registers::AddRegisterPointer(uint16_t, T*) [with T = float]	56	static
+../Src/Sensors/Sensors.hpp:73:8:SensorData::SensorData(SensorData&&)	8	static
+../Src/Sensors/Sensors.cpp:230:6:bool Sensors::AddInterface(uint8_t, I2C_HandleTypeDef*)	160	static
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\c++\10.3.1\bits\vector.tcc:426:7:) [with _Args = {const SensorData&}; _Tp = SensorData; _Alloc = std::allocator<SensorData>]	48	static
+../Src/Sensors/Sensors.cpp:706:6:bool Sensors::AddSensorDataWithType(uint8_t, uint16_t, uint8_t, bool)	72	static

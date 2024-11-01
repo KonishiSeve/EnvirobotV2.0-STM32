@@ -1,0 +1,22 @@
+../Src/Trajectory/TrajectoryGenerator.cpp:13:1:TrajectoryGenerator::TrajectoryGenerator()	1
+../Src/Trajectory/TrajectoryGenerator.cpp:82:6:void TrajectoryGenerator::PlanTrajectory(float, float)	1
+../Src/Trajectory/TrajectoryGenerator.cpp:92:6:void TrajectoryGenerator::ComputeTimings()	6
+../Src/Trajectory/TrajectoryGenerator.cpp:60:6:void TrajectoryGenerator::StartTrajectory()	1
+../Src/Trajectory/TrajectoryGenerator.cpp:71:6:void TrajectoryGenerator::StartTrajectory(float, float)	1
+../Src/Trajectory/TrajectoryGenerator.cpp:131:7:float TrajectoryGenerator::Step(float)	1
+../Src/Trajectory/TrajectoryGenerator.cpp:144:7:float TrajectoryGenerator::Slope(uint32_t, uint32_t, float, float)	2
+../Src/Trajectory/TrajectoryGenerator.cpp:158:7:float TrajectoryGenerator::Trapezoidal(uint32_t, uint32_t, float, float)	5
+../Src/Trajectory/TrajectoryGenerator.cpp:182:7:float TrajectoryGenerator::Sinusoidal(uint32_t, uint32_t, float, float)	2
+../Src/Trajectory/TrajectoryGenerator.cpp:26:7:float TrajectoryGenerator::GenerateSetPoint()	7
+../Src/Trajectory/TrajectoryGenerator.cpp:192:6:void TrajectoryGenerator::SetTrajectoryMode(uint8_t)	1
+../Src/Trajectory/TrajectoryGenerator.cpp:201:6:void TrajectoryGenerator::SetTrajectoryCyclicValue(bool)	1
+../Src/Trajectory/TrajectoryGenerator.cpp:210:6:void TrajectoryGenerator::SetTrajectoryMaxSpeed(float)	1
+../Src/Trajectory/TrajectoryGenerator.cpp:219:6:void TrajectoryGenerator::SetTrajectoryMaxAcceleration(float)	1
+../Src/Trajectory/TrajectoryGenerator.cpp:228:6:void TrajectoryGenerator::SetTrajectoryFrequency(float)	1
+../Src/Trajectory/TrajectoryGenerator.cpp:237:6:void TrajectoryGenerator::SetTrajectoryPhase(float)	1
+../Src/Trajectory/TrajectoryGenerator.cpp:246:9:uint8_t TrajectoryGenerator::GetTrajectoryMode()	1
+../Src/Trajectory/TrajectoryGenerator.cpp:255:6:bool TrajectoryGenerator::GetTrajectoryCyclicValue()	1
+../Src/Trajectory/TrajectoryGenerator.cpp:264:7:float TrajectoryGenerator::GetTrajectoryMaxSpeed()	1
+../Src/Trajectory/TrajectoryGenerator.cpp:273:7:float TrajectoryGenerator::GetTrajectoryMaxAcceleration()	1
+../Src/Trajectory/TrajectoryGenerator.cpp:282:7:float TrajectoryGenerator::GetTrajectoryFrequency()	1
+../Src/Trajectory/TrajectoryGenerator.cpp:291:7:float TrajectoryGenerator::GetTrajectoryPhase()	1

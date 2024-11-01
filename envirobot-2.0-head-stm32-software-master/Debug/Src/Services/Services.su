@@ -1,0 +1,11 @@
+../Src/Services/Services.cpp:14:6:void Services::Init(Registers*, Communication*, LEDS*)	8	static
+../Src/Services/Services.cpp:23:6:void Services::ResetQueue()	16	static
+../Src/Services/Services.cpp:10:1:Services::Services()	8	static
+../Src/Services/Services.cpp:34:9:uint8_t Services::FindQueueIndex(uint8_t, Register, ServiceInterface, bool, bool*)	40	static
+../Src/Services/Services.cpp:60:6:bool Services::QueueAvailable(Register, ServiceInterface, bool)	48	static
+../Src/Services/Services.cpp:90:9:uint8_t Services::FindAvailableIndex(bool*)	0	static
+../Src/Services/Services.cpp:103:9:uint8_t Services::AddToQueue(Register, ServiceInterface, bool, uint16_t, bool*)	48	static
+../Src/Services/Services.cpp:128:6:bool Services::RemoveFromQueue(uint8_t)	16	static
+../Src/Services/Services.cpp:139:6:void Services::ReceiveWrite(ServiceConfiguration, uint8_t)	56	static
+../Src/Services/Services.cpp:155:6:void Services::ReceiveError(ServiceConfiguration, uint8_t)	64	static
+../Src/Services/Services.cpp:172:10:Register Services::FindRemoteRegister(Register, ServiceInterface, bool, bool*)	56	static

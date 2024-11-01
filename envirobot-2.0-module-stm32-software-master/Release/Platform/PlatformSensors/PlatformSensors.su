@@ -1,0 +1,61 @@
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = long long unsigned int]	8	static
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = double]	8	static
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = short unsigned int]	8	static
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = long unsigned int]	8	static
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = long int]	8	static
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = float]	8	static
+../Src/Sensors/Sensors.hpp:339:6:bool Sensors::AddSensorData(uint8_t, uint16_t, bool) [with T = float]	40	static
+../Src/Sensors/Sensors.hpp:339:6:bool Sensors::AddSensorData(uint8_t, uint16_t, bool) [with T = short unsigned int]	40	static
+../Src/Sensors/Sensors.hpp:339:6:bool Sensors::AddSensorData(uint8_t, uint16_t, bool) [with T = long unsigned int]	40	static
+../Platform/PlatformSensors/PlatformSensors.cpp:6:1:PlatformSensors::PlatformSensors()	0	static
+../Platform/PlatformSensors/PlatformSensors.cpp:17:6:void PlatformSensors::Init(Sensors*, Registers*, Publishers*, LEDS*)	0	static
+../Platform/PlatformSensors/PlatformSensors.cpp:30:7:float PlatformSensors::ReadVoltage3_3V(uint32_t)	24	static
+../Platform/PlatformSensors/PlatformSensors.cpp:860:3:static float PlatformSensors::AddVoltageSensor(ADC_HandleTypeDef*, ADC_HandleTypeDef*)::<lambda(void*)>::_FUN(void*)	0	static
+../Platform/PlatformSensors/PlatformSensors.cpp:79:9:uint8_t PlatformSensors::GetADCResolution(ADC_HandleTypeDef*)	0	static
+../Platform/PlatformSensors/PlatformSensors.cpp:131:6:void PlatformSensors::AddPressureSensors()	8	static
+../Platform/PlatformSensors/PlatformSensors.cpp:233:6:void PlatformSensors::ActivatePressureSensors()	8	static
+../Platform/PlatformSensors/PlatformSensors.cpp:267:6:void PlatformSensors::SetupPressureSensorsPublisher()	8	static
+../Platform/PlatformSensors/PlatformSensors.cpp:503:6:void PlatformSensors::ActivateBatterySensor()	8	static
+../Platform/PlatformSensors/PlatformSensors.cpp:534:6:void PlatformSensors::SetupBatterySensorPublisher()	8	static
+../Platform/PlatformSensors/PlatformSensors.cpp:640:6:void PlatformSensors::AddMotorSensor()	32	static
+../Platform/PlatformSensors/PlatformSensors.cpp:725:6:void PlatformSensors::ActivateMotorSensor()	8	static
+../Platform/PlatformSensors/PlatformSensors.cpp:759:6:void PlatformSensors::SetupMotorSensorPublisher()	8	static
+../Platform/PlatformSensors/PlatformSensors.cpp:822:6:void PlatformSensors::ConfigureMotorSensor()	24	static
+../Platform/PlatformSensors/PlatformSensors.cpp:879:6:void PlatformSensors::ActivateVoltageSensor()	8	static
+../Platform/PlatformSensors/PlatformSensors.cpp:904:6:void PlatformSensors::SetupVoltageSensorPublisher()	8	static
+../Src/Registers/Registers.hpp:621:6:bool Registers::ReadRegister(uint16_t, T*, uint16_t*, bool) [with T = long unsigned int]	1080	static
+../Platform/PlatformSensors/PlatformSensors.cpp:201:5:static void PlatformSensors::AddPressureSensors()::<lambda(void*)>::_FUN(void*)	40	static
+../Platform/PlatformSensors/PlatformSensors.cpp:172:5:static void PlatformSensors::AddPressureSensors()::<lambda(void*)>::_FUN(void*)	40	static
+../Src/Sensors/Sensors.hpp:552:3:T Sensors::ReadSensor(uint8_t, HAL_StatusTypeDef*, uint32_t) [with T = short unsigned int]	48	static
+../Platform/PlatformSensors/PlatformSensors.cpp:313:6:void PlatformSensors::ConfigurePressureSensors()	16	static
+../Src/Registers/Registers.hpp:621:6:bool Registers::ReadRegister(uint16_t, T*, uint16_t*, bool) [with T = short unsigned int]	568	static
+../Platform/PlatformSensors/PlatformSensors.cpp:452:5:static void PlatformSensors::AddBatterySensor()::<lambda(void*)>::_FUN(void*)	24	static
+../Platform/PlatformSensors/PlatformSensors.cpp:441:5:static uint16_t PlatformSensors::AddBatterySensor()::<lambda(void*)>::_FUN(void*)	24	static
+../Platform/PlatformSensors/PlatformSensors.cpp:424:5:static uint16_t PlatformSensors::AddBatterySensor()::<lambda(void*)>::_FUN(void*)	24	static
+../Platform/PlatformSensors/PlatformSensors.cpp:411:5:static uint16_t PlatformSensors::AddBatterySensor()::<lambda(void*)>::_FUN(void*)	24	static
+../Src/Registers/Registers.hpp:621:6:bool Registers::ReadRegister(uint16_t, T*, uint16_t*, bool) [with T = long long unsigned int]	2104	static
+../Platform/PlatformSensors/PlatformSensors.cpp:672:5:static void PlatformSensors::AddMotorSensor()::<lambda(void*)>::_FUN(void*)	32	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1173:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::at(size_type) [with _Tp = RegisterCallbacks<float>; _Alloc = std::allocator<RegisterCallbacks<float> >]	16	static
+../Src/Registers/Registers.hpp:621:6:bool Registers::ReadRegister(uint16_t, T*, uint16_t*, bool) [with T = float]	1080	static
+../Platform/PlatformSensors/PlatformSensors.cpp:50:7:float PlatformSensors::ReadVoltage5V(uint32_t)	40	static
+../Platform/PlatformSensors/PlatformSensors.cpp:869:3:static float PlatformSensors::AddVoltageSensor(ADC_HandleTypeDef*, ADC_HandleTypeDef*)::<lambda(void*)>::_FUN(void*)	0	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterConfiguration&}; _Tp = RegisterConfiguration; _Alloc = std::allocator<RegisterConfiguration>]	40	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1276:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = RegisterConfiguration; _Alloc = std::allocator<RegisterConfiguration>]	16	static
+../Src/Registers/Registers.hpp:176:6:bool Registers::AddRegister(uint16_t) [with T = float]	40	static
+../Src/Registers/Registers.hpp:176:6:bool Registers::AddRegister(uint16_t) [with T = long int]	40	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterCallbacks<long int>&}; _Tp = RegisterCallbacks<long int>; _Alloc = std::allocator<RegisterCallbacks<long int> >]	40	static
+../Src/Registers/Registers.hpp:269:6:bool Registers::AddRegisterPointer(uint16_t, T*) [with T = long int]	48	static
+../Platform/PlatformSensors/PlatformSensors.cpp:94:6:void PlatformSensors::AddPressureSensorsRegisters()	16	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterCallbacks<float>&}; _Tp = RegisterCallbacks<float>; _Alloc = std::allocator<RegisterCallbacks<float> >]	40	static
+../Src/Registers/Registers.hpp:269:6:bool Registers::AddRegisterPointer(uint16_t, T*) [with T = float]	48	static
+../Platform/PlatformSensors/PlatformSensors.cpp:352:6:void PlatformSensors::AddBatterySensorRegisters()	16	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const I2CAccess&}; _Tp = I2CAccess; _Alloc = std::allocator<I2CAccess>]	40	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1276:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = I2CAccess; _Alloc = std::allocator<I2CAccess>]	16	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const SensorFunction<short unsigned int>&}; _Tp = SensorFunction<short unsigned int>; _Alloc = std::allocator<SensorFunction<short unsigned int> >]	40	static
+../Src/Sensors/Sensors.hpp:443:6:bool Sensors::AddCodeSequence(uint8_t, uint16_t, void*, T (*)(void*), uint16_t) [with T = short unsigned int]	120	static
+../Platform/PlatformSensors/PlatformSensors.cpp:397:6:void PlatformSensors::AddBatterySensor()	24	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterCallbacks<double>&}; _Tp = RegisterCallbacks<double>; _Alloc = std::allocator<RegisterCallbacks<double> >]	40	static
+../Platform/PlatformSensors/PlatformSensors.cpp:587:6:void PlatformSensors::AddMotorSensorRegisters()	48	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const SensorFunction<float>&}; _Tp = SensorFunction<float>; _Alloc = std::allocator<SensorFunction<float> >]	40	static
+../Src/Sensors/Sensors.hpp:443:6:bool Sensors::AddCodeSequence(uint8_t, uint16_t, void*, T (*)(void*), uint16_t) [with T = float]	120	static
+../Platform/PlatformSensors/PlatformSensors.cpp:836:6:void PlatformSensors::AddVoltageSensor(ADC_HandleTypeDef*, ADC_HandleTypeDef*)	24	static

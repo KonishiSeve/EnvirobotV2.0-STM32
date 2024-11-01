@@ -1,0 +1,64 @@
+../Src/Servomotors/Servomotors.cpp:89:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	0	static
+../Src/Servomotors/Servomotors.cpp:102:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, uint16_t**, uint16_t*)>::_FUN(void*, uint16_t, uint16_t**, uint16_t*)	0	static
+../Src/Servomotors/Servomotors.cpp:180:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, uint8_t**, uint16_t*)>::_FUN(void*, uint16_t, uint8_t**, uint16_t*)	0	static
+../Src/Servomotors/Servomotors.cpp:204:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, uint8_t**, uint16_t*)>::_FUN(void*, uint16_t, uint8_t**, uint16_t*)	0	static
+../Src/Servomotors/Servomotors.cpp:260:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	0	static
+../Src/Servomotors/Servomotors.cpp:284:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	0	static
+../Src/Servomotors/Servomotors.cpp:308:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	0	static
+../Src/Servomotors/Servomotors.cpp:332:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	0	static
+../Src/Servomotors/Servomotors.cpp:340:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	0	static
+../Src/Servomotors/Servomotors.cpp:316:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	0	static
+../Src/Servomotors/Servomotors.cpp:292:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	0	static
+../Src/Servomotors/Servomotors.cpp:268:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	0	static
+../Src/Servomotors/Servomotors.cpp:244:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	16	static
+../Src/Servomotors/Servomotors.cpp:228:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	16	static
+../Src/Servomotors/Servomotors.cpp:212:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	0	static
+../Src/Servomotors/Servomotors.cpp:188:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	0	static
+../Src/Servomotors/Servomotors.cpp:110:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, uint16_t*, uint16_t)>::_FUN(void*, uint16_t, uint16_t*, uint16_t)	0	static
+../Src/Servomotors/Servomotors.cpp:65:4:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, uint8_t**, uint16_t*)>::_FUN(void*, uint16_t, uint8_t**, uint16_t*)	16	static
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = short unsigned int]	8	static
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = float]	8	static
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = unsigned char]	8	static
+../Src/Servomotors/Servomotors.cpp:16:1:Servomotors::Servomotors(uint32_t*, uint32_t*)	16	static
+../Src/Servomotors/Servomotors.cpp:357:6:void Servomotors::SetupPublisher(uint8_t)	16	static
+../Src/Servomotors/Servomotors.cpp:389:6:void Servomotors::ActivateServomotors()	8	static
+../Src/Servomotors/Servomotors.cpp:398:6:void Servomotors::DeactivateServomotors()	8	static
+../Src/Servomotors/Servomotors.cpp:74:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	8	static
+../Src/Servomotors/Servomotors.cpp:27:6:void Servomotors::Init(Registers*, Publishers*)	24	static
+../Src/Servomotors/Servomotors.cpp:409:6:void Servomotors::Reset()	0	static
+../Src/Servomotors/Servomotors.cpp:448:6:void Servomotors::MoveServo1FromTo(float, float)	16	static
+../Src/Servomotors/Servomotors.cpp:429:6:void Servomotors::MoveServo1To(float)	0	static
+../Src/Servomotors/Servomotors.cpp:460:6:void Servomotors::MoveServo2FromTo(float, float)	16	static
+../Src/Servomotors/Servomotors.cpp:438:6:void Servomotors::MoveServo2To(float)	0	static
+../Src/Servomotors/Servomotors.cpp:419:6:void Servomotors::MoveTo(float, float)	16	static
+../Src/Servomotors/Servomotors.cpp:140:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	16	static
+../Src/Servomotors/Servomotors.cpp:125:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	16	static
+../Src/Servomotors/Servomotors.cpp:472:6:void Servomotors::SymmetricMoveFromTo(float, float)	16	static
+../Src/Servomotors/Servomotors.cpp:155:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
+../Src/Servomotors/Servomotors.cpp:483:6:void Servomotors::AsymmetricMoveFromTo(float, float)	16	static
+../Src/Servomotors/Servomotors.cpp:167:3:static bool Servomotors::AddRegisters()::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
+../Src/Servomotors/Servomotors.cpp:491:6:void Servomotors::Control()	16	static
+../Src/Servomotors/Servomotors.cpp:518:6:void Servomotors::SetServomotorsTrajectoryMode(uint8_t)	16	static
+../Src/Servomotors/Servomotors.cpp:530:6:void Servomotors::SetServomotorsTrajectoryCyclicValue(bool)	16	static
+../Src/Servomotors/Servomotors.cpp:542:6:void Servomotors::SetServomotorsTrajectoryMaxSpeed(float)	16	static
+../Src/Servomotors/Servomotors.cpp:554:6:void Servomotors::SetServomotorsTrajectoryMaxAcceleration(float)	16	static
+../Src/Servomotors/Servomotors.cpp:566:6:void Servomotors::SetServomotorsTrajectoryFrequency(float)	16	static
+../Src/Servomotors/Servomotors.cpp:578:6:void Servomotors::SetServomotorsTrajectoryPhase(float)	16	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1173:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::at(size_type) [with _Tp = RegisterCallbacks<unsigned char>; _Alloc = std::allocator<RegisterCallbacks<unsigned char> >]	16	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1173:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::at(size_type) [with _Tp = RegisterCallbacks<float>; _Alloc = std::allocator<RegisterCallbacks<float> >]	16	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1173:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::at(size_type) [with _Tp = RegisterCallbacks<short unsigned int>; _Alloc = std::allocator<RegisterCallbacks<short unsigned int> >]	16	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterConfiguration&}; _Tp = RegisterConfiguration; _Alloc = std::allocator<RegisterConfiguration>]	40	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1276:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = RegisterConfiguration; _Alloc = std::allocator<RegisterConfiguration>]	16	static
+../Src/Registers/Registers.hpp:176:6:bool Registers::AddRegister(uint16_t) [with T = float]	40	static
+../Src/Registers/Registers.hpp:176:6:bool Registers::AddRegister(uint16_t) [with T = unsigned char]	40	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterCallbacks<unsigned char>&}; _Tp = RegisterCallbacks<unsigned char>; _Alloc = std::allocator<RegisterCallbacks<unsigned char> >]	40	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1276:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = RegisterCallbacks<unsigned char>; _Alloc = std::allocator<RegisterCallbacks<unsigned char> >]	16	static
+../Src/Registers/Registers.hpp:348:6:bool Registers::AddWriteCallback(uint16_t, void*, bool (*)(void*, uint16_t, T*, uint16_t)) [with T = unsigned char]	48	static
+../Src/Registers/Registers.hpp:416:6:bool Registers::AddReadCallback(uint16_t, void*, bool (*)(void*, uint16_t, T**, uint16_t*)) [with T = unsigned char]	48	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterCallbacks<float>&}; _Tp = RegisterCallbacks<float>; _Alloc = std::allocator<RegisterCallbacks<float> >]	40	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1276:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = RegisterCallbacks<float>; _Alloc = std::allocator<RegisterCallbacks<float> >]	16	static
+../Src/Registers/Registers.hpp:348:6:bool Registers::AddWriteCallback(uint16_t, void*, bool (*)(void*, uint16_t, T*, uint16_t)) [with T = float]	48	static
+../Src/Registers/Registers.hpp:416:6:bool Registers::AddReadCallback(uint16_t, void*, bool (*)(void*, uint16_t, T**, uint16_t*)) [with T = float]	48	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterCallbacks<short unsigned int>&}; _Tp = RegisterCallbacks<short unsigned int>; _Alloc = std::allocator<RegisterCallbacks<short unsigned int> >]	40	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1276:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = RegisterCallbacks<short unsigned int>; _Alloc = std::allocator<RegisterCallbacks<short unsigned int> >]	16	static
+../Src/Servomotors/Servomotors.cpp:60:6:void Servomotors::AddRegisters()	48	static

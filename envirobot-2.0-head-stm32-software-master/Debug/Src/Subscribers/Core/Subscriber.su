@@ -1,0 +1,4 @@
+D:/Code/Envirobot2_0_STM32_Head/Src/Subscribers/Core/Subscriber.hpp:39:15:virtual void Subscriber::ReceiveUINT8(SubscriberInput, const uint8_t*)	16	static
+D:/Code/Envirobot2_0_STM32_Head/Src/Subscribers/Core/Subscriber.hpp:45:15:virtual void Subscriber::ReceiveUINT32(SubscriberInput, const uint32_t*)	16	static
+D:/Code/Envirobot2_0_STM32_Head/Src/Subscribers/Core/Subscriber.hpp:63:15:virtual void Subscriber::ReceiveFLOAT(SubscriberInput, const float*)	16	static
+../Src/Subscribers/Core/Subscriber.cpp:10:1:Subscriber::Subscriber()	0	static

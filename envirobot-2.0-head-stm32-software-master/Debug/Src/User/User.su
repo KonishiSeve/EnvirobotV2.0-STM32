@@ -1,0 +1,3 @@
+../Src/User/User.cpp:10:1:User::User(Registers*, MasterSubscribers*, Communication*, Services*, Publishers*, HardwareDelay*, Sensors*, LEDS*)	0	static
+../Src/User/User.cpp:28:6:void User::Init()	0	static
+../Src/User/User.cpp:33:6:void User::AddOSThreads()	0	static
