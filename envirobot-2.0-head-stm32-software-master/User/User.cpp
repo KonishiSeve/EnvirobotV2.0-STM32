@@ -6,6 +6,7 @@
  */
 
 #include "User.hpp"
+#include "CPG.hpp"
 
 User::User(	Registers* registers_,
 			MasterSubscribers* subscribers_,
@@ -58,6 +59,8 @@ void User::AddOSThreads(void) {
 //Register map
 #define REG_CPG_SETPOINTS		0x0500
 
+CPG cpg;
+
 static void UserTask(void *argument) {
 	// == retrieving class instances == //
 	class_instances* class_instances_pointer = (class_instances*)argument;
@@ -71,10 +74,10 @@ static void UserTask(void *argument) {
 	LEDS* leds = class_instances_pointer->leds;
 
 	// === Registers Setup === //
-	static int8_t setpoints[MODULE_NUMBER];
+	static int8_t reg_setpoints[MODULE_NUMBER];
 	registers->AddRegister<int8_t>(REG_CPG_SETPOINTS);
 	registers->SetRegisterAsArray(REG_CPG_SETPOINTS, MODULE_NUMBER);
-	registers->AddRegisterPointer<int8_t>(REG_CPG_SETPOINTS, setpoints);
+	registers->AddRegisterPointer<int8_t>(REG_CPG_SETPOINTS, reg_setpoints);
 
 	// === Publisher Setup === //
 	publishers->AddPublisher(PUB_CPG);
@@ -85,13 +88,23 @@ static void UserTask(void *argument) {
 	publishers->AddTopic(PUB_CPG, REG_CPG_SETPOINTS);
 	publishers->ActivateTopic(PUB_CPG, REG_CPG_SETPOINTS);
 
+	publishers->AddTopic(PUB_CPG, REG_TIMEBASE);
+	publishers->ActivateTopic(PUB_CPG, REG_TIMEBASE);
+
 	publishers->ActivatePublisher(PUB_CPG);
 
+	// === CPG Setup === //
+	cpg.init(MODULE_NUMBER, 0.5, 0, 0.3, 0.5, 1, 50, 10);
+	int8_t setpoints[MODULE_NUMBER];
 	for(;;) {
+		for(uint8_t j=0;j<10;j++) {
+			cpg.step(setpoints, 20);
+		}
+		registers->WriteRegister<int8_t>(REG_CPG_SETPOINTS, setpoints, MODULE_NUMBER);
 		publishers->SpinPublisher(PUB_CPG);
 		leds->SetLED(LED_USER3, GPIO_PIN_SET);
-		osDelay(500);
+		osDelay(100);
 		leds->SetLED(LED_USER3, GPIO_PIN_RESET);
-		osDelay(500);
+		osDelay(100);
 	}
 }

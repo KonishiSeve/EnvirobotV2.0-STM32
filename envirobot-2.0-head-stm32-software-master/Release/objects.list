@@ -60,4 +60,5 @@
 "./Src/Subscribers/Core/Subscriber.o"
 "./Src/Subscribers/Example/ExampleSubscriber.o"
 "./Src/Subscribers/MasterSubscribers.o"
+"./User/CPG.o"
 "./User/User.o"

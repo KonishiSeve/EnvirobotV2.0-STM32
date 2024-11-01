@@ -74,7 +74,7 @@ User/User.o: ../User/User.cpp ../User/User.hpp \
  ../Configuration/Definitions/ServicesDefinition.h \
  ../Src/Sensors/Sensors.hpp ../Src/HardwareDelay/HardwareDelay.hpp \
  ../Configuration/Definitions/SensorsDefinition.h \
- ../Configuration/RegisterMaps/RegisterMapSensors.h
+ ../Configuration/RegisterMaps/RegisterMapSensors.h ../User/CPG.hpp
 ../User/User.hpp:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
@@ -156,3 +156,4 @@ User/User.o: ../User/User.cpp ../User/User.hpp \
 ../Src/HardwareDelay/HardwareDelay.hpp:
 ../Configuration/Definitions/SensorsDefinition.h:
 ../Configuration/RegisterMaps/RegisterMapSensors.h:
+../User/CPG.hpp:
