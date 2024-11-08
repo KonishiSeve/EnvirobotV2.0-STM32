@@ -58,6 +58,17 @@ void User::AddOSThreads(void) {
 #define PUB_CPG			0x01
 //Register map
 #define REG_CPG_SETPOINTS		0x0500
+#define REG_CPG_ENABLED			0x0501
+#define REG_CPG_RESET			0x0502
+#define REG_CPG_NB_MODULES		0x0503
+
+#define REG_CPG_FREQUENCY		0x0510
+#define REG_CPG_DIRECTION		0x0511
+#define REG_CPG_AMPLC			0x0512
+#define REG_CPG_AMPLH			0x0513
+#define REG_CPG_NWAVE			0x0514
+#define REG_CPG_COUPLING_STRENGTH	0x0515
+#define REG_CPG_A_R				0x0516
 
 CPG cpg;
 
@@ -74,10 +85,47 @@ static void UserTask(void *argument) {
 	LEDS* leds = class_instances_pointer->leds;
 
 	// === Registers Setup === //
-	static int8_t reg_setpoints[MODULE_NUMBER];
+	//stores the output of the CPG (joint angles in degree), published on CANFD1
+	static int8_t reg_cpg_setpoints[MODULE_NUMBER];
 	registers->AddRegister<int8_t>(REG_CPG_SETPOINTS);
 	registers->SetRegisterAsArray(REG_CPG_SETPOINTS, MODULE_NUMBER);
-	registers->AddRegisterPointer<int8_t>(REG_CPG_SETPOINTS, reg_setpoints);
+	registers->AddRegisterPointer<int8_t>(REG_CPG_SETPOINTS, reg_cpg_setpoints);
+
+	//enables/disables the computation of CPG steps (supposed to be accessed by UART of CM4 or Radio PIC)
+	static int8_t reg_cpg_enabled = 1;
+	registers->AddRegister<int8_t>(REG_CPG_ENABLED);
+	registers->SetRegisterAsSingle(REG_CPG_ENABLED);
+	registers->AddRegisterPointer<int8_t>(REG_CPG_ENABLED, &reg_cpg_enabled);
+
+	//write only register, to reset the CPG states
+	static int8_t reg_cpg_reset;
+	registers->AddRegister<int8_t>(REG_CPG_RESET);
+	registers->SetRegisterAsSingle(REG_CPG_RESET);
+	registers->AddRegisterPointer<int8_t>(REG_CPG_RESET, &reg_cpg_reset);
+	registers->SetRegisterPermissions(REG_CPG_RESET, WRITE_PERMISSION);
+	registers->AddWriteCallback<int8_t>(REG_CPG_RESET, argument,
+		[](void* context , uint16_t register_ID , int8_t* input , uint16_t length) -> bool {
+		class_instances* class_instances_pointer = (class_instances*)context;
+		LEDS* leds = class_instances_pointer->leds;
+		leds->SetLED(LED_USER2, GPIO_PIN_SET);
+		cpg.reset();
+		return true;
+	});
+
+	//CPG frequency register
+	static float reg_cpg_frequency;
+	registers->AddRegister<float>(REG_CPG_FREQUENCY);
+	registers->SetRegisterAsSingle(REG_CPG_FREQUENCY);
+	registers->AddRegisterPointer<float>(REG_CPG_FREQUENCY, &reg_cpg_frequency);
+	registers->SetRegisterPermissions(REG_CPG_FREQUENCY, WRITE_PERMISSION);
+	registers->AddWriteCallback<float>(REG_CPG_FREQUENCY, argument,
+		[](void* context , uint16_t register_ID , float* input , uint16_t length) -> bool {
+		class_instances* class_instances_pointer = (class_instances*)context;
+		LEDS* leds = class_instances_pointer->leds;
+		leds->SetLED(LED_USER2, GPIO_PIN_SET);
+		cpg.set_frequency(*input);
+		return true;
+	});
 
 	// === Publisher Setup === //
 	publishers->AddPublisher(PUB_CPG);
@@ -97,14 +145,16 @@ static void UserTask(void *argument) {
 	cpg.init(MODULE_NUMBER, 0.5, 0, 0.3, 0.5, 1, 50, 10);
 	int8_t setpoints[MODULE_NUMBER];
 	for(;;) {
-		for(uint8_t j=0;j<10;j++) {
-			cpg.step(setpoints, 20);
+		if(reg_cpg_enabled) {
+			for(uint8_t j=0;j<10;j++) {
+				cpg.step(setpoints, 10);
+			}
+			registers->WriteRegister<int8_t>(REG_CPG_SETPOINTS, setpoints, MODULE_NUMBER);
+			publishers->SpinPublisher(PUB_CPG);
 		}
-		registers->WriteRegister<int8_t>(REG_CPG_SETPOINTS, setpoints, MODULE_NUMBER);
-		publishers->SpinPublisher(PUB_CPG);
 		leds->SetLED(LED_USER3, GPIO_PIN_SET);
-		osDelay(100);
+		osDelay(50);
 		leds->SetLED(LED_USER3, GPIO_PIN_RESET);
-		osDelay(100);
+		osDelay(50);
 	}
 }

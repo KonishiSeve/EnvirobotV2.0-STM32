@@ -1,5 +1,5 @@
 ../Src/Registers/Registers.cpp:73:3:static bool Registers::AddBaseRegisters()::<lambda(void*, uint16_t, uint32_t**, uint16_t*)>::_FUN(void*, uint16_t, uint32_t**, uint16_t*)	1
-../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = long unsigned int]	8
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = long unsigned int]	10
 ../Src/Registers/Registers.cpp:13:1:Registers::Registers()	1
 ../Src/Registers/Registers.cpp:60:6:void Registers::Init()	1
 ../Src/Registers/Registers.cpp:100:24:RegisterConfiguration* Registers::FindRegisterConfiguration(uint16_t, bool*)	3

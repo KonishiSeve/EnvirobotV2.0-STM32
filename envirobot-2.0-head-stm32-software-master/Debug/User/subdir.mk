@@ -5,12 +5,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../User/CPG.cpp \
 ../User/User.cpp 
 
 OBJS += \
+./User/CPG.o \
 ./User/User.o 
 
 CPP_DEPS += \
+./User/CPG.d \
 ./User/User.d 
 
 
@@ -21,7 +24,7 @@ User/%.o User/%.su User/%.cyclo: ../User/%.cpp User/subdir.mk
 clean: clean-User
 
 clean-User:
-	-$(RM) ./User/User.cyclo ./User/User.d ./User/User.o ./User/User.su
+	-$(RM) ./User/CPG.cyclo ./User/CPG.d ./User/CPG.o ./User/CPG.su ./User/User.cyclo ./User/User.d ./User/User.o ./User/User.su
 
 .PHONY: clean-User
 
