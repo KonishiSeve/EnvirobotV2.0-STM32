@@ -92,7 +92,7 @@ static void UserTask(void *argument) {
 	registers->AddRegisterPointer<int8_t>(REG_CPG_SETPOINTS, reg_cpg_setpoints);
 
 	//enables/disables the computation of CPG steps (supposed to be accessed by UART of CM4 or Radio PIC)
-	static int8_t reg_cpg_enabled = 1;
+	static int8_t reg_cpg_enabled = 0;
 	registers->AddRegister<int8_t>(REG_CPG_ENABLED);
 	registers->SetRegisterAsSingle(REG_CPG_ENABLED);
 	registers->AddRegisterPointer<int8_t>(REG_CPG_ENABLED, &reg_cpg_enabled);
@@ -105,9 +105,6 @@ static void UserTask(void *argument) {
 	registers->SetRegisterPermissions(REG_CPG_RESET, WRITE_PERMISSION);
 	registers->AddWriteCallback<int8_t>(REG_CPG_RESET, argument,
 		[](void* context , uint16_t register_ID , int8_t* input , uint16_t length) -> bool {
-		class_instances* class_instances_pointer = (class_instances*)context;
-		LEDS* leds = class_instances_pointer->leds;
-		leds->SetLED(LED_USER2, GPIO_PIN_SET);
 		cpg.reset();
 		return true;
 	});
@@ -120,10 +117,79 @@ static void UserTask(void *argument) {
 	registers->SetRegisterPermissions(REG_CPG_FREQUENCY, WRITE_PERMISSION);
 	registers->AddWriteCallback<float>(REG_CPG_FREQUENCY, argument,
 		[](void* context , uint16_t register_ID , float* input , uint16_t length) -> bool {
-		class_instances* class_instances_pointer = (class_instances*)context;
-		LEDS* leds = class_instances_pointer->leds;
-		leds->SetLED(LED_USER2, GPIO_PIN_SET);
 		cpg.set_frequency(*input);
+		return true;
+	});
+
+	//CPG direction register
+	static float reg_cpg_direction;
+	registers->AddRegister<float>(REG_CPG_DIRECTION);
+	registers->SetRegisterAsSingle(REG_CPG_DIRECTION);
+	registers->AddRegisterPointer<float>(REG_CPG_DIRECTION, &reg_cpg_direction);
+	registers->SetRegisterPermissions(REG_CPG_DIRECTION, WRITE_PERMISSION);
+	registers->AddWriteCallback<float>(REG_CPG_DIRECTION, argument,
+		[](void* context , uint16_t register_ID , float* input , uint16_t length) -> bool {
+		cpg.set_direction(*input);
+		return true;
+	});
+
+	//CPG amplc register
+	static float reg_cpg_amplc;
+	registers->AddRegister<float>(REG_CPG_AMPLC);
+	registers->SetRegisterAsSingle(REG_CPG_AMPLC);
+	registers->AddRegisterPointer<float>(REG_CPG_AMPLC, &reg_cpg_amplc);
+	registers->SetRegisterPermissions(REG_CPG_AMPLC, WRITE_PERMISSION);
+	registers->AddWriteCallback<float>(REG_CPG_AMPLC, argument,
+		[](void* context , uint16_t register_ID , float* input , uint16_t length) -> bool {
+		cpg.set_amplc(*input);
+		return true;
+	});
+
+	//CPG amplh register
+	static float reg_cpg_amplh;
+	registers->AddRegister<float>(REG_CPG_AMPLH);
+	registers->SetRegisterAsSingle(REG_CPG_AMPLH);
+	registers->AddRegisterPointer<float>(REG_CPG_AMPLH, &reg_cpg_amplh);
+	registers->SetRegisterPermissions(REG_CPG_AMPLH, WRITE_PERMISSION);
+	registers->AddWriteCallback<float>(REG_CPG_AMPLH, argument,
+		[](void* context , uint16_t register_ID , float* input , uint16_t length) -> bool {
+		cpg.set_amplh(*input);
+		return true;
+	});
+
+	//CPG nwave register
+	static float reg_cpg_nwave;
+	registers->AddRegister<float>(REG_CPG_NWAVE);
+	registers->SetRegisterAsSingle(REG_CPG_NWAVE);
+	registers->AddRegisterPointer<float>(REG_CPG_NWAVE, &reg_cpg_nwave);
+	registers->SetRegisterPermissions(REG_CPG_NWAVE, WRITE_PERMISSION);
+	registers->AddWriteCallback<float>(REG_CPG_NWAVE, argument,
+		[](void* context , uint16_t register_ID , float* input , uint16_t length) -> bool {
+		cpg.set_nwave(*input);
+		return true;
+	});
+
+	//CPG coupling strength register
+	static float reg_cpg_coupling_strength;
+	registers->AddRegister<float>(REG_CPG_COUPLING_STRENGTH);
+	registers->SetRegisterAsSingle(REG_CPG_COUPLING_STRENGTH);
+	registers->AddRegisterPointer<float>(REG_CPG_COUPLING_STRENGTH, &reg_cpg_coupling_strength);
+	registers->SetRegisterPermissions(REG_CPG_COUPLING_STRENGTH, WRITE_PERMISSION);
+	registers->AddWriteCallback<float>(REG_CPG_COUPLING_STRENGTH, argument,
+		[](void* context , uint16_t register_ID , float* input , uint16_t length) -> bool {
+		cpg.set_coupling_strength(*input);
+		return true;
+	});
+
+	//CPG a_r register
+	static float reg_cpg_a_r;
+	registers->AddRegister<float>(REG_CPG_A_R);
+	registers->SetRegisterAsSingle(REG_CPG_A_R);
+	registers->AddRegisterPointer<float>(REG_CPG_A_R, &reg_cpg_a_r);
+	registers->SetRegisterPermissions(REG_CPG_A_R, WRITE_PERMISSION);
+	registers->AddWriteCallback<float>(REG_CPG_A_R, argument,
+		[](void* context , uint16_t register_ID , float* input , uint16_t length) -> bool {
+		cpg.set_a_r(*input);
 		return true;
 	});
 

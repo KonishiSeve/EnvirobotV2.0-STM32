@@ -5,9 +5,12 @@ C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.external
 ../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = long unsigned int]	8
 ../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = short unsigned int]	8
 ../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = unsigned char]	8
+../Src/Sensors/Sensors.hpp:492:6:void Sensors::TransferBuffer(T*, uint8_t*, uint16_t) [with T = long long unsigned int]	3
+../Src/Sensors/Sensors.hpp:492:6:void Sensors::TransferBuffer(T*, uint8_t*, uint16_t) [with T = long unsigned int]	3
 ../Src/Sensors/Sensors.hpp:492:6:void Sensors::TransferBuffer(T*, uint8_t*, uint16_t) [with T = short unsigned int]	3
+../Src/Sensors/Sensors.hpp:492:6:void Sensors::TransferBuffer(T*, uint8_t*, uint16_t) [with T = unsigned char]	3
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1529:7:std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(const_iterator) [with _Tp = Sensor*; _Alloc = std::allocator<Sensor*>]	2
-../Src/Sensors/Sensors.cpp:13:1:Sensors::Sensors()	12
+../Src/Sensors/Sensors.cpp:13:1:Sensors::Sensors()	15
 ../Src/Sensors/Sensors.cpp:98:6:void Sensors::Init(Registers*, Publishers*, HardwareDelay*, LEDS*)	1
 ../Src/Sensors/Sensors.cpp:288:6:bool Sensors::SetReadingStatus(bool)	5
 ../Src/Sensors/Sensors.cpp:130:3:static bool Sensors::AddRegisters()::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	1
@@ -72,11 +75,11 @@ C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.external
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\arm-none-eabi\include\c++\12.3.1\bits\stl_uninitialized.h:1078:5:_ForwardIterator std::__relocate_a_1(_InputIterator, _InputIterator, _ForwardIterator, _Allocator&) [with _InputIterator = Sensor*; _ForwardIterator = Sensor*; _Allocator = allocator<Sensor>]	2
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1529:7:std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(const_iterator) [with _Tp = ReadRequest; _Alloc = std::allocator<ReadRequest>]	3
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1276:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = Sensor*; _Alloc = std::allocator<Sensor*>]	5
-../Src/Sensors/Sensors.cpp:1393:6:void Sensors::ProcessAccess(I2CInterface*, SensorGroup*, Sensor*, SensorData*, I2CAccess*)	17
+../Src/Sensors/Sensors.cpp:1393:6:void Sensors::ProcessAccess(I2CInterface*, SensorGroup*, Sensor*, SensorData*, I2CAccess*)	26
 ../Src/Sensors/Sensors.cpp:1207:6:void Sensors::ReadNextSensor(uint8_t)	59
 ../Src/Sensors/Sensors.cpp:1806:6:void Sensors::ExitRegular(I2CInterface*)	21
 ../Src/Sensors/Sensors.cpp:1912:6:void Sensors::ExitPending(I2CInterface*)	2
-../Src/Sensors/Sensors.cpp:1519:6:void Sensors::ProccessReceivedData(I2CInterface*)	36
+../Src/Sensors/Sensors.cpp:1519:6:void Sensors::ProccessReceivedData(I2CInterface*)	38
 ../Src/Sensors/Sensors.cpp:1501:6:void Sensors::ReceiveSensorData(I2C_HandleTypeDef*)	2
 ../Src/Sensors/Sensors.cpp:1166:6:void Sensors::Spin()	9
 ../Src/Sensors/Sensors.cpp:1751:6:void Sensors::ReceiveDelayInterrupt(uint8_t)	12
@@ -84,6 +87,7 @@ C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.external
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1173:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::at(size_type) [with _Tp = RegisterCallbacks<unsigned char>; _Alloc = std::allocator<RegisterCallbacks<unsigned char> >]	1
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1173:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::at(size_type) [with _Tp = RegisterCallbacks<short unsigned int>; _Alloc = std::allocator<RegisterCallbacks<short unsigned int> >]	1
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1173:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::at(size_type) [with _Tp = RegisterCallbacks<long unsigned int>; _Alloc = std::allocator<RegisterCallbacks<long unsigned int> >]	1
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:111:7:) [with _Args = {unsigned char}; _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	6
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:111:7:) [with _Args = {short unsigned int}; _Tp = short unsigned int; _Alloc = std::allocator<short unsigned int>]	6
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:111:7:) [with _Args = {long unsigned int}; _Tp = long unsigned int; _Alloc = std::allocator<long unsigned int>]	6
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:111:7:) [with _Args = {long long unsigned int}; _Tp = long long unsigned int; _Alloc = std::allocator<long long unsigned int>]	6
@@ -99,11 +103,12 @@ C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.external
 ../Src/Sensors/Sensors.cpp:1101:6:bool Sensors::AddDelaySequence(uint8_t, uint16_t, uint32_t)	2
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterConfiguration&}; _Tp = RegisterConfiguration; _Alloc = std::allocator<RegisterConfiguration>]	6
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1276:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = RegisterConfiguration; _Alloc = std::allocator<RegisterConfiguration>]	2
+../Src/Registers/Registers.hpp:176:6:bool Registers::AddRegister(uint16_t) [with T = unsigned char]	3
 ../Src/Registers/Registers.hpp:176:6:bool Registers::AddRegister(uint16_t) [with T = short unsigned int]	3
 ../Src/Registers/Registers.hpp:176:6:bool Registers::AddRegister(uint16_t) [with T = long unsigned int]	3
-../Src/Registers/Registers.hpp:176:6:bool Registers::AddRegister(uint16_t) [with T = unsigned char]	3
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterCallbacks<unsigned char>&}; _Tp = RegisterCallbacks<unsigned char>; _Alloc = std::allocator<RegisterCallbacks<unsigned char> >]	6
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1276:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = RegisterCallbacks<unsigned char>; _Alloc = std::allocator<RegisterCallbacks<unsigned char> >]	2
+../Src/Registers/Registers.hpp:269:6:bool Registers::AddRegisterPointer(uint16_t, T*) [with T = unsigned char]	7
 ../Src/Registers/Registers.hpp:348:6:bool Registers::AddWriteCallback(uint16_t, void*, bool (*)(void*, uint16_t, T*, uint16_t)) [with T = unsigned char]	7
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterCallbacks<short unsigned int>&}; _Tp = RegisterCallbacks<short unsigned int>; _Alloc = std::allocator<RegisterCallbacks<short unsigned int> >]	6
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1276:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = RegisterCallbacks<short unsigned int>; _Alloc = std::allocator<RegisterCallbacks<short unsigned int> >]	2
@@ -128,4 +133,4 @@ C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.external
 ../Src/Sensors/Sensors.hpp:73:8:SensorData::SensorData(SensorData&&)	1
 ../Src/Sensors/Sensors.cpp:230:6:bool Sensors::AddInterface(uint8_t, I2C_HandleTypeDef*)	3
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const SensorData&}; _Tp = SensorData; _Alloc = std::allocator<SensorData>]	6
-../Src/Sensors/Sensors.cpp:706:6:bool Sensors::AddSensorDataWithType(uint8_t, uint16_t, uint8_t, bool)	32
+../Src/Sensors/Sensors.cpp:706:6:bool Sensors::AddSensorDataWithType(uint8_t, uint16_t, uint8_t, bool)	37

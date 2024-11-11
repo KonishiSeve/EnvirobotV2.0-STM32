@@ -1,7 +1,7 @@
 ///////////////////
 // Configuration //
 ///////////////////
-//#define READ_SENSORS
+#define READ_SENSORS
 
 //#define USE_PRESSURE_SENSORS
 //#define USE_DS2778
@@ -64,11 +64,11 @@
 #define MEAS_5V_ACTIVE
 
 // ENERGY_MONITORING_LTC2947
-//#define MEAS_MOTOR_VOLTAGE_RAW
-//#define MEAS_MOTOR_CURRENT_RAW
-//#define MEAS_MOTOR_POWER_RAW
-//#define MEAS_MOTOR_ENERGY_RAW
-//#define MEAS_MOTOR_TEMPERATURE_RAW
+#define MEAS_MOTOR_VOLTAGE_RAW
+#define MEAS_MOTOR_CURRENT_RAW
+#define MEAS_MOTOR_POWER_RAW
+#define MEAS_MOTOR_ENERGY_RAW
+#define MEAS_MOTOR_TEMPERATURE_RAW
 
 // BATTERY_PROTECTION_DS2778
 #define MEAS_CELL1_RAW
@@ -85,7 +85,7 @@
 ///////////////////////
 // I2C Communication //
 ///////////////////////
-//#define USE_UINT8_I2C_COMMUNICATION
+#define USE_UINT8_I2C_COMMUNICATION
 #define USE_UINT16_I2C_COMMUNICATION
 #define USE_UINT32_I2C_COMMUNICATION
 #define USE_UINT64_I2C_COMMUNICATION
@@ -99,10 +99,10 @@
 //////////////////////
 // Sensor Functions //
 //////////////////////
-//#define USE_UINT8_SENSOR_FUNCTION
+#define USE_UINT8_SENSOR_FUNCTION
 #define USE_UINT16_SENSOR_FUNCTION
-//#define USE_UINT32_SENSOR_FUNCTION
-//#define USE_UINT64_SENSOR_FUNCTION
+#define USE_UINT32_SENSOR_FUNCTION
+#define USE_UINT64_SENSOR_FUNCTION
 //#define USE_INT8_SENSOR_FUNCTION
 //#define USE_INT16_SENSOR_FUNCTION
 //#define USE_INT32_SENSOR_FUNCTION

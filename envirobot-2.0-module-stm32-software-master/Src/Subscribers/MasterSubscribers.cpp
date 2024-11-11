@@ -423,6 +423,7 @@ bool MasterSubscribers::RemoteRegisterSubscriptionAvailable(Register remote_regi
 			}
 		}
 	}
+	osSemaphoreRelease(SubscribersSemaphore);
 	return true;
 }
 

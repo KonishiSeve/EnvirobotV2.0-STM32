@@ -1,3 +1,4 @@
+../Src/Subscribers/Core/Subscriber.hpp:56:15:virtual void Subscriber::ReceiveUINT32(SubscriberInput, const uint32_t*)	1
 ../Src/Subscribers/Core/Subscriber.hpp:70:15:virtual void Subscriber::ReceiveINT8(SubscriberInput, const int8_t*)	1
 ../Src/Subscribers/Core/Subscriber.hpp:98:15:virtual void Subscriber::ReceiveFLOAT(SubscriberInput, const float*)	1
 ../Src/Subscribers/Core/Subscriber.cpp:10:1:Subscriber::Subscriber()	1
