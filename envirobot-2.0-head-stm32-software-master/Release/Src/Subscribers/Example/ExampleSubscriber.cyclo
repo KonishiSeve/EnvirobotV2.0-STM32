@@ -1,2 +1,2 @@
-../Src/Subscribers/Example/ExampleSubscriber.cpp:28:6:virtual void ExampleSubscriber::ReceiveUINT32(SubscriberInput, const uint32_t*)	1
+../Src/Subscribers/Example/ExampleSubscriber.cpp:18:6:virtual void ExampleSubscriber::ReceiveUINT8(SubscriberInput, const uint8_t*)	1
 ../Src/Subscribers/Example/ExampleSubscriber.cpp:10:1:ExampleSubscriber::ExampleSubscriber()	1

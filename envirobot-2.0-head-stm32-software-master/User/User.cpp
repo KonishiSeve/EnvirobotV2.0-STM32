@@ -92,7 +92,7 @@ static void UserTask(void *argument) {
 	registers->AddRegisterPointer<int8_t>(REG_CPG_SETPOINTS, reg_cpg_setpoints);
 
 	//enables/disables the computation of CPG steps (supposed to be accessed by UART of CM4 or Radio PIC)
-	static int8_t reg_cpg_enabled = 0;
+	static int8_t reg_cpg_enabled = 1;
 	registers->AddRegister<int8_t>(REG_CPG_ENABLED);
 	registers->SetRegisterAsSingle(REG_CPG_ENABLED);
 	registers->AddRegisterPointer<int8_t>(REG_CPG_ENABLED, &reg_cpg_enabled);
@@ -212,15 +212,17 @@ static void UserTask(void *argument) {
 	int8_t setpoints[MODULE_NUMBER];
 	for(;;) {
 		if(reg_cpg_enabled) {
-			for(uint8_t j=0;j<10;j++) {
+			leds->SetLED(LED_USER3, GPIO_PIN_SET);
+			for(uint32_t j=0;j<1000;j++) {
 				cpg.step(setpoints, 10);
 			}
+			leds->SetLED(LED_USER3, GPIO_PIN_RESET);
 			registers->WriteRegister<int8_t>(REG_CPG_SETPOINTS, setpoints, MODULE_NUMBER);
 			publishers->SpinPublisher(PUB_CPG);
 		}
-		leds->SetLED(LED_USER3, GPIO_PIN_SET);
+		//leds->SetLED(LED_USER3, GPIO_PIN_SET);
 		osDelay(50);
-		leds->SetLED(LED_USER3, GPIO_PIN_RESET);
+		//leds->SetLED(LED_USER3, GPIO_PIN_RESET);
 		osDelay(50);
 	}
 }

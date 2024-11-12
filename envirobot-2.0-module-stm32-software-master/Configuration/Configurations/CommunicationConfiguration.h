@@ -24,7 +24,7 @@
 //////////////////////////
 /// Communication Type ///
 //////////////////////////
-//#define USE_UINT8_COMMUNICATION
+#define USE_UINT8_COMMUNICATION
 //#define USE_UINT16_COMMUNICATION
 #define USE_UINT32_COMMUNICATION
 ////#define USE_UINT64_COMMUNICATION
