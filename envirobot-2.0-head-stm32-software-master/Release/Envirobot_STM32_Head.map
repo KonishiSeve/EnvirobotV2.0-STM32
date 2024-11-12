@@ -6752,7 +6752,7 @@ LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 [!provide]                        PROVIDE (__fini_array_end = .)
                 0x080197c4                        _sidata = LOADADDR (.data)
 
-.data           0x24000000       0x68 load address 0x080197c4
+.data           0x24000000       0x7c load address 0x080197c4
                 0x24000000                        . = ALIGN (0x4)
                 0x24000000                        _sdata = .
  *(.data)
@@ -6772,304 +6772,304 @@ LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 0x2400000c                uwTickPrio
  .data.uxCriticalNesting
                 0x24000010        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
- .data._ZZL8UserTaskPvE15reg_cpg_enabled
-                0x24000014        0x1 ./User/User.o
- *fill*         0x24000015        0x3 
+ .data._ZZL8UserTaskPvE11reg_cpg_a_r
+                0x24000014        0x4 ./User/User.o
+ .data._ZZL8UserTaskPvE25reg_cpg_coupling_strength
+                0x24000018        0x4 ./User/User.o
+ .data._ZZL8UserTaskPvE13reg_cpg_nwave
+                0x2400001c        0x4 ./User/User.o
+ .data._ZZL8UserTaskPvE13reg_cpg_amplh
+                0x24000020        0x4 ./User/User.o
+ .data._ZZL8UserTaskPvE13reg_cpg_amplc
+                0x24000024        0x4 ./User/User.o
+ .data._ZZL8UserTaskPvE17reg_cpg_frequency
+                0x24000028        0x4 ./User/User.o
  .data._impure_ptr
-                0x24000018        0x4 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-impure.o)
-                0x24000018                _impure_ptr
+                0x2400002c        0x4 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-impure.o)
+                0x2400002c                _impure_ptr
  .data._impure_data
-                0x2400001c       0x4c C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-impure.o)
-                0x2400001c                _impure_data
+                0x24000030       0x4c C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-impure.o)
+                0x24000030                _impure_data
  *(.RamFunc)
  *(.RamFunc*)
-                0x24000068                        . = ALIGN (0x4)
-                0x24000068                        _edata = .
+                0x2400007c                        . = ALIGN (0x4)
+                0x2400007c                        _edata = .
 
-.igot.plt       0x24000068        0x0 load address 0x0801982c
- .igot.plt      0x24000068        0x0 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+dp/hard/crtbegin.o
-                0x24000068                        . = ALIGN (0x4)
+.igot.plt       0x2400007c        0x0 load address 0x08019840
+ .igot.plt      0x2400007c        0x0 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+dp/hard/crtbegin.o
+                0x2400007c                        . = ALIGN (0x4)
 
-.bss            0x24000068     0x9538 load address 0x0801982c
-                0x24000068                        _sbss = .
-                0x24000068                        __bss_start__ = _sbss
+.bss            0x2400007c     0x9520 load address 0x08019840
+                0x2400007c                        _sbss = .
+                0x2400007c                        __bss_start__ = _sbss
  *(.bss)
- .bss           0x24000068       0x1c C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+dp/hard/crtbegin.o
+ .bss           0x2400007c       0x1c C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+dp/hard/crtbegin.o
  *(.bss*)
- .bss.user      0x24000084       0x20 ./Core/Src/main.o
-                0x24000084                user
+ .bss.user      0x24000098       0x20 ./Core/Src/main.o
+                0x24000098                user
  .bss.platform_sensors
-                0x240000a4       0x28 ./Core/Src/main.o
-                0x240000a4                platform_sensors
+                0x240000b8       0x28 ./Core/Src/main.o
+                0x240000b8                platform_sensors
  .bss.motion_generator
-                0x240000cc       0x68 ./Core/Src/main.o
-                0x240000cc                motion_generator
- .bss.leds      0x24000134       0x38 ./Core/Src/main.o
-                0x24000134                leds
- .bss.sensors   0x2400016c       0x6c ./Core/Src/main.o
-                0x2400016c                sensors
+                0x240000e0       0x68 ./Core/Src/main.o
+                0x240000e0                motion_generator
+ .bss.leds      0x24000148       0x38 ./Core/Src/main.o
+                0x24000148                leds
+ .bss.sensors   0x24000180       0x6c ./Core/Src/main.o
+                0x24000180                sensors
  .bss.hardware_delay
-                0x240001d8       0x1c ./Core/Src/main.o
-                0x240001d8                hardware_delay
+                0x240001ec       0x1c ./Core/Src/main.o
+                0x240001ec                hardware_delay
  .bss.publishers
-                0x240001f4       0x18 ./Core/Src/main.o
-                0x240001f4                publishers
- .bss.services  0x2400020c     0x1444 ./Core/Src/main.o
-                0x2400020c                services
+                0x24000208       0x18 ./Core/Src/main.o
+                0x24000208                publishers
+ .bss.services  0x24000220     0x1444 ./Core/Src/main.o
+                0x24000220                services
  .bss.communication
-                0x24001650       0x3c ./Core/Src/main.o
-                0x24001650                communication
+                0x24001664       0x3c ./Core/Src/main.o
+                0x24001664                communication
  .bss.subscribers
-                0x2400168c       0x24 ./Core/Src/main.o
-                0x2400168c                subscribers
+                0x240016a0       0x24 ./Core/Src/main.o
+                0x240016a0                subscribers
  .bss.protocol_canfd
-                0x240016b0       0x54 ./Core/Src/main.o
-                0x240016b0                protocol_canfd
+                0x240016c4       0x54 ./Core/Src/main.o
+                0x240016c4                protocol_canfd
  .bss.protocol_uart
-                0x24001704       0x68 ./Core/Src/main.o
-                0x24001704                protocol_uart
+                0x24001718       0x68 ./Core/Src/main.o
+                0x24001718                protocol_uart
  .bss.registers
-                0x2400176c       0xb0 ./Core/Src/main.o
-                0x2400176c                registers
+                0x24001780       0xb0 ./Core/Src/main.o
+                0x24001780                registers
  .bss.LEDsHandle
-                0x2400181c        0x4 ./Core/Src/main.o
-                0x2400181c                LEDsHandle
+                0x24001830        0x4 ./Core/Src/main.o
+                0x24001830                LEDsHandle
  .bss.CommunicationHandle
-                0x24001820        0x4 ./Core/Src/main.o
-                0x24001820                CommunicationHandle
+                0x24001834        0x4 ./Core/Src/main.o
+                0x24001834                CommunicationHandle
  .bss.SensorsHandle
-                0x24001824        0x4 ./Core/Src/main.o
-                0x24001824                SensorsHandle
+                0x24001838        0x4 ./Core/Src/main.o
+                0x24001838                SensorsHandle
  .bss.TrajectoryHandle
-                0x24001828        0x4 ./Core/Src/main.o
-                0x24001828                TrajectoryHandle
+                0x2400183c        0x4 ./Core/Src/main.o
+                0x2400183c                TrajectoryHandle
  .bss.hdma_usart6_rx
-                0x2400182c       0x78 ./Core/Src/main.o
-                0x2400182c                hdma_usart6_rx
+                0x24001840       0x78 ./Core/Src/main.o
+                0x24001840                hdma_usart6_rx
  .bss.hdma_usart6_tx
-                0x240018a4       0x78 ./Core/Src/main.o
-                0x240018a4                hdma_usart6_tx
+                0x240018b8       0x78 ./Core/Src/main.o
+                0x240018b8                hdma_usart6_tx
  .bss.hdma_usart3_rx
-                0x2400191c       0x78 ./Core/Src/main.o
-                0x2400191c                hdma_usart3_rx
+                0x24001930       0x78 ./Core/Src/main.o
+                0x24001930                hdma_usart3_rx
  .bss.hdma_usart3_tx
-                0x24001994       0x78 ./Core/Src/main.o
-                0x24001994                hdma_usart3_tx
+                0x240019a8       0x78 ./Core/Src/main.o
+                0x240019a8                hdma_usart3_tx
  .bss.hdma_usart2_rx
-                0x24001a0c       0x78 ./Core/Src/main.o
-                0x24001a0c                hdma_usart2_rx
+                0x24001a20       0x78 ./Core/Src/main.o
+                0x24001a20                hdma_usart2_rx
  .bss.hdma_usart2_tx
-                0x24001a84       0x78 ./Core/Src/main.o
-                0x24001a84                hdma_usart2_tx
+                0x24001a98       0x78 ./Core/Src/main.o
+                0x24001a98                hdma_usart2_tx
  .bss.hdma_usart1_rx
-                0x24001afc       0x78 ./Core/Src/main.o
-                0x24001afc                hdma_usart1_rx
+                0x24001b10       0x78 ./Core/Src/main.o
+                0x24001b10                hdma_usart1_rx
  .bss.hdma_usart1_tx
-                0x24001b74       0x78 ./Core/Src/main.o
-                0x24001b74                hdma_usart1_tx
+                0x24001b88       0x78 ./Core/Src/main.o
+                0x24001b88                hdma_usart1_tx
  .bss.hdma_uart8_rx
-                0x24001bec       0x78 ./Core/Src/main.o
-                0x24001bec                hdma_uart8_rx
+                0x24001c00       0x78 ./Core/Src/main.o
+                0x24001c00                hdma_uart8_rx
  .bss.hdma_uart8_tx
-                0x24001c64       0x78 ./Core/Src/main.o
-                0x24001c64                hdma_uart8_tx
+                0x24001c78       0x78 ./Core/Src/main.o
+                0x24001c78                hdma_uart8_tx
  .bss.hdma_uart7_rx
-                0x24001cdc       0x78 ./Core/Src/main.o
-                0x24001cdc                hdma_uart7_rx
+                0x24001cf0       0x78 ./Core/Src/main.o
+                0x24001cf0                hdma_uart7_rx
  .bss.hdma_uart7_tx
-                0x24001d54       0x78 ./Core/Src/main.o
-                0x24001d54                hdma_uart7_tx
+                0x24001d68       0x78 ./Core/Src/main.o
+                0x24001d68                hdma_uart7_tx
  .bss.hdma_uart4_rx
-                0x24001dcc       0x78 ./Core/Src/main.o
-                0x24001dcc                hdma_uart4_rx
+                0x24001de0       0x78 ./Core/Src/main.o
+                0x24001de0                hdma_uart4_rx
  .bss.hdma_uart4_tx
-                0x24001e44       0x78 ./Core/Src/main.o
-                0x24001e44                hdma_uart4_tx
- .bss.huart6    0x24001ebc       0x90 ./Core/Src/main.o
-                0x24001ebc                huart6
- .bss.huart3    0x24001f4c       0x90 ./Core/Src/main.o
-                0x24001f4c                huart3
- .bss.huart2    0x24001fdc       0x90 ./Core/Src/main.o
-                0x24001fdc                huart2
- .bss.huart1    0x2400206c       0x90 ./Core/Src/main.o
-                0x2400206c                huart1
- .bss.huart8    0x240020fc       0x90 ./Core/Src/main.o
-                0x240020fc                huart8
- .bss.huart7    0x2400218c       0x90 ./Core/Src/main.o
-                0x2400218c                huart7
- .bss.huart4    0x2400221c       0x90 ./Core/Src/main.o
-                0x2400221c                huart4
- .bss.htim4     0x240022ac       0x4c ./Core/Src/main.o
-                0x240022ac                htim4
- .bss.htim3     0x240022f8       0x4c ./Core/Src/main.o
-                0x240022f8                htim3
- .bss.hsd1      0x24002344       0x7c ./Core/Src/main.o
-                0x24002344                hsd1
+                0x24001e58       0x78 ./Core/Src/main.o
+                0x24001e58                hdma_uart4_tx
+ .bss.huart6    0x24001ed0       0x90 ./Core/Src/main.o
+                0x24001ed0                huart6
+ .bss.huart3    0x24001f60       0x90 ./Core/Src/main.o
+                0x24001f60                huart3
+ .bss.huart2    0x24001ff0       0x90 ./Core/Src/main.o
+                0x24001ff0                huart2
+ .bss.huart1    0x24002080       0x90 ./Core/Src/main.o
+                0x24002080                huart1
+ .bss.huart8    0x24002110       0x90 ./Core/Src/main.o
+                0x24002110                huart8
+ .bss.huart7    0x240021a0       0x90 ./Core/Src/main.o
+                0x240021a0                huart7
+ .bss.huart4    0x24002230       0x90 ./Core/Src/main.o
+                0x24002230                huart4
+ .bss.htim4     0x240022c0       0x4c ./Core/Src/main.o
+                0x240022c0                htim4
+ .bss.htim3     0x2400230c       0x4c ./Core/Src/main.o
+                0x2400230c                htim3
+ .bss.hsd1      0x24002358       0x7c ./Core/Src/main.o
+                0x24002358                hsd1
  .bss.hdma_i2c1_rx
-                0x240023c0       0x78 ./Core/Src/main.o
-                0x240023c0                hdma_i2c1_rx
+                0x240023d4       0x78 ./Core/Src/main.o
+                0x240023d4                hdma_i2c1_rx
  .bss.hdma_i2c1_tx
-                0x24002438       0x78 ./Core/Src/main.o
-                0x24002438                hdma_i2c1_tx
- .bss.hi2c4     0x240024b0       0x4c ./Core/Src/main.o
-                0x240024b0                hi2c4
- .bss.hi2c1     0x240024fc       0x4c ./Core/Src/main.o
-                0x240024fc                hi2c1
- .bss.hfdcan2   0x24002548       0xa0 ./Core/Src/main.o
-                0x24002548                hfdcan2
- .bss.hfdcan1   0x240025e8       0xa0 ./Core/Src/main.o
-                0x240025e8                hfdcan1
- .bss.hadc3     0x24002688       0x64 ./Core/Src/main.o
-                0x24002688                hadc3
- .bss.hadc1     0x240026ec       0x64 ./Core/Src/main.o
-                0x240026ec                hadc1
+                0x2400244c       0x78 ./Core/Src/main.o
+                0x2400244c                hdma_i2c1_tx
+ .bss.hi2c4     0x240024c4       0x4c ./Core/Src/main.o
+                0x240024c4                hi2c4
+ .bss.hi2c1     0x24002510       0x4c ./Core/Src/main.o
+                0x24002510                hi2c1
+ .bss.hfdcan2   0x2400255c       0xa0 ./Core/Src/main.o
+                0x2400255c                hfdcan2
+ .bss.hfdcan1   0x240025fc       0xa0 ./Core/Src/main.o
+                0x240025fc                hfdcan1
+ .bss.hadc3     0x2400269c       0x64 ./Core/Src/main.o
+                0x2400269c                hadc3
+ .bss.hadc1     0x24002700       0x64 ./Core/Src/main.o
+                0x24002700                hadc1
  .bss.HAL_RCC_FDCAN_CLK_ENABLED
-                0x24002750        0x4 ./Core/Src/stm32h7xx_hal_msp.o
- .bss.htim5     0x24002754       0x4c ./Core/Src/stm32h7xx_hal_timebase_tim.o
-                0x24002754                htim5
+                0x24002764        0x4 ./Core/Src/stm32h7xx_hal_msp.o
+ .bss.htim5     0x24002768       0x4c ./Core/Src/stm32h7xx_hal_timebase_tim.o
+                0x24002768                htim5
  .bss.__sbrk_heap_end
-                0x240027a0        0x4 ./Core/Src/sysmem.o
- .bss.uwTick    0x240027a4        0x4 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.o
-                0x240027a4                uwTick
+                0x240027b4        0x4 ./Core/Src/sysmem.o
+ .bss.uwTick    0x240027b8        0x4 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.o
+                0x240027b8                uwTick
  .bss.Timer_Stack.0
-                0x240027a8      0x400 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+                0x240027bc      0x400 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
  .bss.Timer_TCB.1
-                0x24002ba8       0xa8 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+                0x24002bbc       0xa8 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
  .bss.Idle_Stack.2
-                0x24002c50      0x200 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+                0x24002c64      0x200 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
  .bss.Idle_TCB.3
-                0x24002e50       0xa8 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+                0x24002e64       0xa8 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
  .bss.KernelState
-                0x24002ef8        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+                0x24002f0c        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
  .bss.xQueueRegistry
-                0x24002efc       0x40 ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
-                0x24002efc                xQueueRegistry
+                0x24002f10       0x40 ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
+                0x24002f10                xQueueRegistry
  .bss.uxSchedulerSuspended
-                0x24002f3c        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xNextTaskUnblockTime
-                0x24002f40        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.uxTaskNumber
-                0x24002f44        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xNumOfOverflows
-                0x24002f48        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xYieldPending
-                0x24002f4c        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xPendedTicks
                 0x24002f50        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xSchedulerRunning
+ .bss.xNextTaskUnblockTime
                 0x24002f54        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.uxTopReadyPriority
+ .bss.uxTaskNumber
                 0x24002f58        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xTickCount
+ .bss.xNumOfOverflows
                 0x24002f5c        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.uxCurrentNumberOfTasks
+ .bss.xYieldPending
                 0x24002f60        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.xPendedTicks
+                0x24002f64        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.xSchedulerRunning
+                0x24002f68        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.uxTopReadyPriority
+                0x24002f6c        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.xTickCount
+                0x24002f70        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.uxCurrentNumberOfTasks
+                0x24002f74        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .bss.xSuspendedTaskList
-                0x24002f64       0x14 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x24002f78       0x14 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .bss.uxDeletedTasksWaitingCleanUp
-                0x24002f78        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x24002f8c        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .bss.xTasksWaitingTermination
-                0x24002f7c       0x14 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xPendingReadyList
                 0x24002f90       0x14 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.xPendingReadyList
+                0x24002fa4       0x14 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .bss.pxOverflowDelayedTaskList
-                0x24002fa4        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x24002fb8        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .bss.pxDelayedTaskList
-                0x24002fa8        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x24002fbc        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .bss.xDelayedTaskList2
-                0x24002fac       0x14 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .bss.xDelayedTaskList1
                 0x24002fc0       0x14 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .bss.xDelayedTaskList1
+                0x24002fd4       0x14 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .bss.pxReadyTasksLists
-                0x24002fd4      0x460 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x24002fe8      0x460 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .bss.pxCurrentTCB
-                0x24003434        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
-                0x24003434                pxCurrentTCB
+                0x24003448        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x24003448                pxCurrentTCB
  .bss.xStaticTimerQueue.0
-                0x24003438       0x50 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+                0x2400344c       0x50 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
  .bss.ucStaticTimerQueueStorage.1
-                0x24003488       0xa0 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+                0x2400349c       0xa0 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
  .bss.xLastTime.2
-                0x24003528        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+                0x2400353c        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
  .bss.xTimerTaskHandle
-                0x2400352c        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+                0x24003540        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
  .bss.xTimerQueue
-                0x24003530        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+                0x24003544        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
  .bss.pxOverflowTimerList
-                0x24003534        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+                0x24003548        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
  .bss.pxCurrentTimerList
-                0x24003538        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+                0x2400354c        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
  .bss.xActiveTimerList2
-                0x2400353c       0x14 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
- .bss.xActiveTimerList1
                 0x24003550       0x14 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .bss.xActiveTimerList1
+                0x24003564       0x14 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
  .bss.ulMaxPRIGROUPValue
-                0x24003564        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+                0x24003578        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
  .bss.ucMaxSysCallPriority
-                0x24003568        0x1 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
- *fill*         0x24003569        0x3 
+                0x2400357c        0x1 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+ *fill*         0x2400357d        0x3 
  .bss.xBlockAllocatedBit
-                0x2400356c        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x24003580        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .bss.xNumberOfSuccessfulFrees
-                0x24003570        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x24003584        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .bss.xNumberOfSuccessfulAllocations
-                0x24003574        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x24003588        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .bss.xMinimumEverFreeBytesRemaining
-                0x24003578        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x2400358c        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .bss.xFreeBytesRemaining
-                0x2400357c        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .bss.pxEnd     0x24003580        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .bss.xStart    0x24003584        0x8 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .bss.ucHeap    0x2400358c     0x3c00 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .bss._ZZL8UserTaskPvE11reg_cpg_a_r
-                0x2400718c        0x4 ./User/User.o
- .bss._ZZL8UserTaskPvE25reg_cpg_coupling_strength
-                0x24007190        0x4 ./User/User.o
- .bss._ZZL8UserTaskPvE13reg_cpg_nwave
-                0x24007194        0x4 ./User/User.o
- .bss._ZZL8UserTaskPvE13reg_cpg_amplh
-                0x24007198        0x4 ./User/User.o
- .bss._ZZL8UserTaskPvE13reg_cpg_amplc
-                0x2400719c        0x4 ./User/User.o
+                0x24003590        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .bss.pxEnd     0x24003594        0x4 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .bss.xStart    0x24003598        0x8 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .bss.ucHeap    0x240035a0     0x3c00 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .bss._ZZL8UserTaskPvE17reg_cpg_direction
                 0x240071a0        0x4 ./User/User.o
- .bss._ZZL8UserTaskPvE17reg_cpg_frequency
-                0x240071a4        0x4 ./User/User.o
  .bss._ZZL8UserTaskPvE13reg_cpg_reset
-                0x240071a8        0x1 ./User/User.o
+                0x240071a4        0x1 ./User/User.o
+ .bss._ZZL8UserTaskPvE15reg_cpg_enabled
+                0x240071a5        0x1 ./User/User.o
  .bss._ZZL8UserTaskPvE17reg_cpg_setpoints
-                0x240071a9        0x4 ./User/User.o
- *fill*         0x240071ad        0x3 
- .bss.cpg       0x240071b0     0x2280 ./User/User.o
-                0x240071b0                cpg
+                0x240071a6        0x4 ./User/User.o
+ *fill*         0x240071aa        0x2 
+ .bss.cpg       0x240071ac     0x2280 ./User/User.o
+                0x240071ac                cpg
  .bss._ZGVZN4User12AddOSThreadsEvE24class_instances_argument
-                0x24009430        0x4 ./User/User.o
+                0x2400942c        0x4 ./User/User.o
  .bss._ZZN4User12AddOSThreadsEvE24class_instances_argument
-                0x24009434       0x20 ./User/User.o
+                0x24009430       0x20 ./User/User.o
  .bss._ZN12_GLOBAL__N_113__new_handlerE
-                0x24009454        0x4 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libstdc++_nano.a(new_handler.o)
+                0x24009450        0x4 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libstdc++_nano.a(new_handler.o)
  .bss.__malloc_sbrk_start
-                0x24009458        0x4 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-mallocr.o)
-                0x24009458                __malloc_sbrk_start
+                0x24009454        0x4 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x24009454                __malloc_sbrk_start
  .bss.__malloc_free_list
-                0x2400945c        0x4 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-mallocr.o)
-                0x2400945c                __malloc_free_list
- .bss.__sf      0x24009460      0x138 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-findfp.o)
-                0x24009460                __sf
- .bss.errno     0x24009598        0x4 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-reent.o)
-                0x24009598                errno
+                0x24009458        0x4 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x24009458                __malloc_free_list
+ .bss.__sf      0x2400945c      0x138 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-findfp.o)
+                0x2400945c                __sf
+ .bss.errno     0x24009594        0x4 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-reent.o)
+                0x24009594                errno
  .bss.__lock___malloc_recursive_mutex
-                0x2400959c        0x1 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-lock.o)
-                0x2400959c                __lock___malloc_recursive_mutex
+                0x24009598        0x1 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-lock.o)
+                0x24009598                __lock___malloc_recursive_mutex
  *(COMMON)
-                0x240095a0                        . = ALIGN (0x4)
- *fill*         0x2400959d        0x3 
-                0x240095a0                        _ebss = .
-                0x240095a0                        __bss_end__ = _ebss
+                0x2400959c                        . = ALIGN (0x4)
+ *fill*         0x24009599        0x3 
+                0x2400959c                        _ebss = .
+                0x2400959c                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x240095a0      0x600 load address 0x0801982c
+                0x2400959c      0x604 load address 0x08019840
                 0x240095a0                        . = ALIGN (0x8)
+ *fill*         0x2400959c        0x4 
                 [!provide]                        PROVIDE (end = .)
                 0x240095a0                        PROVIDE (_end = .)
                 0x240097a0                        . = (. + _Min_Heap_Size)

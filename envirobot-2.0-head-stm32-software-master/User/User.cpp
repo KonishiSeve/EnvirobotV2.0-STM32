@@ -92,7 +92,7 @@ static void UserTask(void *argument) {
 	registers->AddRegisterPointer<int8_t>(REG_CPG_SETPOINTS, reg_cpg_setpoints);
 
 	//enables/disables the computation of CPG steps (supposed to be accessed by UART of CM4 or Radio PIC)
-	static int8_t reg_cpg_enabled = 1;
+	static int8_t reg_cpg_enabled = 0;
 	registers->AddRegister<int8_t>(REG_CPG_ENABLED);
 	registers->SetRegisterAsSingle(REG_CPG_ENABLED);
 	registers->AddRegisterPointer<int8_t>(REG_CPG_ENABLED, &reg_cpg_enabled);
@@ -110,7 +110,7 @@ static void UserTask(void *argument) {
 	});
 
 	//CPG frequency register
-	static float reg_cpg_frequency;
+	static float reg_cpg_frequency = 0.5;
 	registers->AddRegister<float>(REG_CPG_FREQUENCY);
 	registers->SetRegisterAsSingle(REG_CPG_FREQUENCY);
 	registers->AddRegisterPointer<float>(REG_CPG_FREQUENCY, &reg_cpg_frequency);
@@ -122,7 +122,7 @@ static void UserTask(void *argument) {
 	});
 
 	//CPG direction register
-	static float reg_cpg_direction;
+	static float reg_cpg_direction = 0;
 	registers->AddRegister<float>(REG_CPG_DIRECTION);
 	registers->SetRegisterAsSingle(REG_CPG_DIRECTION);
 	registers->AddRegisterPointer<float>(REG_CPG_DIRECTION, &reg_cpg_direction);
@@ -134,7 +134,7 @@ static void UserTask(void *argument) {
 	});
 
 	//CPG amplc register
-	static float reg_cpg_amplc;
+	static float reg_cpg_amplc = 0.3;
 	registers->AddRegister<float>(REG_CPG_AMPLC);
 	registers->SetRegisterAsSingle(REG_CPG_AMPLC);
 	registers->AddRegisterPointer<float>(REG_CPG_AMPLC, &reg_cpg_amplc);
@@ -146,7 +146,7 @@ static void UserTask(void *argument) {
 	});
 
 	//CPG amplh register
-	static float reg_cpg_amplh;
+	static float reg_cpg_amplh = 0.5;
 	registers->AddRegister<float>(REG_CPG_AMPLH);
 	registers->SetRegisterAsSingle(REG_CPG_AMPLH);
 	registers->AddRegisterPointer<float>(REG_CPG_AMPLH, &reg_cpg_amplh);
@@ -158,7 +158,7 @@ static void UserTask(void *argument) {
 	});
 
 	//CPG nwave register
-	static float reg_cpg_nwave;
+	static float reg_cpg_nwave = 1;
 	registers->AddRegister<float>(REG_CPG_NWAVE);
 	registers->SetRegisterAsSingle(REG_CPG_NWAVE);
 	registers->AddRegisterPointer<float>(REG_CPG_NWAVE, &reg_cpg_nwave);
@@ -170,7 +170,7 @@ static void UserTask(void *argument) {
 	});
 
 	//CPG coupling strength register
-	static float reg_cpg_coupling_strength;
+	static float reg_cpg_coupling_strength = 50;
 	registers->AddRegister<float>(REG_CPG_COUPLING_STRENGTH);
 	registers->SetRegisterAsSingle(REG_CPG_COUPLING_STRENGTH);
 	registers->AddRegisterPointer<float>(REG_CPG_COUPLING_STRENGTH, &reg_cpg_coupling_strength);
@@ -182,7 +182,7 @@ static void UserTask(void *argument) {
 	});
 
 	//CPG a_r register
-	static float reg_cpg_a_r;
+	static float reg_cpg_a_r = 10;
 	registers->AddRegister<float>(REG_CPG_A_R);
 	registers->SetRegisterAsSingle(REG_CPG_A_R);
 	registers->AddRegisterPointer<float>(REG_CPG_A_R, &reg_cpg_a_r);
@@ -208,21 +208,20 @@ static void UserTask(void *argument) {
 	publishers->ActivatePublisher(PUB_CPG);
 
 	// === CPG Setup === //
-	cpg.init(MODULE_NUMBER, 0.5, 0, 0.3, 0.5, 1, 50, 10);
+	cpg.init(MODULE_NUMBER, reg_cpg_frequency, reg_cpg_direction, reg_cpg_amplc, reg_cpg_amplc, reg_cpg_nwave, reg_cpg_coupling_strength, reg_cpg_a_r);
 	int8_t setpoints[MODULE_NUMBER];
 	for(;;) {
 		if(reg_cpg_enabled) {
 			leds->SetLED(LED_USER3, GPIO_PIN_SET);
-			for(uint32_t j=0;j<1000;j++) {
-				cpg.step(setpoints, 10);
+			for(uint32_t j=0;j<10;j++) {
+				cpg.step(setpoints, 1);
 			}
-			leds->SetLED(LED_USER3, GPIO_PIN_RESET);
 			registers->WriteRegister<int8_t>(REG_CPG_SETPOINTS, setpoints, MODULE_NUMBER);
 			publishers->SpinPublisher(PUB_CPG);
 		}
-		//leds->SetLED(LED_USER3, GPIO_PIN_SET);
-		osDelay(50);
-		//leds->SetLED(LED_USER3, GPIO_PIN_RESET);
-		osDelay(50);
+		else {
+			leds->SetLED(LED_USER3, GPIO_PIN_RESET);
+		}
+		osDelay(10);
 	}
 }
