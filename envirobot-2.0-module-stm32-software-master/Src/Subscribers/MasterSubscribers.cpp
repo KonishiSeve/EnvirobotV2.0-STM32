@@ -195,7 +195,7 @@ bool MasterSubscribers::SubscribeToRemoteRegister(uint8_t ID, Register remote_re
  * @param input interface: interface information to filter incomming data
  * @return whether successful
  */
-bool MasterSubscribers::SubscribeToRemoteRegister(uint8_t ID, uint8_t register_ID, SubscriberInterface interface) {
+bool MasterSubscribers::SubscribeToRemoteRegister(uint8_t ID, uint16_t register_ID, SubscriberInterface interface) {
 	bool success;
 	Register internal_register = registers->FindRegister(register_ID, &success);
 	if (!success) return false;
@@ -238,7 +238,7 @@ bool MasterSubscribers::SubscribeToRemoteRegister(uint8_t ID, Register remote_re
  * @param input remote_register_ID: subscribed register ID
  * @return whether successful
  */
-bool MasterSubscribers::UnsubscribeFromRemoteRegister(uint8_t ID, uint8_t remote_register_ID) {
+bool MasterSubscribers::UnsubscribeFromRemoteRegister(uint8_t ID, uint16_t remote_register_ID) {
 	bool success;
 	uint8_t index = FindSubscriberIndex(ID, &success);
 	if (!success) return false;

@@ -17503,7 +17503,7 @@ LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x000116cb      0x398 ./Src/Trajectory/TrajectoryGenerator.o
  .debug_macro   0x00011a63      0x8c1 ./User/User.o
 
-.debug_line     0x00000000    0x82dc5
+.debug_line     0x00000000    0x82dc3
  .debug_line    0x00000000     0x5fb9 ./Core/Src/main.o
  .debug_line    0x00005fb9     0x1944 ./Core/Src/stm32h7xx_hal_msp.o
  .debug_line    0x000078fd      0xa15 ./Core/Src/stm32h7xx_hal_timebase_tim.o
@@ -17536,120 +17536,120 @@ LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x0003e8f9      0xb71 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
  .debug_line    0x0003f46a      0xba6 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_line    0x00040010     0x1a33 ./Platform/PlatformLEDs/PlatformLEDs.o
- .debug_line    0x00041a43     0x4639 ./Platform/PlatformSensors/PlatformSensors.o
- .debug_line    0x0004607c     0xb779 ./Src/Communication/Communication.o
- .debug_line    0x000517f5     0x500a ./Src/Controller/Controller.o
- .debug_line    0x000567ff     0x1f8c ./Src/HardwareDelay/HardwareDelay.o
- .debug_line    0x0005878b     0x3b4e ./Src/LEDs/LEDS.o
- .debug_line    0x0005c2d9     0x21ca ./Src/Protocols/Communication/Core/CommunicationProtocol.o
- .debug_line    0x0005e4a3     0x2720 ./Src/Protocols/Communication/FDCAN/CANProtocol.o
- .debug_line    0x00060bc3     0x2ee3 ./Src/Protocols/Communication/UART/UARTProtocol.o
- .debug_line    0x00063aa6     0x72e5 ./Src/Publishers/Publishers.o
- .debug_line    0x0006ad8b     0x2074 ./Src/Registers/Registers.o
- .debug_line    0x0006cdff     0x9c6d ./Src/Sensors/Sensors.o
- .debug_line    0x00076a6c     0x1ddf ./Src/Services/Services.o
- .debug_line    0x0007884b     0x3503 ./Src/Servomotors/Servomotors.o
- .debug_line    0x0007bd4e     0x412d ./Src/Subscribers/MasterSubscribers.o
- .debug_line    0x0007fe7b     0x1420 ./Src/Trajectory/TrajectoryGenerator.o
- .debug_line    0x0008129b     0x1b2a ./User/User.o
+ .debug_line    0x00041a43     0x4637 ./Platform/PlatformSensors/PlatformSensors.o
+ .debug_line    0x0004607a     0xb779 ./Src/Communication/Communication.o
+ .debug_line    0x000517f3     0x500a ./Src/Controller/Controller.o
+ .debug_line    0x000567fd     0x1f8c ./Src/HardwareDelay/HardwareDelay.o
+ .debug_line    0x00058789     0x3b4e ./Src/LEDs/LEDS.o
+ .debug_line    0x0005c2d7     0x21ca ./Src/Protocols/Communication/Core/CommunicationProtocol.o
+ .debug_line    0x0005e4a1     0x2720 ./Src/Protocols/Communication/FDCAN/CANProtocol.o
+ .debug_line    0x00060bc1     0x2ee3 ./Src/Protocols/Communication/UART/UARTProtocol.o
+ .debug_line    0x00063aa4     0x72e5 ./Src/Publishers/Publishers.o
+ .debug_line    0x0006ad89     0x2074 ./Src/Registers/Registers.o
+ .debug_line    0x0006cdfd     0x9c6d ./Src/Sensors/Sensors.o
+ .debug_line    0x00076a6a     0x1ddf ./Src/Services/Services.o
+ .debug_line    0x00078849     0x3503 ./Src/Servomotors/Servomotors.o
+ .debug_line    0x0007bd4c     0x412d ./Src/Subscribers/MasterSubscribers.o
+ .debug_line    0x0007fe79     0x1420 ./Src/Trajectory/TrajectoryGenerator.o
+ .debug_line    0x00081299     0x1b2a ./User/User.o
 
-.debug_str      0x00000000   0x245576
- .debug_str     0x00000000   0x1fbec4 ./Core/Src/main.o
-                             0x1fdc27 (size before relaxing)
- .debug_str     0x001fbec4      0x4da ./Core/Src/stm32h7xx_hal_msp.o
+.debug_str      0x00000000   0x245574
+ .debug_str     0x00000000   0x1fbec2 ./Core/Src/main.o
+                             0x1fdc25 (size before relaxing)
+ .debug_str     0x001fbec2      0x4da ./Core/Src/stm32h7xx_hal_msp.o
                              0x17c5a1 (size before relaxing)
- .debug_str     0x001fc39e       0xf5 ./Core/Src/stm32h7xx_hal_timebase_tim.o
+ .debug_str     0x001fc39c       0xf5 ./Core/Src/stm32h7xx_hal_timebase_tim.o
                              0x17add0 (size before relaxing)
- .debug_str     0x001fc493      0x370 ./Core/Src/stm32h7xx_it.o
+ .debug_str     0x001fc491      0x370 ./Core/Src/stm32h7xx_it.o
                              0x17b689 (size before relaxing)
- .debug_str     0x001fc803     0x2449 ./Core/Src/syscalls.o
+ .debug_str     0x001fc801     0x2449 ./Core/Src/syscalls.o
                                0x9918 (size before relaxing)
- .debug_str     0x001fec4c       0x6b ./Core/Src/sysmem.o
+ .debug_str     0x001fec4a       0x6b ./Core/Src/sysmem.o
                                0x6130 (size before relaxing)
- .debug_str     0x001fecb7      0x332 ./Core/Src/system_stm32h7xx.o
+ .debug_str     0x001fecb5      0x332 ./Core/Src/system_stm32h7xx.o
                              0x17a0e6 (size before relaxing)
- .debug_str     0x001fefe9       0x44 ./Core/Startup/startup_stm32h750vbtx.o
+ .debug_str     0x001fefe7       0x44 ./Core/Startup/startup_stm32h750vbtx.o
                                  0x9b (size before relaxing)
- .debug_str     0x001ff02d      0x792 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.o
+ .debug_str     0x001ff02b      0x792 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.o
                              0x17b00b (size before relaxing)
- .debug_str     0x001ff7bf      0xb23 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.o
+ .debug_str     0x001ff7bd      0xb23 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.o
                              0x17ae71 (size before relaxing)
- .debug_str     0x002002e2      0x7a8 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.o
+ .debug_str     0x002002e0      0x7a8 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.o
                              0x17aec4 (size before relaxing)
- .debug_str     0x00200a8a      0x319 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.o
+ .debug_str     0x00200a88      0x319 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.o
                              0x17aa0e (size before relaxing)
- .debug_str     0x00200da3      0x7ee ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.o
+ .debug_str     0x00200da1      0x7ee ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.o
                              0x17a820 (size before relaxing)
- .debug_str     0x00201591     0x1a64 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.o
+ .debug_str     0x0020158f     0x1a64 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.o
                              0x17bdec (size before relaxing)
- .debug_str     0x00202ff5       0xaa ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.o
+ .debug_str     0x00202ff3       0xaa ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.o
                              0x17a09d (size before relaxing)
- .debug_str     0x0020309f      0xd1b ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.o
+ .debug_str     0x0020309d      0xd1b ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.o
                              0x17b102 (size before relaxing)
- .debug_str     0x00203dba       0xb8 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.o
+ .debug_str     0x00203db8       0xb8 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.o
                              0x17a4f6 (size before relaxing)
- .debug_str     0x00203e72      0x624 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.o
+ .debug_str     0x00203e70      0x624 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.o
                              0x17a55e (size before relaxing)
- .debug_str     0x00204496      0x1e4 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.o
+ .debug_str     0x00204494      0x1e4 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.o
                              0x17a481 (size before relaxing)
- .debug_str     0x0020467a      0x614 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.o
+ .debug_str     0x00204678      0x614 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.o
                              0x17a939 (size before relaxing)
- .debug_str     0x00204c8e      0xc59 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.o
+ .debug_str     0x00204c8c      0xc59 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.o
                              0x17b210 (size before relaxing)
- .debug_str     0x002058e7      0x4ad ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.o
+ .debug_str     0x002058e5      0x4ad ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.o
                              0x17ab48 (size before relaxing)
- .debug_str     0x00205d94      0x9b5 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.o
+ .debug_str     0x00205d92      0x9b5 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.o
                              0x17afab (size before relaxing)
- .debug_str     0x00206749      0x23b ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.o
+ .debug_str     0x00206747      0x23b ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.o
                              0x17a540 (size before relaxing)
- .debug_str     0x00206984     0x3250 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_str     0x00206982     0x3250 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
                              0x181fe1 (size before relaxing)
- .debug_str     0x00209bd4      0x12d ./Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_str     0x00209bd2      0x12d ./Middlewares/Third_Party/FreeRTOS/Source/list.o
                                0xab67 (size before relaxing)
- .debug_str     0x00209d01      0x889 ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_str     0x00209cff      0x889 ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
                                0xc6b8 (size before relaxing)
- .debug_str     0x0020a58a     0x1079 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_str     0x0020a588     0x1079 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
                                0xd4bd (size before relaxing)
- .debug_str     0x0020b603      0x5a6 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_str     0x0020b601      0x5a6 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
                                0xcef8 (size before relaxing)
- .debug_str     0x0020bba9      0x783 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+ .debug_str     0x0020bba7      0x783 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
                                0xa31f (size before relaxing)
- .debug_str     0x0020c32c      0x324 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_str     0x0020c32a      0x324 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
                                0xb4a9 (size before relaxing)
- .debug_str     0x0020c650       0xe0 ./Platform/PlatformLEDs/PlatformLEDs.o
+ .debug_str     0x0020c64e       0xe0 ./Platform/PlatformLEDs/PlatformLEDs.o
                              0x1a4139 (size before relaxing)
- .debug_str     0x0020c730     0x5725 ./Platform/PlatformSensors/PlatformSensors.o
-                             0x1e416b (size before relaxing)
- .debug_str     0x00211e55    0x10980 ./Src/Communication/Communication.o
-                             0x1cbfd6 (size before relaxing)
- .debug_str     0x002227d5     0x2a90 ./Src/Controller/Controller.o
-                             0x1c7aa8 (size before relaxing)
- .debug_str     0x00225265     0x13a7 ./Src/HardwareDelay/HardwareDelay.o
+ .debug_str     0x0020c72e     0x5725 ./Platform/PlatformSensors/PlatformSensors.o
+                             0x1e4169 (size before relaxing)
+ .debug_str     0x00211e53    0x10980 ./Src/Communication/Communication.o
+                             0x1cbfd4 (size before relaxing)
+ .debug_str     0x002227d3     0x2a90 ./Src/Controller/Controller.o
+                             0x1c7aa6 (size before relaxing)
+ .debug_str     0x00225263     0x13a7 ./Src/HardwareDelay/HardwareDelay.o
                              0x187416 (size before relaxing)
- .debug_str     0x0022660c     0x24a3 ./Src/LEDs/LEDS.o
+ .debug_str     0x0022660a     0x24a3 ./Src/LEDs/LEDS.o
                              0x1a94ee (size before relaxing)
- .debug_str     0x00228aaf     0x14c8 ./Src/Protocols/Communication/Core/CommunicationProtocol.o
+ .debug_str     0x00228aad     0x14c8 ./Src/Protocols/Communication/Core/CommunicationProtocol.o
                              0x18796a (size before relaxing)
- .debug_str     0x00229f77      0xfa9 ./Src/Protocols/Communication/FDCAN/CANProtocol.o
+ .debug_str     0x00229f75      0xfa9 ./Src/Protocols/Communication/FDCAN/CANProtocol.o
                              0x18ef42 (size before relaxing)
- .debug_str     0x0022af20      0x499 ./Src/Protocols/Communication/UART/UARTProtocol.o
+ .debug_str     0x0022af1e      0x499 ./Src/Protocols/Communication/UART/UARTProtocol.o
                              0x18c60b (size before relaxing)
- .debug_str     0x0022b3b9     0x61f0 ./Src/Publishers/Publishers.o
-                             0x1d09cf (size before relaxing)
- .debug_str     0x002315a9      0xcbb ./Src/Registers/Registers.o
+ .debug_str     0x0022b3b7     0x61f0 ./Src/Publishers/Publishers.o
+                             0x1d09cd (size before relaxing)
+ .debug_str     0x002315a7      0xcbb ./Src/Registers/Registers.o
                              0x19c0b9 (size before relaxing)
- .debug_str     0x00232264     0xd9ff ./Src/Sensors/Sensors.o
-                             0x1f1a99 (size before relaxing)
- .debug_str     0x0023fc63       0x76 ./Src/Services/Services.o
-                             0x1b2d5f (size before relaxing)
- .debug_str     0x0023fcd9      0x111 ./Src/Servomotors/Servomotors.o
-                             0x1bda6e (size before relaxing)
- .debug_str     0x0023fdea     0x558e ./Src/Subscribers/MasterSubscribers.o
+ .debug_str     0x00232262     0xd9ff ./Src/Sensors/Sensors.o
+                             0x1f1a97 (size before relaxing)
+ .debug_str     0x0023fc61       0x76 ./Src/Services/Services.o
+                             0x1b2d5d (size before relaxing)
+ .debug_str     0x0023fcd7      0x111 ./Src/Servomotors/Servomotors.o
+                             0x1bda6c (size before relaxing)
+ .debug_str     0x0023fde8     0x558e ./Src/Subscribers/MasterSubscribers.o
                              0x1b7fc8 (size before relaxing)
- .debug_str     0x00245378       0xc2 ./Src/Trajectory/TrajectoryGenerator.o
+ .debug_str     0x00245376       0xc2 ./Src/Trajectory/TrajectoryGenerator.o
                              0x17dee5 (size before relaxing)
- .debug_str     0x0024543a      0x13c ./User/User.o
-                             0x1e344f (size before relaxing)
+ .debug_str     0x00245438      0x13c ./User/User.o
+                             0x1e344d (size before relaxing)
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Core/Src/main.o

@@ -1,4 +1,15 @@
-../User/User.cpp:67:13:void UserTask(void*)	8	static
+../Src/Subscribers/Core/Subscriber.hpp:42:15:virtual void Subscriber::ReceiveUINT8(SubscriberInput, const uint8_t*)	16	static
+../Src/Subscribers/Core/Subscriber.hpp:56:15:virtual void Subscriber::ReceiveUINT32(SubscriberInput, const uint32_t*)	16	static
+../Src/Subscribers/Core/Subscriber.hpp:98:15:virtual void Subscriber::ReceiveFLOAT(SubscriberInput, const float*)	16	static
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = signed char]	8	static
+../Src/Registers/Registers.hpp:621:6:bool Registers::ReadRegister(uint16_t, T*, uint16_t*, bool) [with T = unsigned char]	312	static
 ../User/User.cpp:10:1:User::User(Registers*, MasterSubscribers*, Communication*, Services*, Publishers*, HardwareDelay*, Sensors*, LEDS*, Controller*, Servomotors*)	8	static
 ../User/User.cpp:35:6:void User::Init()	0	static
 ../User/User.cpp:42:6:void User::AddOSThreads()	56	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1173:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::at(size_type) [with _Tp = RegisterCallbacks<signed char>; _Alloc = std::allocator<RegisterCallbacks<signed char> >]	16	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterConfiguration&}; _Tp = RegisterConfiguration; _Alloc = std::allocator<RegisterConfiguration>]	40	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterCallbacks<signed char>&}; _Tp = RegisterCallbacks<signed char>; _Alloc = std::allocator<RegisterCallbacks<signed char> >]	40	static
+../User/User.cpp:100:13:void UserTask(void*)	56	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\arm-none-eabi\include\c++\12.3.1\bits\stl_uninitialized.h:655:9:static _ForwardIterator std::__uninitialized_default_n_1<true>::__uninit_default_n(_ForwardIterator, _Size) [with _ForwardIterator = signed char*; _Size = unsigned int]	8	static
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:628:5:void std::vector<_Tp, _Alloc>::_M_default_append(size_type) [with _Tp = signed char; _Alloc = std::allocator<signed char>]	32	static
+../User/User.cpp:81:7:virtual void SubCPGSetpoints::ReceiveINT8(SubscriberInput, const int8_t*)	72	static

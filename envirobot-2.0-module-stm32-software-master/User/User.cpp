@@ -64,6 +64,39 @@ void User::AddOSThreads(void) {
 	osThreadNew(UserTask, &class_instances_argument, &UserTask_attributes);
 }
 
+// ===== User Part ===== //
+#define MODULE_NUMBER			4
+#define REG_CPG_SETPOINTS		0x0500
+#define SUB_CPG_SETPOINT		0x10
+
+// ==
+class SubCPGSetpoints: public Subscriber {
+public:
+	SubCPGSetpoints(Registers* registers_, LEDS* leds_, Controller* controller_) {
+		registers = registers_;
+		leds = leds_;
+		controller = controller_;
+	}
+private:
+	void ReceiveINT8(SubscriberInput information, const int8_t* data) {
+		uint8_t module_id;
+		uint16_t length;
+		registers->ReadRegister<uint8_t>(REG_COM_ADDRESS, &module_id, &length);
+		//check that the module got allocated an ID
+		if(module_id != UNKNOWN) {
+			leds->SetLED(LED_USER2, GPIO_PIN_SET);
+			static int8_t copy;
+			copy = *data;
+			registers->WriteRegister<int8_t>(REG_CPG_SETPOINTS, &copy);
+			controller->MoveTo((float)data[module_id-2]);
+		}
+	}
+	Registers* registers;
+	LEDS* leds;
+	Controller* controller;
+};
+
+
 static void UserTask(void *argument) {
 	// == retrieving class instances == //
 	class_instances* class_instances_pointer = (class_instances*)argument;
@@ -78,10 +111,28 @@ static void UserTask(void *argument) {
 	Controller* controller = class_instances_pointer->controller;
 	Servomotors* servomotors = class_instances_pointer->servomotors;
 
+	// == Registers == //
+	static int8_t reg_cpg_setpoints[MODULE_NUMBER];
+	registers->AddRegister<int8_t>(REG_CPG_SETPOINTS);
+	registers->SetRegisterAsArray(REG_CPG_SETPOINTS, MODULE_NUMBER);
+	registers->AddRegisterPointer<int8_t>(REG_CPG_SETPOINTS, reg_cpg_setpoints);
+
+	// == Subscriber == //
+	static SubCPGSetpoints sub_setpoint(registers, leds, controller);
+	subscribers->AddSubscriber(SUB_CPG_SETPOINT, &sub_setpoint);
+	subscribers->SubscribeToRemoteRegister(SUB_CPG_SETPOINT, REG_CPG_SETPOINTS, SubscriberInterface{.interface=CANFD1 , .address=ALL});
+	subscribers->ActivateSubscriber(SUB_CPG_SETPOINT);
+
+	// == Motor Controller == //
+	controller->SelectInputFilter(POSITION_MODE, OUTPUT_MOTOR_POSITION_FILTER);
+	controller->trajectory_generator.SetTrajectoryMode(TRAJECTORY_STEP);
+
 	for(;;) {
 		leds->SetLED(LED_USER3, GPIO_PIN_SET);
-		osDelay(500);
+		//controller->MoveTo(0.0f);
+		osDelay(5000);
 		leds->SetLED(LED_USER3, GPIO_PIN_RESET);
-		osDelay(500);
+		//controller->MoveTo(20.0f);
+		osDelay(5000);
 	}
 }
