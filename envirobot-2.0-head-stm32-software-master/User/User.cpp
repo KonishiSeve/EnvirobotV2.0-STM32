@@ -210,6 +210,10 @@ static void UserTask(void *argument) {
 	// === CPG Setup === //
 	cpg.init(MODULE_NUMBER, reg_cpg_frequency, reg_cpg_direction, reg_cpg_amplc, reg_cpg_amplc, reg_cpg_nwave, reg_cpg_coupling_strength, reg_cpg_a_r);
 	int8_t setpoints[MODULE_NUMBER];
+
+	uint32_t pic_data;
+	uint16_t pic_length;
+
 	for(;;) {
 		if(reg_cpg_enabled) {
 			leds->SetLED(LED_USER3, GPIO_PIN_SET);
