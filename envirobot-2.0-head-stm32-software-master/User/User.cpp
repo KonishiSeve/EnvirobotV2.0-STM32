@@ -61,11 +61,11 @@ void User::AddOSThreads(void) {
 // == Register map == //
 //registers for the radio remote support
 //The Radio PIC needs to map these to 0x00 - 0x04 (radio protocol addresses)
-#define REG_REMOTE_MODE			0x0400
-#define REG_REMOTE_ELT_NB		0x0401
-#define REG_REMOTE_SPEED		0x0402
-#define REG_REMOTE_FREQUENCY	0x0403
-#define REG_REMOTE_DIRECTION	0x0409
+#define REG_REMOTE_MODE			0x0600
+#define REG_REMOTE_ELT_NB		0x0601
+#define REG_REMOTE_SPEED		0x0602
+#define REG_REMOTE_FREQUENCY	0x0603
+#define REG_REMOTE_DIRECTION	0x0609
 
 //registers for meta parameters of the CPG
 #define REG_CPG_SETPOINTS		0x0500
@@ -84,7 +84,7 @@ void User::AddOSThreads(void) {
 
 //miscellaneous
 //set to 1 when any module detects a water leak
-#define REG_ALERT_WATER			0x0600
+#define REG_ALERT_WATER			0x0700
 
 CPG cpg;
 
@@ -101,7 +101,6 @@ static void UserTask(void *argument) {
 	LEDS* leds = class_instances_pointer->leds;
 
 	// === Radio Remote Registers Setup === //
-	bool debug;
 	//the remote needs to read 7 from the 0x00 (side radio address) mode register to start correctly
 	static uint8_t reg_remote_mode = 7;
 	registers->AddRegister<uint8_t>(REG_REMOTE_MODE);
@@ -117,16 +116,13 @@ static void UserTask(void *argument) {
 	registers->SetRegisterPermissions(REG_REMOTE_MODE, READ_PERMISSION);
 
 	//the remote tries to write a speed variable to it (controlled by up-down axis of the joystick), we use it to compute a frequency for the CPG
-	static uint8_t reg_remote_speed = 0;
 	registers->AddRegister<uint8_t>(REG_REMOTE_SPEED);
 	registers->SetRegisterAsSingle(REG_REMOTE_SPEED);
-	//registers->AddRegisterPointer<uint8_t>(REG_REMOTE_SPEED, &reg_remote_speed);
-	registers->SetRegisterPermissions(REG_REMOTE_FREQUENCY, WRITE_PERMISSION);
+	registers->SetRegisterPermissions(REG_REMOTE_SPEED, WRITE_PERMISSION);
 	registers->AddWriteCallback<uint8_t>(REG_REMOTE_SPEED, argument,
 		[](void* context , uint16_t register_ID , uint8_t* input , uint16_t length) -> bool {
 		class_instances* class_instances_pointer = (class_instances*)context;
 		Registers* registers = class_instances_pointer->registers;
-
 		static float temp;
 		temp = (((((float)(*input))/255.0)*2.0)-1.0)/0.75;	//invert the scaling done on the remote and get a value between -1 and 1 (more around -1 to 0.7 because of the bad stick calibration)
 		//temp = (temp + 1)/2;	//scaling to have values from 0 to 1 for the CPG frequency
@@ -136,47 +132,38 @@ static void UserTask(void *argument) {
 
 	//the remote write a frequency to this module, only 3 values exist (2 high values for swimming, and 1 low for walking) we switch from one to another by pressing the enter button on the remote
 	//we use it turn the CPG on and off
-	static uint8_t reg_remote_frequency = 0;
 	registers->AddRegister<uint8_t>(REG_REMOTE_FREQUENCY);
 	registers->SetRegisterAsSingle(REG_REMOTE_FREQUENCY);
-	registers->SetRegisterPermissions(REG_REMOTE_FREQUENCY, WRITE_PERMISSION);
 	registers->AddWriteCallback<uint8_t>(REG_REMOTE_FREQUENCY, argument,
 		[](void* context , uint16_t register_ID , uint8_t* input , uint16_t length) -> bool {
 		class_instances* class_instances_pointer = (class_instances*)context;
 		Registers* registers = class_instances_pointer->registers;
-
 		static uint8_t cpg_enabled = 0;
 		if(*input > 0 && cpg_enabled==0) {
 			cpg_enabled = 1;
 			registers->WriteRegister<uint8_t>(REG_CPG_ENABLED, &cpg_enabled);
 		}
-		else if(cpg_enabled==1){
+		else if(*input == 0 && cpg_enabled==1) {
 			cpg_enabled = 0;
 			registers->WriteRegister<uint8_t>(REG_CPG_ENABLED, &cpg_enabled);
 		}
 		return true;
 	});
 
-	static uint8_t reg_remote_direction = 0;
+	//static uint8_t reg_remote_direction = 0;
 	registers->AddRegister<uint8_t>(REG_REMOTE_DIRECTION);
 	registers->SetRegisterAsSingle(REG_REMOTE_DIRECTION);
 	//registers->AddRegisterPointer<uint8_t>(REG_REMOTE_DIRECTION, &reg_remote_direction);
 	registers->SetRegisterPermissions(REG_REMOTE_DIRECTION, WRITE_PERMISSION);
-	debug = registers->AddWriteCallback<uint8_t>(REG_REMOTE_DIRECTION, argument,
+	registers->AddWriteCallback<uint8_t>(REG_REMOTE_DIRECTION, argument,
 		[](void* context , uint16_t register_ID , uint8_t* input , uint16_t length) -> bool {
 		class_instances* class_instances_pointer = (class_instances*)context;
 		Registers* registers = class_instances_pointer->registers;
-		LEDS* leds = class_instances_pointer->leds;
-
-		leds->SetLED(LED_USER1, GPIO_PIN_SET);
 		static float temp;
 		temp = ((((float)(*input))/255.0)*2.0)-1;	//get back the raw stick value
 		registers->WriteRegister<float>(REG_CPG_DIRECTION, &temp);
 		return true;
 	});
-	if(!debug) {
-		leds->SetLED(LED_USER2, GPIO_PIN_SET);
-	}
 
 	// === CPG Registers Setup === //
 	//stores the output of the CPG (joint angles in degree), published on CANFD1

@@ -1,16 +1,16 @@
-../User/User.cpp:219:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	0	static
-../User/User.cpp:201:3:static bool UserTask(void*)::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	8	static
-../User/User.cpp:213:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
-../User/User.cpp:231:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
-../User/User.cpp:248:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
-../User/User.cpp:260:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
-../User/User.cpp:272:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
-../User/User.cpp:284:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
-../User/User.cpp:296:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
+../User/User.cpp:206:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	0	static
+../User/User.cpp:188:3:static bool UserTask(void*)::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	8	static
+../User/User.cpp:200:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
+../User/User.cpp:218:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
+../User/User.cpp:235:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
+../User/User.cpp:247:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
+../User/User.cpp:259:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
+../User/User.cpp:271:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
+../User/User.cpp:283:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	8	static
 ../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = signed char]	8	static
 ../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = float]	8	static
 ../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = unsigned char]	8	static
-../User/User.cpp:236:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	0	static
+../User/User.cpp:223:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	0	static
 ../User/User.cpp:11:1:User::User(Registers*, MasterSubscribers*, Communication*, Services*, Publishers*, HardwareDelay*, Sensors*, LEDS*)	8	static
 ../User/User.cpp:29:6:void User::Init()	0	static
 ../User/User.cpp:34:6:void User::AddOSThreads()	56	static
@@ -35,13 +35,13 @@ C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.external
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\arm-none-eabi\include\c++\12.3.1\bits\stl_uninitialized.h:655:9:static _ForwardIterator std::__uninitialized_default_n_1<true>::__uninit_default_n(_ForwardIterator, _Size) [with _ForwardIterator = float*; _Size = unsigned int]	8	static
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:628:5:void std::vector<_Tp, _Alloc>::_M_default_append(size_type) [with _Tp = float; _Alloc = std::allocator<float>]	32	static
 ../Src/Registers/Registers.hpp:497:6:bool Registers::WriteRegister(uint16_t, T*, uint16_t, bool) [with T = float]	56	static
-../User/User.cpp:126:3:static bool UserTask(void*)::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	16	static
-../User/User.cpp:166:3:static bool UserTask(void*)::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	24	static
+../User/User.cpp:159:3:static bool UserTask(void*)::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	16	static
+../User/User.cpp:123:3:static bool UserTask(void*)::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	16	static
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\arm-none-eabi\include\c++\12.3.1\bits\stl_uninitialized.h:655:9:static _ForwardIterator std::__uninitialized_default_n_1<true>::__uninit_default_n(_ForwardIterator, _Size) [with _ForwardIterator = unsigned char*; _Size = unsigned int]	8	static
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:628:5:void std::vector<_Tp, _Alloc>::_M_default_append(size_type) [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	32	static
 ../Src/Registers/Registers.hpp:497:6:bool Registers::WriteRegister(uint16_t, T*, uint16_t, bool) [with T = unsigned char]	56	static
-../User/User.cpp:144:3:static bool UserTask(void*)::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	16	static
+../User/User.cpp:138:3:static bool UserTask(void*)::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	16	static
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\arm-none-eabi\include\c++\12.3.1\bits\stl_uninitialized.h:655:9:static _ForwardIterator std::__uninitialized_default_n_1<true>::__uninit_default_n(_ForwardIterator, _Size) [with _ForwardIterator = signed char*; _Size = unsigned int]	8	static
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:628:5:void std::vector<_Tp, _Alloc>::_M_default_append(size_type) [with _Tp = signed char; _Alloc = std::allocator<signed char>]	32	static
 ../User/User.cpp:91:13:void UserTask(void*)	72	static
-../User/User.cpp:337:1:cpp)	8	static
+../User/User.cpp:324:1:cpp)	8	static
