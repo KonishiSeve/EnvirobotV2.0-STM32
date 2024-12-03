@@ -288,6 +288,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     if(GPIO_Pin == WATER_DETECTION_Pin) // Trigger fault LED and set RGB led to blue when water detected
     {
     	WaterDetectedLEDS(&leds);
+    	static uint8_t temp = 1;
+    	leds.SetLED(LED_USER3, GPIO_PIN_SET);
+    	registers.WriteRegister<uint8_t>(0x0700, &temp, 1);
     }
 }
 

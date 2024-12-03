@@ -8,5 +8,5 @@
 //////////////////
 /// Parameters ///
 //////////////////
-//#define AUTO_ID_ALLOCATION
+#define AUTO_ID_ALLOCATION
 #define AUTO_ID_DELAY			2000 // ms

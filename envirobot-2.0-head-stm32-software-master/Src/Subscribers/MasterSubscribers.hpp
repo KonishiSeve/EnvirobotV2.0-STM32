@@ -46,11 +46,11 @@ public:
 	bool ActivateSubscriber(uint8_t ID);
 	bool DeactivateSubscriber(uint8_t ID);
 
-	bool SubscribeToRemoteRegister(uint8_t ID, uint8_t register_ID);
+	bool SubscribeToRemoteRegister(uint8_t ID, uint16_t register_ID);
 	bool SubscribeToRemoteRegister(uint8_t ID, Register remote_register);
-	bool SubscribeToRemoteRegister(uint8_t ID, uint8_t register_ID, SubscriberInterface interface);
+	bool SubscribeToRemoteRegister(uint8_t ID, uint16_t register_ID, SubscriberInterface interface);
 	bool SubscribeToRemoteRegister(uint8_t ID, Register remote_register, SubscriberInterface interface);
-	bool UnsubscribeFromRemoteRegister(uint8_t ID, uint8_t remote_register_ID);
+	bool UnsubscribeFromRemoteRegister(uint8_t ID, uint16_t remote_register_ID);
 	bool UnsubscribeFromAllRemoteRegisters(uint8_t ID);
 
 	bool AddFilter(uint8_t ID, uint8_t address);

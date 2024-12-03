@@ -1,31 +1,65 @@
-../User/User.cpp:107:3:static bool UserTask(void*)::<lambda(void*, uint16_t, int8_t*, uint16_t)>::_FUN(void*, uint16_t, int8_t*, uint16_t)	1
-../User/User.cpp:119:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	1
-../User/User.cpp:131:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	1
-../User/User.cpp:143:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	1
-../User/User.cpp:155:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	1
-../User/User.cpp:167:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	1
-../User/User.cpp:179:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	1
-../User/User.cpp:191:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	1
+../Src/Subscribers/Core/Subscriber.hpp:56:15:virtual void Subscriber::ReceiveUINT32(SubscriberInput, const uint32_t*)	1
+../Src/Subscribers/Core/Subscriber.hpp:70:15:virtual void Subscriber::ReceiveINT8(SubscriberInput, const int8_t*)	1
+../Src/Subscribers/Core/Subscriber.hpp:98:15:virtual void Subscriber::ReceiveFLOAT(SubscriberInput, const float*)	1
+../User/User.cpp:183:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	1
+../User/User.cpp:99:7:virtual void SubAlertWater::ReceiveUINT8(SubscriberInput, const uint8_t*)	1
+../User/User.cpp:165:3:static bool UserTask(void*)::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	1
+../User/User.cpp:177:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	1
+../User/User.cpp:195:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	1
+../User/User.cpp:213:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	1
+../User/User.cpp:231:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	1
+../User/User.cpp:249:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	1
+../User/User.cpp:267:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	1
+../User/User.cpp:285:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float*, uint16_t)>::_FUN(void*, uint16_t, float*, uint16_t)	1
+../User/User.cpp:273:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	1
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = long unsigned int]	10
 ../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = float]	10
+../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = unsigned char]	10
 ../Src/Registers/Registers.hpp:221:9:uint8_t Registers::GetTypeID(bool*) [with T = signed char]	10
+../User/User.cpp:291:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	1
+../User/User.cpp:201:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	1
+../User/User.cpp:219:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	1
+../User/User.cpp:237:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	1
+../User/User.cpp:255:3:static bool UserTask(void*)::<lambda(void*, uint16_t, float**, uint16_t*)>::_FUN(void*, uint16_t, float**, uint16_t*)	1
 ../User/User.cpp:11:1:User::User(Registers*, MasterSubscribers*, Communication*, Services*, Publishers*, HardwareDelay*, Sensors*, LEDS*)	1
 ../User/User.cpp:29:6:void User::Init()	1
 ../User/User.cpp:34:6:void User::AddOSThreads()	3
 ../User/CPG.hpp:7:7:CPG::CPG()	1
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1173:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::at(size_type) [with _Tp = RegisterCallbacks<signed char>; _Alloc = std::allocator<RegisterCallbacks<signed char> >]	1
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1173:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::at(size_type) [with _Tp = RegisterCallbacks<unsigned char>; _Alloc = std::allocator<RegisterCallbacks<unsigned char> >]	1
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1173:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::at(size_type) [with _Tp = RegisterCallbacks<float>; _Alloc = std::allocator<RegisterCallbacks<float> >]	1
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1173:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::at(size_type) [with _Tp = RegisterCallbacks<long unsigned int>; _Alloc = std::allocator<RegisterCallbacks<long unsigned int> >]	1
+../Src/Registers/Registers.hpp:621:6:bool Registers::ReadRegister(uint16_t, T*, uint16_t*, bool) [with T = long unsigned int]	25
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterConfiguration&}; _Tp = RegisterConfiguration; _Alloc = std::allocator<RegisterConfiguration>]	6
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1276:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = RegisterConfiguration; _Alloc = std::allocator<RegisterConfiguration>]	2
+../Src/Registers/Registers.hpp:176:6:bool Registers::AddRegister(uint16_t) [with T = long unsigned int]	3
 ../Src/Registers/Registers.hpp:176:6:bool Registers::AddRegister(uint16_t) [with T = float]	3
+../Src/Registers/Registers.hpp:176:6:bool Registers::AddRegister(uint16_t) [with T = unsigned char]	3
 ../Src/Registers/Registers.hpp:176:6:bool Registers::AddRegister(uint16_t) [with T = signed char]	3
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterCallbacks<signed char>&}; _Tp = RegisterCallbacks<signed char>; _Alloc = std::allocator<RegisterCallbacks<signed char> >]	6
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1276:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = RegisterCallbacks<signed char>; _Alloc = std::allocator<RegisterCallbacks<signed char> >]	2
-../Src/Registers/Registers.hpp:269:6:bool Registers::AddRegisterPointer(uint16_t, T*) [with T = signed char]	7
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterCallbacks<unsigned char>&}; _Tp = RegisterCallbacks<unsigned char>; _Alloc = std::allocator<RegisterCallbacks<unsigned char> >]	6
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1276:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = RegisterCallbacks<unsigned char>; _Alloc = std::allocator<RegisterCallbacks<unsigned char> >]	2
+../Src/Registers/Registers.hpp:348:6:bool Registers::AddWriteCallback(uint16_t, void*, bool (*)(void*, uint16_t, T*, uint16_t)) [with T = unsigned char]	7
+../Src/Registers/Registers.hpp:269:6:bool Registers::AddRegisterPointer(uint16_t, T*) [with T = unsigned char]	7
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterCallbacks<float>&}; _Tp = RegisterCallbacks<float>; _Alloc = std::allocator<RegisterCallbacks<float> >]	6
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/stl_vector.h:1276:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = RegisterCallbacks<float>; _Alloc = std::allocator<RegisterCallbacks<float> >]	2
+../Src/Registers/Registers.hpp:416:6:bool Registers::AddReadCallback(uint16_t, void*, bool (*)(void*, uint16_t, T**, uint16_t*)) [with T = float]	7
 ../Src/Registers/Registers.hpp:348:6:bool Registers::AddWriteCallback(uint16_t, void*, bool (*)(void*, uint16_t, T*, uint16_t)) [with T = float]	7
-../Src/Registers/Registers.hpp:269:6:bool Registers::AddRegisterPointer(uint16_t, T*) [with T = float]	7
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:439:7:) [with _Args = {const RegisterCallbacks<long unsigned int>&}; _Tp = RegisterCallbacks<long unsigned int>; _Alloc = std::allocator<RegisterCallbacks<long unsigned int> >]	6
+../Src/Registers/Registers.hpp:269:6:bool Registers::AddRegisterPointer(uint16_t, T*) [with T = long unsigned int]	8
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\arm-none-eabi\include\c++\12.3.1\bits\stl_uninitialized.h:655:9:static _ForwardIterator std::__uninitialized_default_n_1<true>::__uninit_default_n(_ForwardIterator, _Size) [with _ForwardIterator = float*; _Size = unsigned int]	3
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:628:5:void std::vector<_Tp, _Alloc>::_M_default_append(size_type) [with _Tp = float; _Alloc = std::allocator<float>]	7
+../Src/Registers/Registers.hpp:497:6:bool Registers::WriteRegister(uint16_t, T*, uint16_t, bool) [with T = float]	22
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\arm-none-eabi\include\c++\12.3.1\bits\stl_uninitialized.h:655:9:static _ForwardIterator std::__uninitialized_default_n_1<true>::__uninit_default_n(_ForwardIterator, _Size) [with _ForwardIterator = long unsigned int*; _Size = unsigned int]	3
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:628:5:void std::vector<_Tp, _Alloc>::_M_default_append(size_type) [with _Tp = long unsigned int; _Alloc = std::allocator<long unsigned int>]	7
+../Src/Registers/Registers.hpp:497:6:bool Registers::WriteRegister(uint16_t, T*, uint16_t, bool) [with T = long unsigned int]	22
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\arm-none-eabi\include\c++\12.3.1\bits\stl_uninitialized.h:655:9:static _ForwardIterator std::__uninitialized_default_n_1<true>::__uninit_default_n(_ForwardIterator, _Size) [with _ForwardIterator = unsigned char*; _Size = unsigned int]	3
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:628:5:void std::vector<_Tp, _Alloc>::_M_default_append(size_type) [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	5
+../Src/Registers/Registers.hpp:497:6:bool Registers::WriteRegister(uint16_t, T*, uint16_t, bool) [with T = unsigned char]	22
+../User/User.cpp:363:3:static bool UserTask(void*)::<lambda(void*, uint16_t, int8_t*, uint16_t)>::_FUN(void*, uint16_t, int8_t*, uint16_t)	1
+../User/User.cpp:314:3:static bool UserTask(void*)::<lambda(void*, uint16_t, uint8_t*, uint16_t)>::_FUN(void*, uint16_t, uint8_t*, uint16_t)	1
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\arm-none-eabi\include\c++\12.3.1\bits\stl_uninitialized.h:655:9:static _ForwardIterator std::__uninitialized_default_n_1<true>::__uninit_default_n(_ForwardIterator, _Size) [with _ForwardIterator = signed char*; _Size = unsigned int]	3
 C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/bits/vector.tcc:628:5:void std::vector<_Tp, _Alloc>::_M_default_append(size_type) [with _Tp = signed char; _Alloc = std::allocator<signed char>]	5
-../User/User.cpp:75:13:void UserTask(void*)	28
-../User/User.cpp:231:1:cpp)	1
+../User/User.cpp:133:13:void UserTask(void*)	38
+../User/User.cpp:468:1:cpp)	1
