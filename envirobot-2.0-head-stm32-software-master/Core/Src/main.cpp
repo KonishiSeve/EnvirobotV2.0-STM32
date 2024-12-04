@@ -1668,7 +1668,7 @@ void TrajectoryTask(void *argument)
 #ifdef AUTO_ID_ALLOCATION
   osDelay(AUTO_ID_DELAY); // leave some time to modules to configure themselves
 
-  uint8_t base_address = STM32_HEAD + 1;
+  uint8_t base_address = STM32_HEAD;
   registers.WriteRegister<uint8_t>(REG_COM_ID_PROPAGATION, &base_address);
 
   bool success = true;

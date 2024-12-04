@@ -55,8 +55,6 @@ void User::AddOSThreads(void) {
 }
 
 #define MODULE_NUMBER	4
-#define PUB_CPG			0x01
-#define SUB_ALERT		0x10
 
 // == Register map == //
 //registers for meta parameters of the CPG
@@ -85,26 +83,39 @@ void User::AddOSThreads(void) {
 //miscellaneous
 //set to 1 when any module detects a water leak
 #define REG_ALERT_WATER			0x0700
-#define REG_ALERT_RADIO			0x0701
+#define REG_ALERT_WATER_RADIO	0x0701
 
-CPG cpg;
+// == Publisher/Subscriber map == //
+#define PUB_CPG_SETPOINTS	0x00
+#define PUB_REMOTE_MODE		0x01
+#define SUB_GENERAL			0x00
 
-class SubAlertWater: public Subscriber {
+class SubGeneral: public Subscriber {
 public:
-	SubAlertWater(Registers* registers_, LEDS* leds_) {
+	SubGeneral(Registers* registers_, LEDS* leds_) {
 		registers = registers_;
 		leds = leds_;
 	}
 private:
 	void ReceiveUINT8(SubscriberInput information, const uint8_t* data) {
-		//check that the module got allocated an ID
-		leds->SetLED(LED_USER3, GPIO_PIN_SET);
+		if(information.register_.address == REG_ALERT_WATER) {
+			uint8_t already_alert = 0;
+			if(*data == 1 && already_alert == 0) {
+				already_alert = 1;
+				leds->SetLED(LED_USER3, GPIO_PIN_SET);
+				uint32_t value = (0x65<<24) | (0x43<<16) | (0x21<<8) | (information.interface.address&0xFF);
+				registers->WriteRegister<uint32_t>(REG_ALERT_WATER_RADIO, &value, 1);
+			}
+		}
 	}
 	Registers* registers;
 	LEDS* leds;
 };
 
-/*
+// CPG class instance
+CPG cpg;
+
+/* [DEL]
 class SubAlertWater: public Subscriber {
 public:
 	SubAlertWater(Registers* registers_, LEDS* leds_) {
@@ -320,7 +331,7 @@ static void UserTask(void *argument) {
 		//temp = (temp + 1)/2;	//scaling to have values from 0 to 1 for the CPG frequency
 		registers->WriteRegister<float>(REG_CPG_FREQUENCY, &temp);
 		//save the timestamp
-		uint32_t timestamp = 0;
+		static uint32_t timestamp = 0;
 		uint16_t temp_length;
 		registers->ReadRegister<uint32_t>(REG_TIMEBASE, &timestamp, &temp_length);
 		registers->WriteRegister<uint32_t>(REG_REMOTE_LAST_RX, &timestamp, temp_length);
@@ -391,36 +402,42 @@ static void UserTask(void *argument) {
 	registers->AddRegisterPointer<uint8_t>(REG_ALERT_WATER, &reg_alert_water);
 
 	static uint32_t reg_alert_radio = (0x65)<<24 | (0x43)<<16 | (0x21)<<8;
-	registers->AddRegister<uint32_t>(REG_ALERT_RADIO);
-	registers->SetRegisterAsSingle(REG_ALERT_RADIO);
-	registers->AddRegisterPointer<uint32_t>(REG_ALERT_RADIO, &reg_alert_radio);
+	registers->AddRegister<uint32_t>(REG_ALERT_WATER_RADIO);
+	registers->SetRegisterAsSingle(REG_ALERT_WATER_RADIO);
+	registers->AddRegisterPointer<uint32_t>(REG_ALERT_WATER_RADIO, &reg_alert_radio);
 
 	// === Publisher Setup === //
-	publishers->AddPublisher(PUB_CPG);
-	publishers->SetPublisherPrescaler(PUB_CPG, 1);
-	publishers->LinkToInterface(PUB_CPG, CANFD1);
-	publishers->SetPublishAddress(PUB_CPG, CANFD1, ALL);
+	//setpoints publisher
+	publishers->AddPublisher(PUB_CPG_SETPOINTS);
+	publishers->SetPublisherPrescaler(PUB_CPG_SETPOINTS, 1); //publish at ~100Hz
+	publishers->LinkToInterface(PUB_CPG_SETPOINTS, CANFD1);
+	publishers->SetPublishAddress(PUB_CPG_SETPOINTS, CANFD1, ALL);
 
-	//publish the CPG setpoints
-	publishers->AddTopic(PUB_CPG, REG_CPG_SETPOINTS);
-	publishers->ActivateTopic(PUB_CPG, REG_CPG_SETPOINTS);
-
-	//publish the timebase of the head for logging
-	publishers->AddTopic(PUB_CPG, REG_TIMEBASE);
-	publishers->ActivateTopic(PUB_CPG, REG_TIMEBASE);
+	publishers->AddTopic(PUB_CPG_SETPOINTS, REG_CPG_SETPOINTS);
+	publishers->ActivateTopic(PUB_CPG_SETPOINTS, REG_CPG_SETPOINTS);
+	publishers->AddTopic(PUB_CPG_SETPOINTS, REG_TIMEBASE);
+	publishers->ActivateTopic(PUB_CPG_SETPOINTS, REG_TIMEBASE);
+	publishers->ActivatePublisher(PUB_CPG_SETPOINTS);
 
 	//publish the state of the robot (if the remote started it or not)
-	publishers->AddTopic(PUB_CPG, REG_REMOTE_MODE);
-	publishers->ActivateTopic(PUB_CPG, REG_REMOTE_MODE);
+	publishers->AddPublisher(PUB_REMOTE_MODE);
+	publishers->SetPublisherPrescaler(PUB_REMOTE_MODE, 10); //publish at ~10Hz
+	publishers->LinkToInterface(PUB_REMOTE_MODE, CANFD1);
+	publishers->SetPublishAddress(PUB_REMOTE_MODE, CANFD1, ALL);
 
-	publishers->ActivatePublisher(PUB_CPG);
+	publishers->AddTopic(PUB_REMOTE_MODE, REG_REMOTE_MODE);
+	publishers->ActivateTopic(PUB_REMOTE_MODE, REG_REMOTE_MODE);
+	publishers->AddTopic(PUB_REMOTE_MODE, REG_TIMEBASE);
+	publishers->ActivateTopic(PUB_REMOTE_MODE, REG_TIMEBASE);
+	publishers->ActivatePublisher(PUB_REMOTE_MODE);
+
 
 	// === Subscribers Setup === //
-	static SubAlertWater sub_alert_water(registers, leds);
-	subscribers->AddSubscriber(SUB_ALERT, &sub_alert_water);
-	subscribers->SubscribeToRemoteRegister(SUB_ALERT, Register{.address=0x0700, .type=UINT8_TYPE, .isArray=false}, SubscriberInterface{.interface=CANFD1 , .address=ALL});
-	//subscribers->SubscribeToRemoteRegister(SUB_ALERT, REG_ALERT_WATER, SubscriberInterface{.interface=CANFD1 , .address=ALL});
-	subscribers->ActivateSubscriber(SUB_ALERT);
+	static SubGeneral sub_general(registers, leds);
+	subscribers->AddSubscriber(SUB_GENERAL, &sub_general);
+	subscribers->SubscribeToRemoteRegister(SUB_GENERAL, REG_ALERT_WATER, SubscriberInterface{.interface=CANFD1 , .address=ALL});
+	//[DEL] subscribers->SubscribeToRemoteRegister(SUB_ALERT, REG_ALERT_WATER, SubscriberInterface{.interface=CANFD1 , .address=ALL});
+	subscribers->ActivateSubscriber(SUB_GENERAL);
 
 	// === CPG Setup === //
 	cpg.init(MODULE_NUMBER, reg_cpg_frequency, reg_cpg_direction, reg_cpg_amplc, reg_cpg_amplc, reg_cpg_nwave, reg_cpg_coupling_strength, reg_cpg_a_r);
@@ -448,7 +465,7 @@ static void UserTask(void *argument) {
 			uint16_t length;
 			registers->ReadRegister(REG_REMOTE_LAST_RX, &remote_last_rx, &length);
 			registers->ReadRegister(REG_TIMEBASE, &time_now, &length);
-			if(time_now-remote_last_rx > 100) {	//200ms timeout
+			if(time_now-remote_last_rx > 200) {	//200ms timeout
 				uint8_t temp = 0;
 				registers->WriteRegister<uint8_t>(REG_CPG_ENABLED, &temp, 1);	//disable CPG
 			}
@@ -458,11 +475,12 @@ static void UserTask(void *argument) {
 		}
 
 		//publish the setpoints and remote mode registers
-		publishers->SpinPublisher(PUB_CPG);
-		//osDelay(10);
-		leds->SetLED(LED_USER2, GPIO_PIN_SET);
-		osDelay(200);
-		leds->SetLED(LED_USER2, GPIO_PIN_RESET);
-		osDelay(200);
+		publishers->SpinPublisher(PUB_CPG_SETPOINTS);
+		publishers->SpinPublisher(PUB_REMOTE_MODE);
+		osDelay(10);
+		//leds->SetLED(LED_USER2, GPIO_PIN_SET);
+		//osDelay(200);
+		//leds->SetLED(LED_USER2, GPIO_PIN_RESET);
+		//osDelay(200);
 	}
 }
