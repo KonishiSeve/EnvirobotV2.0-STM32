@@ -179,7 +179,7 @@ static void UserTask(void *argument) {
 	});
 
 	//CPG frequency register
-	float reg_cpg_frequency = 0;
+	float reg_cpg_frequency = 1;
 	registers->AddRegister<float>(REG_CPG_FREQUENCY);
 	registers->SetRegisterAsSingle(REG_CPG_FREQUENCY);
 	//[DEL] registers->AddRegisterPointer<float>(REG_CPG_FREQUENCY, &reg_cpg_frequency);
@@ -215,7 +215,7 @@ static void UserTask(void *argument) {
 	});
 
 	//CPG amplc register
-	static float reg_cpg_amplc = 0;
+	static float reg_cpg_amplc = 0.2;
 	registers->AddRegister<float>(REG_CPG_AMPLC);
 	registers->SetRegisterAsSingle(REG_CPG_AMPLC);
 	//[DEL] registers->AddRegisterPointer<float>(REG_CPG_AMPLC, &reg_cpg_amplc);
@@ -233,7 +233,7 @@ static void UserTask(void *argument) {
 	});
 
 	//CPG amplh register
-	static float reg_cpg_amplh = 0;
+	static float reg_cpg_amplh = 0.2;
 	registers->AddRegister<float>(REG_CPG_AMPLH);
 	registers->SetRegisterAsSingle(REG_CPG_AMPLH);
 	//[DEL] registers->AddRegisterPointer<float>(REG_CPG_AMPLH, &reg_cpg_amplh);
@@ -335,7 +335,7 @@ static void UserTask(void *argument) {
 		uint16_t temp_length;
 		registers->ReadRegister<uint32_t>(REG_TIMEBASE, &timestamp, &temp_length);
 		registers->WriteRegister<uint32_t>(REG_REMOTE_LAST_RX, &timestamp, temp_length);
-		uint8_t var = 1;
+		static uint8_t var = 1;
 		registers->WriteRegister<uint8_t>(REG_CPG_ENABLED, &var, 1);	//enable CPG
 		return true;
 	});
@@ -383,7 +383,7 @@ static void UserTask(void *argument) {
 		uint16_t temp_length;
 		registers->ReadRegister<uint32_t>(REG_TIMEBASE, &timestamp, &temp_length);
 		registers->WriteRegister<uint32_t>(REG_REMOTE_LAST_RX, &timestamp, temp_length);
-		uint8_t var = 1;
+		static uint8_t var = 1;
 		registers->WriteRegister<uint8_t>(REG_CPG_ENABLED, &var, 1);	//enable CPG
 		return true;
 	});
@@ -415,8 +415,8 @@ static void UserTask(void *argument) {
 
 	publishers->AddTopic(PUB_CPG_SETPOINTS, REG_CPG_SETPOINTS);
 	publishers->ActivateTopic(PUB_CPG_SETPOINTS, REG_CPG_SETPOINTS);
-	publishers->AddTopic(PUB_CPG_SETPOINTS, REG_TIMEBASE);
-	publishers->ActivateTopic(PUB_CPG_SETPOINTS, REG_TIMEBASE);
+	//publishers->AddTopic(PUB_CPG_SETPOINTS, REG_TIMEBASE);
+	//publishers->ActivateTopic(PUB_CPG_SETPOINTS, REG_TIMEBASE);
 	publishers->ActivatePublisher(PUB_CPG_SETPOINTS);
 
 	//publish the state of the robot (if the remote started it or not)
@@ -427,8 +427,8 @@ static void UserTask(void *argument) {
 
 	publishers->AddTopic(PUB_REMOTE_MODE, REG_REMOTE_MODE);
 	publishers->ActivateTopic(PUB_REMOTE_MODE, REG_REMOTE_MODE);
-	publishers->AddTopic(PUB_REMOTE_MODE, REG_TIMEBASE);
-	publishers->ActivateTopic(PUB_REMOTE_MODE, REG_TIMEBASE);
+	//publishers->AddTopic(PUB_REMOTE_MODE, REG_TIMEBASE);
+	//publishers->ActivateTopic(PUB_REMOTE_MODE, REG_TIMEBASE);
 	publishers->ActivatePublisher(PUB_REMOTE_MODE);
 
 
@@ -443,13 +443,18 @@ static void UserTask(void *argument) {
 	cpg.init(MODULE_NUMBER, reg_cpg_frequency, reg_cpg_direction, reg_cpg_amplc, reg_cpg_amplc, reg_cpg_nwave, reg_cpg_coupling_strength, reg_cpg_a_r);
 	int8_t setpoints[MODULE_NUMBER];
 
+	uint8_t last_remote_mode = 0;
 	for(;;) {
 		//robot is started from the remote
-		if(reg_remote_mode == 1) {
+		if(reg_remote_mode == 1 && last_remote_mode == 0) {
 			leds->SetLED(LED_USER1, GPIO_PIN_SET);
+			last_remote_mode = 1;
+			cpg.reset();
 		}
-		else {
+		else if(reg_remote_mode == 0 && last_remote_mode == 1) {
 			leds->SetLED(LED_USER1, GPIO_PIN_RESET);
+			last_remote_mode = 0;
+			reg_cpg_enabled = 0;
 		}
 
 		//compute CPG steps if enabled
@@ -460,14 +465,14 @@ static void UserTask(void *argument) {
 				cpg.step(setpoints, 1);
 			}
 			registers->WriteRegister<int8_t>(REG_CPG_SETPOINTS, setpoints, MODULE_NUMBER);
+			publishers->SpinPublisher(PUB_CPG_SETPOINTS);
 			uint32_t remote_last_rx;
 			uint32_t time_now;
 			uint16_t length;
 			registers->ReadRegister(REG_REMOTE_LAST_RX, &remote_last_rx, &length);
 			registers->ReadRegister(REG_TIMEBASE, &time_now, &length);
-			if(time_now-remote_last_rx > 200) {	//200ms timeout
-				uint8_t temp = 0;
-				registers->WriteRegister<uint8_t>(REG_CPG_ENABLED, &temp, 1);	//disable CPG
+			if(time_now-remote_last_rx > 500) {	//500ms timeout
+				//reg_cpg_enabled = 0;
 			}
 		}
 		else {
@@ -475,12 +480,7 @@ static void UserTask(void *argument) {
 		}
 
 		//publish the setpoints and remote mode registers
-		publishers->SpinPublisher(PUB_CPG_SETPOINTS);
 		publishers->SpinPublisher(PUB_REMOTE_MODE);
 		osDelay(10);
-		//leds->SetLED(LED_USER2, GPIO_PIN_SET);
-		//osDelay(200);
-		//leds->SetLED(LED_USER2, GPIO_PIN_RESET);
-		//osDelay(200);
 	}
 }
