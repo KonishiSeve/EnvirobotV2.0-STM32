@@ -56,4 +56,14 @@ typedef struct class_instances {
 	LEDS* leds;
 } class_instances;
 
+typedef struct reg_cb_context {
+	Publishers* publishers;
+	void* pointer;
+} reg_cb_context;
+
+typedef struct test_context {
+	Publishers* _publishers;
+	void* pointer;
+} test_context;
+
 static void UserTask(void *argument);
