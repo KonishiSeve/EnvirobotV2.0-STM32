@@ -17475,7 +17475,7 @@ LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
 LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libm.a
 LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+dp/hard\libgcc.a
 
-.debug_info     0x00000000   0x3458d8
+.debug_info     0x00000000   0x3458d7
  .debug_info    0x00000000    0x5a597 ./Core/Src/main.o
  .debug_info    0x0005a597     0x3b30 ./Core/Src/stm32h7xx_hal_msp.o
  .debug_info    0x0005e0c7     0x114f ./Core/Src/stm32h7xx_hal_timebase_tim.o
@@ -17525,7 +17525,7 @@ LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_info    0x002c7dfb     0x18ec ./Src/Subscribers/Core/Subscriber.o
  .debug_info    0x002c96e7    0x31318 ./Src/Subscribers/MasterSubscribers.o
  .debug_info    0x002fa9ff     0x23e9 ./User/CPG.o
- .debug_info    0x002fcde8    0x48af0 ./User/User.o
+ .debug_info    0x002fcde8    0x48aef ./User/User.o
 
 .debug_abbrev   0x00000000    0x11257
  .debug_abbrev  0x00000000      0xe3c ./Core/Src/main.o
@@ -18056,7 +18056,7 @@ LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x0001256c      0x3cd ./User/CPG.o
  .debug_macro   0x00012939      0x8d9 ./User/User.o
 
-.debug_line     0x00000000    0x854bd
+.debug_line     0x00000000    0x854bc
  .debug_line    0x00000000     0x5e9b ./Core/Src/main.o
  .debug_line    0x00005e9b     0x1974 ./Core/Src/stm32h7xx_hal_msp.o
  .debug_line    0x0000780f      0xa79 ./Core/Src/stm32h7xx_hal_timebase_tim.o
@@ -18106,7 +18106,7 @@ LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x0007a697     0x1732 ./Src/Subscribers/Core/Subscriber.o
  .debug_line    0x0007bdc9     0x4199 ./Src/Subscribers/MasterSubscribers.o
  .debug_line    0x0007ff62      0xfda ./User/CPG.o
- .debug_line    0x00080f3c     0x4581 ./User/User.o
+ .debug_line    0x00080f3c     0x4580 ./User/User.o
 
 .debug_str      0x00000000   0x238c77
  .debug_str     0x00000000   0x1f31c0 ./Core/Src/main.o

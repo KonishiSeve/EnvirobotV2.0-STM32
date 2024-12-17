@@ -55,7 +55,7 @@ void User::AddOSThreads(void) {
 }
 
 #define MODULE_NUMBER	4
-#define REMOTE_TIMEOUT_MS	100
+#define REMOTE_TIMEOUT_MS	200
 // == Register map == //
 //registers for meta parameters of the CPG
 #define REG_CPG_SETPOINTS		0x0500
@@ -481,24 +481,25 @@ static void UserTask(void *argument) {
 
 		//compute CPG steps if CPG is enabled
 		registers->ReadRegister<uint8_t>(REG_CPG_ENABLED, &cpg_enabled, &len);
-		if(cpg_enabled == 1) {
-			leds->SetLED(LED_USER2, GPIO_PIN_SET);
-			//compute 10 cpg steps with 1ms stepsize
-			for(uint32_t j=0;j<10;j++) {
-				cpg.step(setpoints, 1);
-			}
-			//publish the setpoints
-			registers->WriteRegister<int8_t>(REG_CPG_SETPOINTS, setpoints, MODULE_NUMBER);
-			publishers->SpinPublisher(PUB_CPG_SETPOINTS);
+		if(cpg_enabled > 0) {
 			//disable the CPG if the remote stopped it
 			uint32_t remote_last_rx;
 			uint32_t time_now;
 			registers->ReadRegister(REG_REMOTE_LAST_RX, &remote_last_rx, &len);
 			registers->ReadRegister(REG_TIMEBASE, &time_now, &len);
-			if(time_now-remote_last_rx > REMOTE_TIMEOUT_MS) {
+			if((time_now-remote_last_rx > REMOTE_TIMEOUT_MS) && (cpg_enabled == 1)) {
 				cpg_enabled = 0;
 				registers->WriteRegister<uint8_t>(REG_CPG_ENABLED, &cpg_enabled);
-				leds->SetLED(LED_USER2, GPIO_PIN_RESET);
+			}
+			else {
+				leds->SetLED(LED_USER2, GPIO_PIN_SET);
+				//compute 10 cpg steps with 1ms stepsize
+				for(uint32_t j=0;j<10;j++) {
+					cpg.step(setpoints, 1);
+				}
+				//publish the setpoints
+				registers->WriteRegister<int8_t>(REG_CPG_SETPOINTS, setpoints, MODULE_NUMBER);
+				publishers->SpinPublisher(PUB_CPG_SETPOINTS);
 			}
 		}
 		else {

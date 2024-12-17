@@ -23,11 +23,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
   9 .ARM.attributes 0000002e  00000000  00000000  0001f080  2**0
                   CONTENTS, READONLY
- 10 .debug_info   003458d8  00000000  00000000  0001f0ae  2**0
+ 10 .debug_info   003458d7  00000000  00000000  0001f0ae  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 11 .debug_abbrev 00011257  00000000  00000000  00364986  2**0
+ 11 .debug_abbrev 00011257  00000000  00000000  00364985  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 12 .debug_loclists 0006cb3f  00000000  00000000  00375bdd  2**0
+ 12 .debug_loclists 0006cb3f  00000000  00000000  00375bdc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  13 .debug_aranges 00003e50  00000000  00000000  003e2720  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -35,11 +35,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_macro  00013212  00000000  00000000  003f20a2  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_line   000854bd  00000000  00000000  004052b4  2**0
+ 16 .debug_line   000854bc  00000000  00000000  004052b4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_str    00238c77  00000000  00000000  0048a771  2**0
+ 17 .debug_str    00238c77  00000000  00000000  0048a770  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .comment      00000043  00000000  00000000  006c33e8  2**0
+ 18 .comment      00000043  00000000  00000000  006c33e7  2**0
                   CONTENTS, READONLY
  19 .debug_frame  0000d690  00000000  00000000  006c342c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -62945,13 +62945,13 @@ bool Registers::WriteRegister(uint16_t ID, T* value, uint16_t length, bool use_s
 static void UserTask(void *argument) {
  801b718:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
 	MasterSubscribers* subscribers = class_instances_pointer->subscribers;
- 801b71c:	e9d0 4900 	ldrd	r4, r9, [r0]
+ 801b71c:	e9d0 4800 	ldrd	r4, r8, [r0]
 static void UserTask(void *argument) {
  801b720:	b08d      	sub	sp, #52	@ 0x34
 	Publishers* publishers = class_instances_pointer->publishers;
  801b722:	6905      	ldr	r5, [r0, #16]
 	LEDS* leds = class_instances_pointer->leds;
- 801b724:	f8d0 801c 	ldr.w	r8, [r0, #28]
+ 801b724:	f8d0 901c 	ldr.w	r9, [r0, #28]
 	registers->AddRegister<int8_t>(REG_CPG_SETPOINTS);
  801b728:	f44f 61a0 	mov.w	r1, #1280	@ 0x500
 static void UserTask(void *argument) {
@@ -62979,7 +62979,7 @@ static void UserTask(void *argument) {
  801b75a:	4607      	mov	r7, r0
 	if (!success) {
  801b75c:	2b00      	cmp	r3, #0
- 801b75e:	f040 831b 	bne.w	801bd98 <_ZL8UserTaskPv+0x680>
+ 801b75e:	f040 8316 	bne.w	801bd8e <_ZL8UserTaskPv+0x676>
 	osSemaphoreRelease(RegistersSemaphore);
  801b762:	6820      	ldr	r0, [r4, #0]
  801b764:	f7f1 f84a 	bl	800c7fc <osSemaphoreRelease>
@@ -63251,7 +63251,7 @@ static void UserTask(void *argument) {
  801b9ea:	4607      	mov	r7, r0
 	if (!success) {
  801b9ec:	2b00      	cmp	r3, #0
- 801b9ee:	f040 8201 	bne.w	801bdf4 <_ZL8UserTaskPv+0x6dc>
+ 801b9ee:	f040 81fc 	bne.w	801bdea <_ZL8UserTaskPv+0x6d2>
 	osSemaphoreRelease(RegistersSemaphore);
  801b9f2:	6820      	ldr	r0, [r4, #0]
  801b9f4:	f7f0 ff02 	bl	800c7fc <osSemaphoreRelease>
@@ -63488,22 +63488,22 @@ static void UserTask(void *argument) {
  801bc10:	f000 fa50 	bl	801c0b4 <__cxa_guard_acquire>
  801bc14:	b158      	cbz	r0, 801bc2e <_ZL8UserTaskPv+0x516>
 	SubGeneral(Registers* registers_, LEDS* leds_) {
- 801bc16:	4e98      	ldr	r6, [pc, #608]	@ (801be78 <_ZL8UserTaskPv+0x760>)
+ 801bc16:	4e95      	ldr	r6, [pc, #596]	@ (801be6c <_ZL8UserTaskPv+0x754>)
  801bc18:	4630      	mov	r0, r6
  801bc1a:	f7fd fb97 	bl	801934c <_ZN10SubscriberC1Ev>
- 801bc1e:	4b97      	ldr	r3, [pc, #604]	@ (801be7c <_ZL8UserTaskPv+0x764>)
+ 801bc1e:	4b94      	ldr	r3, [pc, #592]	@ (801be70 <_ZL8UserTaskPv+0x758>)
 	static SubGeneral sub_general(registers, leds);
  801bc20:	4638      	mov	r0, r7
 		leds = leds_;
- 801bc22:	f8c6 8008 	str.w	r8, [r6, #8]
+ 801bc22:	f8c6 9008 	str.w	r9, [r6, #8]
 		registers = registers_;
  801bc26:	e9c6 3400 	strd	r3, r4, [r6]
 	static SubGeneral sub_general(registers, leds);
  801bc2a:	f000 fa4f 	bl	801c0cc <__cxa_guard_release>
 	subscribers->AddSubscriber(SUB_GENERAL, &sub_general);
- 801bc2e:	4a92      	ldr	r2, [pc, #584]	@ (801be78 <_ZL8UserTaskPv+0x760>)
+ 801bc2e:	4a8f      	ldr	r2, [pc, #572]	@ (801be6c <_ZL8UserTaskPv+0x754>)
  801bc30:	2100      	movs	r1, #0
- 801bc32:	4648      	mov	r0, r9
+ 801bc32:	4640      	mov	r0, r8
 
 	// === CPG Setup === //
 	cpg.init(MODULE_NUMBER, reg_cpg_frequency, reg_cpg_direction, reg_cpg_amplc, reg_cpg_amplc, reg_cpg_nwave, reg_cpg_coupling_strength, reg_cpg_a_r);
@@ -63518,36 +63518,36 @@ static void UserTask(void *argument) {
  801bc3e:	f44f 62e0 	mov.w	r2, #1792	@ 0x700
  801bc42:	2100      	movs	r1, #0
  801bc44:	f8ad 3014 	strh.w	r3, [sp, #20]
- 801bc48:	4648      	mov	r0, r9
+ 801bc48:	4640      	mov	r0, r8
  801bc4a:	9b05      	ldr	r3, [sp, #20]
  801bc4c:	f7fd ff5b 	bl	8019b06 <_ZN17MasterSubscribers25SubscribeToRemoteRegisterEht19SubscriberInterface>
 	subscribers->ActivateSubscriber(SUB_GENERAL);
  801bc50:	2100      	movs	r1, #0
- 801bc52:	4648      	mov	r0, r9
+ 801bc52:	4640      	mov	r0, r8
 	uint8_t remote_mode = 0;
 	uint8_t remote_mode_last = 0;
 	uint16_t len;
 	for(;;) {
 		//robot is started from the remote
 		registers->ReadRegister<uint8_t>(REG_REMOTE_MODE, &remote_mode, &len);
- 801bc54:	f04f 0901 	mov.w	r9, #1
+ 801bc54:	f04f 0801 	mov.w	r8, #1
 	subscribers->ActivateSubscriber(SUB_GENERAL);
  801bc58:	f7fd fc3f 	bl	80194da <_ZN17MasterSubscribers18ActivateSubscriberEh>
 	cpg.init(MODULE_NUMBER, reg_cpg_frequency, reg_cpg_direction, reg_cpg_amplc, reg_cpg_amplc, reg_cpg_nwave, reg_cpg_coupling_strength, reg_cpg_a_r);
- 801bc5c:	4b88      	ldr	r3, [pc, #544]	@ (801be80 <_ZL8UserTaskPv+0x768>)
+ 801bc5c:	4b85      	ldr	r3, [pc, #532]	@ (801be74 <_ZL8UserTaskPv+0x75c>)
  801bc5e:	2104      	movs	r1, #4
- 801bc60:	4888      	ldr	r0, [pc, #544]	@ (801be84 <_ZL8UserTaskPv+0x76c>)
+ 801bc60:	4885      	ldr	r0, [pc, #532]	@ (801be78 <_ZL8UserTaskPv+0x760>)
  801bc62:	edd3 1a00 	vldr	s3, [r3]
- 801bc66:	4b88      	ldr	r3, [pc, #544]	@ (801be88 <_ZL8UserTaskPv+0x770>)
+ 801bc66:	4b85      	ldr	r3, [pc, #532]	@ (801be7c <_ZL8UserTaskPv+0x764>)
  801bc68:	eeb0 1a61 	vmov.f32	s2, s3
  801bc6c:	ed93 3a00 	vldr	s6, [r3]
- 801bc70:	4b86      	ldr	r3, [pc, #536]	@ (801be8c <_ZL8UserTaskPv+0x774>)
+ 801bc70:	4b83      	ldr	r3, [pc, #524]	@ (801be80 <_ZL8UserTaskPv+0x768>)
  801bc72:	edd3 2a00 	vldr	s5, [r3]
- 801bc76:	4b86      	ldr	r3, [pc, #536]	@ (801be90 <_ZL8UserTaskPv+0x778>)
+ 801bc76:	4b83      	ldr	r3, [pc, #524]	@ (801be84 <_ZL8UserTaskPv+0x76c>)
  801bc78:	ed93 2a00 	vldr	s4, [r3]
- 801bc7c:	4b85      	ldr	r3, [pc, #532]	@ (801be94 <_ZL8UserTaskPv+0x77c>)
+ 801bc7c:	4b82      	ldr	r3, [pc, #520]	@ (801be88 <_ZL8UserTaskPv+0x770>)
  801bc7e:	edd3 0a00 	vldr	s1, [r3]
- 801bc82:	4b85      	ldr	r3, [pc, #532]	@ (801be98 <_ZL8UserTaskPv+0x780>)
+ 801bc82:	4b82      	ldr	r3, [pc, #520]	@ (801be8c <_ZL8UserTaskPv+0x774>)
  801bc84:	ed93 0a00 	vldr	s0, [r3]
  801bc88:	f7fe fb32 	bl	801a2f0 <_ZN3CPG4initEhfffffff>
 	uint8_t cpg_enabled = 0;
@@ -63559,21 +63559,21 @@ static void UserTask(void *argument) {
  801bc98:	f10d 0213 	add.w	r2, sp, #19
  801bc9c:	f44f 61c0 	mov.w	r1, #1536	@ 0x600
  801bca0:	4620      	mov	r0, r4
- 801bca2:	f8cd 9000 	str.w	r9, [sp]
+ 801bca2:	f8cd 8000 	str.w	r8, [sp]
  801bca6:	f7fe fec7 	bl	801aa38 <_ZN9Registers12ReadRegisterIhEEbtPT_Ptb.isra.0>
 		if(remote_mode == 1 && remote_mode_last == 0) {
  801bcaa:	f89d a013 	ldrb.w	sl, [sp, #19]
  801bcae:	f1ba 0f01 	cmp.w	sl, #1
- 801bcb2:	f040 80cc 	bne.w	801be4e <_ZL8UserTaskPv+0x736>
+ 801bcb2:	f040 80c7 	bne.w	801be44 <_ZL8UserTaskPv+0x72c>
  801bcb6:	b93e      	cbnz	r6, 801bcc8 <_ZL8UserTaskPv+0x5b0>
 			leds->SetLED(LED_USER1, GPIO_PIN_SET);
  801bcb8:	4652      	mov	r2, sl
  801bcba:	210a      	movs	r1, #10
- 801bcbc:	4640      	mov	r0, r8
+ 801bcbc:	4648      	mov	r0, r9
  801bcbe:	f7f8 f847 	bl	8013d50 <_ZN4LEDS6SetLEDEh13GPIO_PinState>
 			remote_mode_last = 1;
 			cpg.reset();
- 801bcc2:	4870      	ldr	r0, [pc, #448]	@ (801be84 <_ZL8UserTaskPv+0x76c>)
+ 801bcc2:	486d      	ldr	r0, [pc, #436]	@ (801be78 <_ZL8UserTaskPv+0x760>)
  801bcc4:	f7fe fa8a 	bl	801a1dc <_ZN3CPG5resetEv>
 			leds->SetLED(LED_USER1, GPIO_PIN_RESET);
 			remote_mode_last = 0;
@@ -63591,363 +63591,362 @@ static void UserTask(void *argument) {
  801bcd4:	f10d 0316 	add.w	r3, sp, #22
  801bcd8:	f240 5101 	movw	r1, #1281	@ 0x501
  801bcdc:	4620      	mov	r0, r4
- 801bcde:	f8cd 9000 	str.w	r9, [sp]
+ 801bcde:	f8cd 8000 	str.w	r8, [sp]
  801bce2:	f7fe fea9 	bl	801aa38 <_ZN9Registers12ReadRegisterIhEEbtPT_Ptb.isra.0>
 		if(cpg_enabled == 1) {
  801bce6:	f89d 2012 	ldrb.w	r2, [sp, #18]
  801bcea:	2a01      	cmp	r2, #1
- 801bcec:	d14a      	bne.n	801bd84 <_ZL8UserTaskPv+0x66c>
+ 801bcec:	f040 814a 	bne.w	801bf84 <_ZL8UserTaskPv+0x86c>
 			leds->SetLED(LED_USER2, GPIO_PIN_SET);
- 801bcee:	270a      	movs	r7, #10
+ 801bcf0:	270a      	movs	r7, #10
 			//compute 10 cpg steps with 1ms stepsize
 			for(uint32_t j=0;j<10;j++) {
 				cpg.step(setpoints, 1);
- 801bcf0:	4e64      	ldr	r6, [pc, #400]	@ (801be84 <_ZL8UserTaskPv+0x76c>)
+ 801bcf2:	4e61      	ldr	r6, [pc, #388]	@ (801be78 <_ZL8UserTaskPv+0x760>)
 			leds->SetLED(LED_USER2, GPIO_PIN_SET);
- 801bcf2:	210b      	movs	r1, #11
- 801bcf4:	4640      	mov	r0, r8
- 801bcf6:	f7f8 f82b 	bl	8013d50 <_ZN4LEDS6SetLEDEh13GPIO_PinState>
+ 801bcf4:	210b      	movs	r1, #11
+ 801bcf6:	4648      	mov	r0, r9
+ 801bcf8:	f7f8 f82a 	bl	8013d50 <_ZN4LEDS6SetLEDEh13GPIO_PinState>
 				cpg.step(setpoints, 1);
- 801bcfa:	eeb7 0a00 	vmov.f32	s0, #112	@ 0x3f800000  1.0
- 801bcfe:	a906      	add	r1, sp, #24
- 801bd00:	4630      	mov	r0, r6
- 801bd02:	f7fe f911 	bl	8019f28 <_ZN3CPG4stepEPaf>
+ 801bcfc:	eeb7 0a00 	vmov.f32	s0, #112	@ 0x3f800000  1.0
+ 801bd00:	a906      	add	r1, sp, #24
+ 801bd02:	4630      	mov	r0, r6
+ 801bd04:	f7fe f910 	bl	8019f28 <_ZN3CPG4stepEPaf>
 			for(uint32_t j=0;j<10;j++) {
- 801bd06:	3f01      	subs	r7, #1
- 801bd08:	d1f7      	bne.n	801bcfa <_ZL8UserTaskPv+0x5e2>
+ 801bd08:	3f01      	subs	r7, #1
+ 801bd0a:	d1f7      	bne.n	801bcfc <_ZL8UserTaskPv+0x5e4>
 	osSemaphoreAcquire(RegistersSemaphore, osWaitForever);
- 801bd0a:	f04f 31ff 	mov.w	r1, #4294967295
- 801bd0e:	6820      	ldr	r0, [r4, #0]
- 801bd10:	f7f0 fd40 	bl	800c794 <osSemaphoreAcquire>
+ 801bd0c:	f04f 31ff 	mov.w	r1, #4294967295
+ 801bd10:	6820      	ldr	r0, [r4, #0]
+ 801bd12:	f7f0 fd3f 	bl	800c794 <osSemaphoreAcquire>
 	RegisterConfiguration* target_register = FindRegisterConfiguration(ID, &success);
- 801bd14:	aa08      	add	r2, sp, #32
- 801bd16:	f44f 61a0 	mov.w	r1, #1280	@ 0x500
- 801bd1a:	4620      	mov	r0, r4
- 801bd1c:	f7fc faff 	bl	801831e <_ZN9Registers25FindRegisterConfigurationEtPb>
+ 801bd16:	aa08      	add	r2, sp, #32
+ 801bd18:	f44f 61a0 	mov.w	r1, #1280	@ 0x500
+ 801bd1c:	4620      	mov	r0, r4
+ 801bd1e:	f7fc fafe 	bl	801831e <_ZN9Registers25FindRegisterConfigurationEtPb>
 	if (!success) {
- 801bd20:	f89d 3020 	ldrb.w	r3, [sp, #32]
+ 801bd22:	f89d 3020 	ldrb.w	r3, [sp, #32]
 	RegisterConfiguration* target_register = FindRegisterConfiguration(ID, &success);
- 801bd24:	4606      	mov	r6, r0
+ 801bd26:	4606      	mov	r6, r0
 	if (!success) {
- 801bd26:	2b00      	cmp	r3, #0
- 801bd28:	f040 80bc 	bne.w	801bea4 <_ZL8UserTaskPv+0x78c>
+ 801bd28:	2b00      	cmp	r3, #0
+ 801bd2a:	f040 80b5 	bne.w	801be98 <_ZL8UserTaskPv+0x780>
 	osSemaphoreRelease(RegistersSemaphore);
- 801bd2c:	6820      	ldr	r0, [r4, #0]
- 801bd2e:	f7f0 fd65 	bl	800c7fc <osSemaphoreRelease>
+ 801bd2e:	6820      	ldr	r0, [r4, #0]
+ 801bd30:	f7f0 fd64 	bl	800c7fc <osSemaphoreRelease>
 			}
 			//publish the setpoints
 			registers->WriteRegister<int8_t>(REG_CPG_SETPOINTS, setpoints, MODULE_NUMBER);
 			publishers->SpinPublisher(PUB_CPG_SETPOINTS);
- 801bd32:	2100      	movs	r1, #0
- 801bd34:	4628      	mov	r0, r5
- 801bd36:	f7fb fe27 	bl	8017988 <_ZN10Publishers13SpinPublisherEh>
+ 801bd34:	2100      	movs	r1, #0
+ 801bd36:	4628      	mov	r0, r5
+ 801bd38:	f7fb fe26 	bl	8017988 <_ZN10Publishers13SpinPublisherEh>
 			//disable the CPG if the remote stopped it
 			uint32_t remote_last_rx;
 			uint32_t time_now;
 			registers->ReadRegister(REG_REMOTE_LAST_RX, &remote_last_rx, &len);
- 801bd3a:	f10d 0316 	add.w	r3, sp, #22
- 801bd3e:	aa07      	add	r2, sp, #28
- 801bd40:	f44f 61c2 	mov.w	r1, #1552	@ 0x610
- 801bd44:	4620      	mov	r0, r4
- 801bd46:	f8cd 9000 	str.w	r9, [sp]
- 801bd4a:	f7fe fdd3 	bl	801a8f4 <_ZN9Registers12ReadRegisterImEEbtPT_Ptb.isra.0>
+ 801bd3c:	f10d 0316 	add.w	r3, sp, #22
+ 801bd40:	aa07      	add	r2, sp, #28
+ 801bd42:	f44f 61c2 	mov.w	r1, #1552	@ 0x610
+ 801bd46:	4620      	mov	r0, r4
+ 801bd48:	f8cd 8000 	str.w	r8, [sp]
+ 801bd4c:	f7fe fdd2 	bl	801a8f4 <_ZN9Registers12ReadRegisterImEEbtPT_Ptb.isra.0>
 			registers->ReadRegister(REG_TIMEBASE, &time_now, &len);
- 801bd4e:	f10d 0316 	add.w	r3, sp, #22
- 801bd52:	aa08      	add	r2, sp, #32
- 801bd54:	2100      	movs	r1, #0
- 801bd56:	4620      	mov	r0, r4
- 801bd58:	f8cd 9000 	str.w	r9, [sp]
- 801bd5c:	f7fe fdca 	bl	801a8f4 <_ZN9Registers12ReadRegisterImEEbtPT_Ptb.isra.0>
+ 801bd50:	f10d 0316 	add.w	r3, sp, #22
+ 801bd54:	aa08      	add	r2, sp, #32
+ 801bd56:	2100      	movs	r1, #0
+ 801bd58:	4620      	mov	r0, r4
+ 801bd5a:	f8cd 8000 	str.w	r8, [sp]
+ 801bd5e:	f7fe fdc9 	bl	801a8f4 <_ZN9Registers12ReadRegisterImEEbtPT_Ptb.isra.0>
 			if(time_now-remote_last_rx > REMOTE_TIMEOUT_MS) {
- 801bd60:	e9dd 2307 	ldrd	r2, r3, [sp, #28]
- 801bd64:	1a9b      	subs	r3, r3, r2
- 801bd66:	2b64      	cmp	r3, #100	@ 0x64
- 801bd68:	d911      	bls.n	801bd8e <_ZL8UserTaskPv+0x676>
+ 801bd62:	e9dd 2307 	ldrd	r2, r3, [sp, #28]
+ 801bd66:	1a9b      	subs	r3, r3, r2
+ 801bd68:	2b64      	cmp	r3, #100	@ 0x64
+ 801bd6a:	d90b      	bls.n	801bd84 <_ZL8UserTaskPv+0x66c>
 				cpg_enabled = 0;
- 801bd6a:	2600      	movs	r6, #0
+ 801bd6c:	2300      	movs	r3, #0
 				registers->WriteRegister<uint8_t>(REG_CPG_ENABLED, &cpg_enabled);
- 801bd6c:	f10d 0212 	add.w	r2, sp, #18
- 801bd70:	f240 5101 	movw	r1, #1281	@ 0x501
- 801bd74:	4620      	mov	r0, r4
- 801bd76:	4633      	mov	r3, r6
- 801bd78:	f8cd 9000 	str.w	r9, [sp]
+ 801bd6e:	f10d 0212 	add.w	r2, sp, #18
+ 801bd72:	f240 5101 	movw	r1, #1281	@ 0x501
+ 801bd76:	4620      	mov	r0, r4
+ 801bd78:	f8cd 8000 	str.w	r8, [sp]
 				cpg_enabled = 0;
- 801bd7c:	f88d 6012 	strb.w	r6, [sp, #18]
+ 801bd7c:	f88d 3012 	strb.w	r3, [sp, #18]
 				registers->WriteRegister<uint8_t>(REG_CPG_ENABLED, &cpg_enabled);
  801bd80:	f7ff fb7f 	bl	801b482 <_ZN9Registers13WriteRegisterIhEEbtPT_tb.isra.0>
-				leds->SetLED(LED_USER2, GPIO_PIN_RESET);
 			}
 		}
 		else {
 			leds->SetLED(LED_USER2, GPIO_PIN_RESET);
- 801bd84:	2200      	movs	r2, #0
- 801bd86:	210b      	movs	r1, #11
- 801bd88:	4640      	mov	r0, r8
- 801bd8a:	f7f7 ffe1 	bl	8013d50 <_ZN4LEDS6SetLEDEh13GPIO_PinState>
 		}
 		osDelay(10);
- 801bd8e:	200a      	movs	r0, #10
+ 801bd84:	200a      	movs	r0, #10
 	}
- 801bd90:	4656      	mov	r6, sl
+ 801bd86:	4656      	mov	r6, sl
 		osDelay(10);
- 801bd92:	f7f0 fc95 	bl	800c6c0 <osDelay>
+ 801bd88:	f7f0 fc9a 	bl	800c6c0 <osDelay>
 	}
- 801bd96:	e77d      	b.n	801bc94 <_ZL8UserTaskPv+0x57c>
+ 801bd8c:	e782      	b.n	801bc94 <_ZL8UserTaskPv+0x57c>
 	uint8_t registered_type = GetTypeID<T>(&success);
- 801bd98:	a807      	add	r0, sp, #28
- 801bd9a:	f7fe fc6d 	bl	801a678 <_ZN9Registers9GetTypeIDIaEEhPb.isra.0>
+ 801bd8e:	a807      	add	r0, sp, #28
+ 801bd90:	f7fe fc72 	bl	801a678 <_ZN9Registers9GetTypeIDIaEEhPb.isra.0>
 	if (!success) {
- 801bd9e:	f89d 301c 	ldrb.w	r3, [sp, #28]
- 801bda2:	2b00      	cmp	r3, #0
- 801bda4:	f43f acdd 	beq.w	801b762 <_ZL8UserTaskPv+0x4a>
+ 801bd94:	f89d 301c 	ldrb.w	r3, [sp, #28]
+ 801bd98:	2b00      	cmp	r3, #0
+ 801bd9a:	f43f ace2 	beq.w	801b762 <_ZL8UserTaskPv+0x4a>
 	if (target_register->register_info.type != registered_type) {
- 801bda8:	793b      	ldrb	r3, [r7, #4]
- 801bdaa:	4298      	cmp	r0, r3
- 801bdac:	f47f acd9 	bne.w	801b762 <_ZL8UserTaskPv+0x4a>
+ 801bd9e:	793b      	ldrb	r3, [r7, #4]
+ 801bda0:	4298      	cmp	r0, r3
+ 801bda2:	f47f acde 	bne.w	801b762 <_ZL8UserTaskPv+0x4a>
 	if (callbacks[target_register->register_info.type] == NULL) {
- 801bdb0:	3004      	adds	r0, #4
- 801bdb2:	f854 0020 	ldr.w	r0, [r4, r0, lsl #2]
- 801bdb6:	2800      	cmp	r0, #0
- 801bdb8:	f43f acd3 	beq.w	801b762 <_ZL8UserTaskPv+0x4a>
+ 801bda6:	3004      	adds	r0, #4
+ 801bda8:	f854 0020 	ldr.w	r0, [r4, r0, lsl #2]
+ 801bdac:	2800      	cmp	r0, #0
+ 801bdae:	f43f acd8 	beq.w	801b762 <_ZL8UserTaskPv+0x4a>
 	if (not target_register->mode.pointer &&  not target_register->mode.callbacks) {
- 801bdbc:	783b      	ldrb	r3, [r7, #0]
- 801bdbe:	f8df a0dc 	ldr.w	sl, [pc, #220]	@ 801be9c <_ZL8UserTaskPv+0x784>
- 801bdc2:	b98b      	cbnz	r3, 801bde8 <_ZL8UserTaskPv+0x6d0>
- 801bdc4:	787b      	ldrb	r3, [r7, #1]
- 801bdc6:	b97b      	cbnz	r3, 801bde8 <_ZL8UserTaskPv+0x6d0>
+ 801bdb2:	783b      	ldrb	r3, [r7, #0]
+ 801bdb4:	f8df a0d8 	ldr.w	sl, [pc, #216]	@ 801be90 <_ZL8UserTaskPv+0x778>
+ 801bdb8:	b98b      	cbnz	r3, 801bdde <_ZL8UserTaskPv+0x6c6>
+ 801bdba:	787b      	ldrb	r3, [r7, #1]
+ 801bdbc:	b97b      	cbnz	r3, 801bdde <_ZL8UserTaskPv+0x6c6>
 		callback.pointer = pointer;
- 801bdc8:	f8cd a020 	str.w	sl, [sp, #32]
+ 801bdbe:	f8cd a020 	str.w	sl, [sp, #32]
 		target_callback_list->push_back(callback);
- 801bdcc:	a908      	add	r1, sp, #32
+ 801bdc2:	a908      	add	r1, sp, #32
       { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
- 801bdce:	e9d0 2300 	ldrd	r2, r3, [r0]
- 801bdd2:	1a9b      	subs	r3, r3, r2
- 801bdd4:	111b      	asrs	r3, r3, #4
+ 801bdc4:	e9d0 2300 	ldrd	r2, r3, [r0]
+ 801bdc8:	1a9b      	subs	r3, r3, r2
+ 801bdca:	111b      	asrs	r3, r3, #4
 		target_register->callbacks_ID = (uint16_t) target_callback_list->size();
- 801bdd6:	817b      	strh	r3, [r7, #10]
+ 801bdcc:	817b      	strh	r3, [r7, #10]
 		target_callback_list->push_back(callback);
- 801bdd8:	f7ff f890 	bl	801aefc <_ZNSt6vectorI17RegisterCallbacksIaESaIS1_EE9push_backERKS1_>
+ 801bdce:	f7ff f895 	bl	801aefc <_ZNSt6vectorI17RegisterCallbacksIaESaIS1_EE9push_backERKS1_>
 	target_register->mode.pointer = true;
- 801bddc:	2301      	movs	r3, #1
- 801bdde:	703b      	strb	r3, [r7, #0]
+ 801bdd2:	2301      	movs	r3, #1
+ 801bdd4:	703b      	strb	r3, [r7, #0]
 	target_register->access.write = true;
- 801bde0:	f240 1301 	movw	r3, #257	@ 0x101
- 801bde4:	813b      	strh	r3, [r7, #8]
- 801bde6:	e4bc      	b.n	801b762 <_ZL8UserTaskPv+0x4a>
+ 801bdd6:	f240 1301 	movw	r3, #257	@ 0x101
+ 801bdda:	813b      	strh	r3, [r7, #8]
+ 801bddc:	e4c1      	b.n	801b762 <_ZL8UserTaskPv+0x4a>
 		RegisterCallbacks<T>* callback = &(target_callback_list->at(target_register->callbacks_ID));
- 801bde8:	8979      	ldrh	r1, [r7, #10]
- 801bdea:	f7f3 fde3 	bl	800f9b4 <_ZNSt6vectorI17RegisterCallbacksIaESaIS1_EE2atEj>
+ 801bdde:	8979      	ldrh	r1, [r7, #10]
+ 801bde0:	f7f3 fde8 	bl	800f9b4 <_ZNSt6vectorI17RegisterCallbacksIaESaIS1_EE2atEj>
 		callback->pointer = pointer;
- 801bdee:	f8c0 a000 	str.w	sl, [r0]
- 801bdf2:	e7f3      	b.n	801bddc <_ZL8UserTaskPv+0x6c4>
+ 801bde4:	f8c0 a000 	str.w	sl, [r0]
+ 801bde8:	e7f3      	b.n	801bdd2 <_ZL8UserTaskPv+0x6ba>
 	uint8_t registered_type = GetTypeID<T>(&success);
- 801bdf4:	a807      	add	r0, sp, #28
- 801bdf6:	f7fe fc3f 	bl	801a678 <_ZN9Registers9GetTypeIDIaEEhPb.isra.0>
+ 801bdea:	a807      	add	r0, sp, #28
+ 801bdec:	f7fe fc44 	bl	801a678 <_ZN9Registers9GetTypeIDIaEEhPb.isra.0>
 	if (!success) {
- 801bdfa:	f89d 301c 	ldrb.w	r3, [sp, #28]
- 801bdfe:	2b00      	cmp	r3, #0
- 801be00:	f43f adf7 	beq.w	801b9f2 <_ZL8UserTaskPv+0x2da>
+ 801bdf0:	f89d 301c 	ldrb.w	r3, [sp, #28]
+ 801bdf4:	2b00      	cmp	r3, #0
+ 801bdf6:	f43f adfc 	beq.w	801b9f2 <_ZL8UserTaskPv+0x2da>
 	if (target_register->register_info.type != registered_type) {
- 801be04:	793b      	ldrb	r3, [r7, #4]
- 801be06:	4298      	cmp	r0, r3
- 801be08:	f47f adf3 	bne.w	801b9f2 <_ZL8UserTaskPv+0x2da>
+ 801bdfa:	793b      	ldrb	r3, [r7, #4]
+ 801bdfc:	4298      	cmp	r0, r3
+ 801bdfe:	f47f adf8 	bne.w	801b9f2 <_ZL8UserTaskPv+0x2da>
 	if (callbacks[target_register->register_info.type] == NULL) {
- 801be0c:	3004      	adds	r0, #4
- 801be0e:	f854 0020 	ldr.w	r0, [r4, r0, lsl #2]
- 801be12:	2800      	cmp	r0, #0
- 801be14:	f43f aded 	beq.w	801b9f2 <_ZL8UserTaskPv+0x2da>
+ 801be02:	3004      	adds	r0, #4
+ 801be04:	f854 0020 	ldr.w	r0, [r4, r0, lsl #2]
+ 801be08:	2800      	cmp	r0, #0
+ 801be0a:	f43f adf2 	beq.w	801b9f2 <_ZL8UserTaskPv+0x2da>
 	if (not target_register->mode.pointer &&  not target_register->mode.callbacks) { // if (target_register->mode. == NONE_MODE) {
- 801be18:	783b      	ldrb	r3, [r7, #0]
- 801be1a:	f8df a084 	ldr.w	sl, [pc, #132]	@ 801bea0 <_ZL8UserTaskPv+0x788>
- 801be1e:	b983      	cbnz	r3, 801be42 <_ZL8UserTaskPv+0x72a>
- 801be20:	787b      	ldrb	r3, [r7, #1]
- 801be22:	b973      	cbnz	r3, 801be42 <_ZL8UserTaskPv+0x72a>
+ 801be0e:	783b      	ldrb	r3, [r7, #0]
+ 801be10:	f8df a080 	ldr.w	sl, [pc, #128]	@ 801be94 <_ZL8UserTaskPv+0x77c>
+ 801be14:	b983      	cbnz	r3, 801be38 <_ZL8UserTaskPv+0x720>
+ 801be16:	787b      	ldrb	r3, [r7, #1]
+ 801be18:	b973      	cbnz	r3, 801be38 <_ZL8UserTaskPv+0x720>
 		callback.read = NULL;
- 801be24:	930b      	str	r3, [sp, #44]	@ 0x2c
+ 801be1a:	930b      	str	r3, [sp, #44]	@ 0x2c
 		target_callback_list->push_back(callback);
- 801be26:	a908      	add	r1, sp, #32
- 801be28:	e9d0 2300 	ldrd	r2, r3, [r0]
+ 801be1c:	a908      	add	r1, sp, #32
+ 801be1e:	e9d0 2300 	ldrd	r2, r3, [r0]
 		callback.write = write;
- 801be2c:	e9cd 6a09 	strd	r6, sl, [sp, #36]	@ 0x24
- 801be30:	1a9b      	subs	r3, r3, r2
- 801be32:	111b      	asrs	r3, r3, #4
+ 801be22:	e9cd 6a09 	strd	r6, sl, [sp, #36]	@ 0x24
+ 801be26:	1a9b      	subs	r3, r3, r2
+ 801be28:	111b      	asrs	r3, r3, #4
 		target_register->callbacks_ID = (uint16_t) target_callback_list->size();
- 801be34:	817b      	strh	r3, [r7, #10]
+ 801be2a:	817b      	strh	r3, [r7, #10]
 		target_callback_list->push_back(callback);
- 801be36:	f7ff f861 	bl	801aefc <_ZNSt6vectorI17RegisterCallbacksIaESaIS1_EE9push_backERKS1_>
+ 801be2c:	f7ff f866 	bl	801aefc <_ZNSt6vectorI17RegisterCallbacksIaESaIS1_EE9push_backERKS1_>
 	target_register->mode.callbacks = true;
- 801be3a:	2301      	movs	r3, #1
- 801be3c:	707b      	strb	r3, [r7, #1]
+ 801be30:	2301      	movs	r3, #1
+ 801be32:	707b      	strb	r3, [r7, #1]
 	target_register->access.write = true;
- 801be3e:	723b      	strb	r3, [r7, #8]
- 801be40:	e5d7      	b.n	801b9f2 <_ZL8UserTaskPv+0x2da>
+ 801be34:	723b      	strb	r3, [r7, #8]
+ 801be36:	e5dc      	b.n	801b9f2 <_ZL8UserTaskPv+0x2da>
 		RegisterCallbacks<T>* callback = &(target_callback_list->at(target_register->callbacks_ID));
- 801be42:	8979      	ldrh	r1, [r7, #10]
- 801be44:	f7f3 fdb6 	bl	800f9b4 <_ZNSt6vectorI17RegisterCallbacksIaESaIS1_EE2atEj>
+ 801be38:	8979      	ldrh	r1, [r7, #10]
+ 801be3a:	f7f3 fdbb 	bl	800f9b4 <_ZNSt6vectorI17RegisterCallbacksIaESaIS1_EE2atEj>
 		callback->write = write;
- 801be48:	e9c0 6a01 	strd	r6, sl, [r0, #4]
- 801be4c:	e7f5      	b.n	801be3a <_ZL8UserTaskPv+0x722>
+ 801be3e:	e9c0 6a01 	strd	r6, sl, [r0, #4]
+ 801be42:	e7f5      	b.n	801be30 <_ZL8UserTaskPv+0x718>
 		else if(remote_mode != 1 && remote_mode_last == 1) {
- 801be4e:	2e01      	cmp	r6, #1
- 801be50:	d002      	beq.n	801be58 <_ZL8UserTaskPv+0x740>
+ 801be44:	2e01      	cmp	r6, #1
+ 801be46:	d002      	beq.n	801be4e <_ZL8UserTaskPv+0x736>
 	}
- 801be52:	f04f 0a00 	mov.w	sl, #0
- 801be56:	e737      	b.n	801bcc8 <_ZL8UserTaskPv+0x5b0>
+ 801be48:	f04f 0a00 	mov.w	sl, #0
+ 801be4c:	e73c      	b.n	801bcc8 <_ZL8UserTaskPv+0x5b0>
 			leds->SetLED(LED_USER1, GPIO_PIN_RESET);
- 801be58:	2200      	movs	r2, #0
- 801be5a:	210a      	movs	r1, #10
- 801be5c:	4640      	mov	r0, r8
- 801be5e:	f7f7 ff77 	bl	8013d50 <_ZN4LEDS6SetLEDEh13GPIO_PinState>
+ 801be4e:	2200      	movs	r2, #0
+ 801be50:	210a      	movs	r1, #10
+ 801be52:	4648      	mov	r0, r9
+ 801be54:	f7f7 ff7c 	bl	8013d50 <_ZN4LEDS6SetLEDEh13GPIO_PinState>
 			registers->WriteRegister<uint8_t>(REG_CPG_ENABLED, &remote_mode);
- 801be62:	2300      	movs	r3, #0
- 801be64:	f10d 0213 	add.w	r2, sp, #19
- 801be68:	f240 5101 	movw	r1, #1281	@ 0x501
- 801be6c:	4620      	mov	r0, r4
- 801be6e:	9600      	str	r6, [sp, #0]
- 801be70:	f7ff fb07 	bl	801b482 <_ZN9Registers13WriteRegisterIhEEbtPT_tb.isra.0>
- 801be74:	e7ed      	b.n	801be52 <_ZL8UserTaskPv+0x73a>
- 801be76:	bf00      	nop
- 801be78:	240071ac 	.word	0x240071ac
- 801be7c:	0801cdfc 	.word	0x0801cdfc
- 801be80:	2400002c 	.word	0x2400002c
- 801be84:	240071d4 	.word	0x240071d4
- 801be88:	2400001c 	.word	0x2400001c
- 801be8c:	24000020 	.word	0x24000020
- 801be90:	24000024 	.word	0x24000024
- 801be94:	240071c4 	.word	0x240071c4
- 801be98:	240071c8 	.word	0x240071c8
- 801be9c:	240071cd 	.word	0x240071cd
- 801bea0:	0801b5ad 	.word	0x0801b5ad
+ 801be58:	2300      	movs	r3, #0
+ 801be5a:	f10d 0213 	add.w	r2, sp, #19
+ 801be5e:	f240 5101 	movw	r1, #1281	@ 0x501
+ 801be62:	4620      	mov	r0, r4
+ 801be64:	9600      	str	r6, [sp, #0]
+ 801be66:	f7ff fb0c 	bl	801b482 <_ZN9Registers13WriteRegisterIhEEbtPT_tb.isra.0>
+ 801be6a:	e7ed      	b.n	801be48 <_ZL8UserTaskPv+0x730>
+ 801be6c:	240071ac 	.word	0x240071ac
+ 801be70:	0801cdfc 	.word	0x0801cdfc
+ 801be74:	2400002c 	.word	0x2400002c
+ 801be78:	240071d4 	.word	0x240071d4
+ 801be7c:	2400001c 	.word	0x2400001c
+ 801be80:	24000020 	.word	0x24000020
+ 801be84:	24000024 	.word	0x24000024
+ 801be88:	240071c4 	.word	0x240071c4
+ 801be8c:	240071c8 	.word	0x240071c8
+ 801be90:	240071cd 	.word	0x240071cd
+ 801be94:	0801b5ad 	.word	0x0801b5ad
 	uint8_t registered_type = GetTypeID<T>(&success);
- 801bea4:	a808      	add	r0, sp, #32
- 801bea6:	f7fe fbe7 	bl	801a678 <_ZN9Registers9GetTypeIDIaEEhPb.isra.0>
+ 801be98:	a808      	add	r0, sp, #32
+ 801be9a:	f7fe fbed 	bl	801a678 <_ZN9Registers9GetTypeIDIaEEhPb.isra.0>
 	if (!success) {
- 801beaa:	f89d 3020 	ldrb.w	r3, [sp, #32]
- 801beae:	2b00      	cmp	r3, #0
- 801beb0:	f43f af3c 	beq.w	801bd2c <_ZL8UserTaskPv+0x614>
+ 801be9e:	f89d 3020 	ldrb.w	r3, [sp, #32]
+ 801bea2:	2b00      	cmp	r3, #0
+ 801bea4:	f43f af43 	beq.w	801bd2e <_ZL8UserTaskPv+0x616>
 	if (target_register->register_info.type != registered_type) {
- 801beb4:	7933      	ldrb	r3, [r6, #4]
- 801beb6:	4298      	cmp	r0, r3
- 801beb8:	f47f af38 	bne.w	801bd2c <_ZL8UserTaskPv+0x614>
+ 801bea8:	7933      	ldrb	r3, [r6, #4]
+ 801beaa:	4298      	cmp	r0, r3
+ 801beac:	f47f af3f 	bne.w	801bd2e <_ZL8UserTaskPv+0x616>
 	if (callbacks[target_register->register_info.type] == NULL) {
- 801bebc:	3004      	adds	r0, #4
- 801bebe:	f854 0020 	ldr.w	r0, [r4, r0, lsl #2]
- 801bec2:	2800      	cmp	r0, #0
- 801bec4:	f43f af32 	beq.w	801bd2c <_ZL8UserTaskPv+0x614>
+ 801beb0:	3004      	adds	r0, #4
+ 801beb2:	f854 0020 	ldr.w	r0, [r4, r0, lsl #2]
+ 801beb6:	2800      	cmp	r0, #0
+ 801beb8:	f43f af39 	beq.w	801bd2e <_ZL8UserTaskPv+0x616>
 	if (target_register->access.write) {
- 801bec8:	7a33      	ldrb	r3, [r6, #8]
- 801beca:	2b00      	cmp	r3, #0
- 801becc:	f43f af2e 	beq.w	801bd2c <_ZL8UserTaskPv+0x614>
+ 801bebc:	7a33      	ldrb	r3, [r6, #8]
+ 801bebe:	2b00      	cmp	r3, #0
+ 801bec0:	f43f af35 	beq.w	801bd2e <_ZL8UserTaskPv+0x616>
 		RegisterCallbacks<T> callbacks = target_callback_list->at(target_register->callbacks_ID);
- 801bed0:	8971      	ldrh	r1, [r6, #10]
+ 801bec4:	8971      	ldrh	r1, [r6, #10]
 		success = false;
- 801bed2:	f88d 7020 	strb.w	r7, [sp, #32]
+ 801bec6:	f88d 7020 	strb.w	r7, [sp, #32]
 		RegisterCallbacks<T> callbacks = target_callback_list->at(target_register->callbacks_ID);
- 801bed6:	f7f3 fd6d 	bl	800f9b4 <_ZNSt6vectorI17RegisterCallbacksIaESaIS1_EE2atEj>
- 801beda:	f8d0 b008 	ldr.w	fp, [r0, #8]
- 801bede:	e9d0 3200 	ldrd	r3, r2, [r0]
- 801bee2:	9202      	str	r2, [sp, #8]
+ 801beca:	f7f3 fd73 	bl	800f9b4 <_ZNSt6vectorI17RegisterCallbacksIaESaIS1_EE2atEj>
+ 801bece:	f8d0 b008 	ldr.w	fp, [r0, #8]
+ 801bed2:	e9d0 3200 	ldrd	r3, r2, [r0]
+ 801bed6:	9202      	str	r2, [sp, #8]
 		if (use_semaphore && target_register->register_semaphore != NULL) {
- 801bee4:	68f2      	ldr	r2, [r6, #12]
- 801bee6:	b132      	cbz	r2, 801bef6 <_ZL8UserTaskPv+0x7de>
+ 801bed8:	68f2      	ldr	r2, [r6, #12]
+ 801beda:	b132      	cbz	r2, 801beea <_ZL8UserTaskPv+0x7d2>
 			osSemaphoreAcquire(*(target_register->register_semaphore), osWaitForever);
- 801bee8:	f04f 31ff 	mov.w	r1, #4294967295
- 801beec:	6810      	ldr	r0, [r2, #0]
- 801beee:	9303      	str	r3, [sp, #12]
- 801bef0:	f7f0 fc50 	bl	800c794 <osSemaphoreAcquire>
- 801bef4:	9b03      	ldr	r3, [sp, #12]
+ 801bedc:	f04f 31ff 	mov.w	r1, #4294967295
+ 801bee0:	6810      	ldr	r0, [r2, #0]
+ 801bee2:	9303      	str	r3, [sp, #12]
+ 801bee4:	f7f0 fc56 	bl	800c794 <osSemaphoreAcquire>
+ 801bee8:	9b03      	ldr	r3, [sp, #12]
 		if (target_register->mode.pointer) {
- 801bef6:	7832      	ldrb	r2, [r6, #0]
- 801bef8:	b1fa      	cbz	r2, 801bf3a <_ZL8UserTaskPv+0x822>
+ 801beea:	7832      	ldrb	r2, [r6, #0]
+ 801beec:	b1fa      	cbz	r2, 801bf2e <_ZL8UserTaskPv+0x816>
 			success = true;
- 801befa:	f88d 9020 	strb.w	r9, [sp, #32]
+ 801beee:	f88d 8020 	strb.w	r8, [sp, #32]
 			if (target_register->register_info.isArray && target_register->register_info.length == 0) {
- 801befe:	7972      	ldrb	r2, [r6, #5]
- 801bf00:	2a00      	cmp	r2, #0
- 801bf02:	d03f      	beq.n	801bf84 <_ZL8UserTaskPv+0x86c>
- 801bf04:	88f2      	ldrh	r2, [r6, #6]
- 801bf06:	2a00      	cmp	r2, #0
- 801bf08:	d137      	bne.n	801bf7a <_ZL8UserTaskPv+0x862>
+ 801bef2:	7972      	ldrb	r2, [r6, #5]
+ 801bef4:	2a00      	cmp	r2, #0
+ 801bef6:	d03f      	beq.n	801bf78 <_ZL8UserTaskPv+0x860>
+ 801bef8:	88f2      	ldrh	r2, [r6, #6]
+ 801befa:	2a00      	cmp	r2, #0
+ 801befc:	d137      	bne.n	801bf6e <_ZL8UserTaskPv+0x856>
 	if (size_type __n = this->_M_impl._M_finish - __pos)
- 801bf0a:	e9d3 2100 	ldrd	r2, r1, [r3]
- 801bf0e:	428a      	cmp	r2, r1
+ 801befe:	e9d3 2100 	ldrd	r2, r1, [r3]
+ 801bf02:	428a      	cmp	r2, r1
 	    this->_M_impl._M_finish = __pos;
- 801bf10:	bf18      	it	ne
- 801bf12:	605a      	strne	r2, [r3, #4]
+ 801bf04:	bf18      	it	ne
+ 801bf06:	605a      	strne	r2, [r3, #4]
       { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
- 801bf14:	6858      	ldr	r0, [r3, #4]
- 801bf16:	1a81      	subs	r1, r0, r2
+ 801bf08:	6858      	ldr	r0, [r3, #4]
+ 801bf0a:	1a81      	subs	r1, r0, r2
 	if (__new_size > size())
- 801bf18:	2903      	cmp	r1, #3
- 801bf1a:	d827      	bhi.n	801bf6c <_ZL8UserTaskPv+0x854>
+ 801bf0c:	2903      	cmp	r1, #3
+ 801bf0e:	d827      	bhi.n	801bf60 <_ZL8UserTaskPv+0x848>
 	  _M_default_append(__new_size - size());
- 801bf1c:	4618      	mov	r0, r3
- 801bf1e:	f1c1 0104 	rsb	r1, r1, #4
- 801bf22:	9303      	str	r3, [sp, #12]
- 801bf24:	f7f6 fc9e 	bl	8012864 <_ZNSt6vectorIaSaIaEE17_M_default_appendEj>
+ 801bf10:	4618      	mov	r0, r3
+ 801bf12:	f1c1 0104 	rsb	r1, r1, #4
+ 801bf16:	9303      	str	r3, [sp, #12]
+ 801bf18:	f7f6 fca4 	bl	8012864 <_ZNSt6vectorIaSaIaEE17_M_default_appendEj>
 				for (uint16_t index = 0; index < length; index++) {
- 801bf28:	9b03      	ldr	r3, [sp, #12]
- 801bf2a:	aa06      	add	r2, sp, #24
+ 801bf1c:	9b03      	ldr	r3, [sp, #12]
+ 801bf1e:	aa06      	add	r2, sp, #24
 					(*register_vector)[index] = value[index];
- 801bf2c:	f912 0b01 	ldrsb.w	r0, [r2], #1
- 801bf30:	6819      	ldr	r1, [r3, #0]
- 801bf32:	55c8      	strb	r0, [r1, r7]
+ 801bf20:	f912 0b01 	ldrsb.w	r0, [r2], #1
+ 801bf24:	6819      	ldr	r1, [r3, #0]
+ 801bf26:	55c8      	strb	r0, [r1, r7]
 				for (uint16_t index = 0; index < length; index++) {
- 801bf34:	3701      	adds	r7, #1
- 801bf36:	2f04      	cmp	r7, #4
- 801bf38:	d1f8      	bne.n	801bf2c <_ZL8UserTaskPv+0x814>
+ 801bf28:	3701      	adds	r7, #1
+ 801bf2a:	2f04      	cmp	r7, #4
+ 801bf2c:	d1f8      	bne.n	801bf20 <_ZL8UserTaskPv+0x808>
 		if (target_register->mode.callbacks) {
- 801bf3a:	7873      	ldrb	r3, [r6, #1]
- 801bf3c:	b173      	cbz	r3, 801bf5c <_ZL8UserTaskPv+0x844>
+ 801bf2e:	7873      	ldrb	r3, [r6, #1]
+ 801bf30:	b173      	cbz	r3, 801bf50 <_ZL8UserTaskPv+0x838>
 			if (callbacks.write != NULL) {
- 801bf3e:	f1bb 0f00 	cmp.w	fp, #0
- 801bf42:	d00b      	beq.n	801bf5c <_ZL8UserTaskPv+0x844>
+ 801bf32:	f1bb 0f00 	cmp.w	fp, #0
+ 801bf36:	d00b      	beq.n	801bf50 <_ZL8UserTaskPv+0x838>
 				if (target_register->register_info.isArray && target_register->register_info.length == 0) {
- 801bf44:	7973      	ldrb	r3, [r6, #5]
- 801bf46:	b30b      	cbz	r3, 801bf8c <_ZL8UserTaskPv+0x874>
- 801bf48:	88f3      	ldrh	r3, [r6, #6]
- 801bf4a:	b903      	cbnz	r3, 801bf4e <_ZL8UserTaskPv+0x836>
+ 801bf38:	7973      	ldrb	r3, [r6, #5]
+ 801bf3a:	b30b      	cbz	r3, 801bf80 <_ZL8UserTaskPv+0x868>
+ 801bf3c:	88f3      	ldrh	r3, [r6, #6]
+ 801bf3e:	b903      	cbnz	r3, 801bf42 <_ZL8UserTaskPv+0x82a>
 					success = callbacks.write(callbacks.context, ID, value, length);
- 801bf4c:	2304      	movs	r3, #4
+ 801bf40:	2304      	movs	r3, #4
 					success = callbacks.write(callbacks.context, ID, value, 1);
- 801bf4e:	aa06      	add	r2, sp, #24
- 801bf50:	f44f 61a0 	mov.w	r1, #1280	@ 0x500
- 801bf54:	9802      	ldr	r0, [sp, #8]
- 801bf56:	47d8      	blx	fp
- 801bf58:	f88d 0020 	strb.w	r0, [sp, #32]
+ 801bf42:	aa06      	add	r2, sp, #24
+ 801bf44:	f44f 61a0 	mov.w	r1, #1280	@ 0x500
+ 801bf48:	9802      	ldr	r0, [sp, #8]
+ 801bf4a:	47d8      	blx	fp
+ 801bf4c:	f88d 0020 	strb.w	r0, [sp, #32]
 		if (use_semaphore && target_register->register_semaphore != NULL) {
- 801bf5c:	68f3      	ldr	r3, [r6, #12]
- 801bf5e:	2b00      	cmp	r3, #0
- 801bf60:	f43f aee4 	beq.w	801bd2c <_ZL8UserTaskPv+0x614>
+ 801bf50:	68f3      	ldr	r3, [r6, #12]
+ 801bf52:	2b00      	cmp	r3, #0
+ 801bf54:	f43f aeeb 	beq.w	801bd2e <_ZL8UserTaskPv+0x616>
 			osSemaphoreRelease(*(target_register->register_semaphore));
- 801bf64:	6818      	ldr	r0, [r3, #0]
- 801bf66:	f7f0 fc49 	bl	800c7fc <osSemaphoreRelease>
- 801bf6a:	e6df      	b.n	801bd2c <_ZL8UserTaskPv+0x614>
+ 801bf58:	6818      	ldr	r0, [r3, #0]
+ 801bf5a:	f7f0 fc4f 	bl	800c7fc <osSemaphoreRelease>
+ 801bf5e:	e6e6      	b.n	801bd2e <_ZL8UserTaskPv+0x616>
 	else if (__new_size < size())
- 801bf6c:	2904      	cmp	r1, #4
- 801bf6e:	d0dc      	beq.n	801bf2a <_ZL8UserTaskPv+0x812>
+ 801bf60:	2904      	cmp	r1, #4
+ 801bf62:	d0dc      	beq.n	801bf1e <_ZL8UserTaskPv+0x806>
 	  _M_erase_at_end(this->_M_impl._M_start + __new_size);
- 801bf70:	3204      	adds	r2, #4
+ 801bf64:	3204      	adds	r2, #4
 	if (size_type __n = this->_M_impl._M_finish - __pos)
- 801bf72:	4290      	cmp	r0, r2
+ 801bf66:	4290      	cmp	r0, r2
 	    this->_M_impl._M_finish = __pos;
- 801bf74:	bf18      	it	ne
- 801bf76:	605a      	strne	r2, [r3, #4]
+ 801bf68:	bf18      	it	ne
+ 801bf6a:	605a      	strne	r2, [r3, #4]
 				for (uint16_t index = 0; index < length; index++) {
- 801bf78:	e7d7      	b.n	801bf2a <_ZL8UserTaskPv+0x812>
+ 801bf6c:	e7d7      	b.n	801bf1e <_ZL8UserTaskPv+0x806>
 	    __builtin_memmove(__result, __first, sizeof(_Tp) * _Num);
- 801bf7a:	a906      	add	r1, sp, #24
- 801bf7c:	4618      	mov	r0, r3
- 801bf7e:	f000 fbe1 	bl	801c744 <memmove>
+ 801bf6e:	a906      	add	r1, sp, #24
+ 801bf70:	4618      	mov	r0, r3
+ 801bf72:	f000 fbe7 	bl	801c744 <memmove>
 	  return __result + _Num;
- 801bf82:	e7da      	b.n	801bf3a <_ZL8UserTaskPv+0x822>
+ 801bf76:	e7da      	b.n	801bf2e <_ZL8UserTaskPv+0x816>
 				*(callbacks.pointer) = *value;
- 801bf84:	f99d 2018 	ldrsb.w	r2, [sp, #24]
- 801bf88:	701a      	strb	r2, [r3, #0]
- 801bf8a:	e7d6      	b.n	801bf3a <_ZL8UserTaskPv+0x822>
+ 801bf78:	f99d 2018 	ldrsb.w	r2, [sp, #24]
+ 801bf7c:	701a      	strb	r2, [r3, #0]
+ 801bf7e:	e7d6      	b.n	801bf2e <_ZL8UserTaskPv+0x816>
 					success = callbacks.write(callbacks.context, ID, value, 1);
- 801bf8c:	2301      	movs	r3, #1
- 801bf8e:	e7de      	b.n	801bf4e <_ZL8UserTaskPv+0x836>
+ 801bf80:	2301      	movs	r3, #1
+ 801bf82:	e7de      	b.n	801bf42 <_ZL8UserTaskPv+0x82a>
+			leds->SetLED(LED_USER2, GPIO_PIN_RESET);
+ 801bf84:	2200      	movs	r2, #0
+ 801bf86:	210b      	movs	r1, #11
+ 801bf88:	4648      	mov	r0, r9
+ 801bf8a:	f7f7 fee1 	bl	8013d50 <_ZN4LEDS6SetLEDEh13GPIO_PinState>
+ 801bf8e:	e6f9      	b.n	801bd84 <_ZL8UserTaskPv+0x66c>
 
 0801bf90 <_GLOBAL__sub_I__ZN4UserC2EP9RegistersP17MasterSubscribersP13CommunicationP8ServicesP10PublishersP13HardwareDelayP7SensorsP4LEDS>:
 }
