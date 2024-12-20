@@ -97,6 +97,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 Envirobot_STM32_Head.list \
 
+OBJCOPY_HEX += \
+Envirobot_STM32_Head.hex \
+
 
 # All Target
 all: main-build
@@ -120,12 +123,17 @@ Envirobot_STM32_Head.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_
 	@echo 'Finished building: $@'
 	@echo ' '
 
+Envirobot_STM32_Head.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "Envirobot_STM32_Head.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) Envirobot_STM32_Head.elf Envirobot_STM32_Head.list Envirobot_STM32_Head.map default.size.stdout
+	-$(RM) Envirobot_STM32_Head.elf Envirobot_STM32_Head.hex Envirobot_STM32_Head.list Envirobot_STM32_Head.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

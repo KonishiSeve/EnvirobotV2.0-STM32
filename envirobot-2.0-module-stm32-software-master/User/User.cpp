@@ -69,17 +69,16 @@ void User::AddOSThreads(void) {
 
 // == Register map == //
 #define REG_CPG_SETPOINTS			0x0500
-#define REG_CPG_SETPOINT			0x0520	//setpoint for this module only
+#define REG_CPG_SETPOINT			0x0503	//setpoint for this module only
 
 #define REG_REMOTE_MODE				0x0600
 
 #define REG_ALERT_WATER				0x0700
 
+// == Publisher/Subscriber == //
 #define SUB_GENERAL			0x00
 #define PUB_ALERT_WATER		0x02
 
-
-// == Publisher/Subscriber == //
 class SubGeneral: public Subscriber {
 public:
 	SubGeneral(Registers* registers_, LEDS* leds_, Controller* controller_) {
@@ -127,40 +126,6 @@ private:
 	Controller* controller;
 };
 
-/*
-class SubRemoteMode: public Subscriber {
-public:
-	SubRemoteMode(Registers* registers_, LEDS* leds_, Controller* controller_) {
-		registers = registers_;
-		leds = leds_;
-		controller = controller_;
-	}
-private:
-	void ReceiveINT8(SubscriberInput information, const int8_t* data) {
-		leds->SetLED(LED_USER2, GPIO_PIN_SET);
-		static uint8_t temp = 0;
-		if(*data == 1) {
-			leds->SetLED(LED_USER1, GPIO_PIN_SET);
-			//controller->ActivateBridge();
-			//controller->ActivateController();
-			temp = 1;
-			registers->WriteRegister<uint8_t>(REG_REMOTE_MODE, &temp, 1);
-		}
-		else {
-			leds->SetLED(LED_USER1, GPIO_PIN_RESET);
-			controller->DeactivateBridge();
-			controller->DeactivateController();
-			temp = 0;
-			registers->WriteRegister<uint8_t>(REG_REMOTE_MODE, &temp, 1);
-		}
-	}
-	Registers* registers;
-	LEDS* leds;
-	Controller* controller;
-};
-*/
-
-
 static void UserTask(void *argument) {
 	// == retrieving class instances == //
 	class_instances* class_instances_pointer = (class_instances*)argument;
@@ -205,26 +170,14 @@ static void UserTask(void *argument) {
 	subscribers->SubscribeToRemoteRegister(SUB_GENERAL, REG_REMOTE_MODE, SubscriberInterface{.interface=CANFD1 , .address=ALL});
 	subscribers->ActivateSubscriber(SUB_GENERAL);
 
-	/* [DEL]
-	static SubRemoteMode sub_remote_mode(registers, leds, controller);
-	subscribers->AddSubscriber(SUB_REMOTE_MODE, &sub_remote_mode);
-	subscribers->SubscribeToRemoteRegister(SUB_REMOTE_MODE, REG_REMOTE_MODE, SubscriberInterface{.interface=CANFD1 , .address=ALL});
-	subscribers->ActivateSubscriber(SUB_REMOTE_MODE);
-	*/
-
 	// == Publishers == //
 	publishers->AddPublisher(PUB_ALERT_WATER);
 	publishers->SetPublisherPrescaler(PUB_ALERT_WATER, 1);
 	publishers->LinkToInterface(PUB_ALERT_WATER, CANFD1);
 	publishers->SetPublishAddress(PUB_ALERT_WATER, CANFD1, 0xFF);
-
 	publishers->AddTopic(PUB_ALERT_WATER, REG_ALERT_WATER);
 	publishers->ActivateTopic(PUB_ALERT_WATER, REG_ALERT_WATER);
 	publishers->ActivatePublisher(PUB_ALERT_WATER);
-
-	//publish the water alert register in the same packet as the sensor readings
-	//publishers->AddTopic(PUBLISHER_MOTOR, REG_ALERT_WATER);
-	//publishers->ActivateTopic(PUBLISHER_MOTOR, REG_ALERT_WATER);
 
 	// == Motor Controller == //
 	controller->SelectInputFilter(POSITION_MODE, OUTPUT_MOTOR_POSITION_FILTER);

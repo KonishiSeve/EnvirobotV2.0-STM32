@@ -46845,14 +46845,14 @@ Disassembly of section .text:
  801d9fa:	f44f 61a0 	mov.w	r1, #1280	@ 0x500
  801d9fe:	4620      	mov	r0, r4
  801da00:	f7ff ff4c 	bl	801d89c <_ZN9Registers18AddRegisterPointerIaEEbtPT_.isra.0>
- 801da04:	f44f 61a4 	mov.w	r1, #1312	@ 0x520
+ 801da04:	f240 5103 	movw	r1, #1283	@ 0x503
  801da08:	4620      	mov	r0, r4
  801da0a:	f7ff fec1 	bl	801d790 <_ZN9Registers11AddRegisterIaEEbt.isra.0>
- 801da0e:	f44f 61a4 	mov.w	r1, #1312	@ 0x520
+ 801da0e:	f240 5103 	movw	r1, #1283	@ 0x503
  801da12:	4620      	mov	r0, r4
  801da14:	f7fa ff62 	bl	80188dc <_ZN9Registers19SetRegisterAsSingleEt>
  801da18:	4a48      	ldr	r2, [pc, #288]	@ (801db3c <_ZL8UserTaskPv+0x16c>)
- 801da1a:	f44f 61a4 	mov.w	r1, #1312	@ 0x520
+ 801da1a:	f240 5103 	movw	r1, #1283	@ 0x503
  801da1e:	4620      	mov	r0, r4
  801da20:	f7ff ff3c 	bl	801d89c <_ZN9Registers18AddRegisterPointerIaEEbtPT_.isra.0>
  801da24:	f44f 61c0 	mov.w	r1, #1536	@ 0x600
@@ -46994,7 +46994,7 @@ Disassembly of section .text:
  801dbac:	f88d 301c 	strb.w	r3, [sp, #28]
  801dbb0:	f7ed fb23 	bl	800b1fa <osSemaphoreAcquire>
  801dbb4:	f10d 021d 	add.w	r2, sp, #29
- 801dbb8:	f44f 61a4 	mov.w	r1, #1312	@ 0x520
+ 801dbb8:	f240 5103 	movw	r1, #1283	@ 0x503
  801dbbc:	4628      	mov	r0, r5
  801dbbe:	f7fa fe54 	bl	801886a <_ZN9Registers25FindRegisterConfigurationEtPb>
  801dbc2:	f89d 301d 	ldrb.w	r3, [sp, #29]
@@ -47055,7 +47055,7 @@ Disassembly of section .text:
  801dc58:	b1bb      	cbz	r3, 801dc8a <_ZN10SubGeneral11ReceiveINT8E15SubscriberInputPKa+0x136>
  801dc5a:	88e3      	ldrh	r3, [r4, #6]
  801dc5c:	aa07      	add	r2, sp, #28
- 801dc5e:	f44f 61a4 	mov.w	r1, #1312	@ 0x520
+ 801dc5e:	f240 5103 	movw	r1, #1283	@ 0x503
  801dc62:	4648      	mov	r0, r9
  801dc64:	47c0      	blx	r8
  801dc66:	f88d 001d 	strb.w	r0, [sp, #29]
