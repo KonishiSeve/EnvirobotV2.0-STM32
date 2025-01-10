@@ -58,6 +58,8 @@ void User::AddOSThreads(void) {
 #define MODULE_NUMBER	4
 //max duration between remote packets before turning off CPG
 #define REMOTE_TIMEOUT_MS	200
+//main loop period
+#define LOOP_TIME_MS 10
 
 // == Register map == //
 //registers for meta parameters of the CPG
@@ -548,10 +550,17 @@ static void UserTask(void *argument) {
 	cpg.init(MODULE_NUMBER, reg_cpg_frequency, reg_cpg_direction, reg_cpg_amplc, reg_cpg_amplc, reg_cpg_nwave, reg_cpg_coupling_strength, reg_cpg_a_r);
 	int8_t setpoints[MODULE_NUMBER];
 
+	//variables used in loop
 	uint8_t cpg_enabled = 0;
 	uint8_t remote_mode = 0;
 	uint8_t remote_mode_last = 0;
 	uint16_t len;
+
+	//to have a precise loop time
+	uint32_t time_now;
+	registers->ReadRegister<uint32_t>(REG_TIMEBASE, &time_now, &len);
+	uint32_t time_next = time_now + LOOP_TIME_MS;
+
 	for(;;) {
 		//robot is started from the remote
 		registers->ReadRegister<uint8_t>(REG_REMOTE_MODE, &remote_mode, &len);
@@ -568,14 +577,15 @@ static void UserTask(void *argument) {
 		//publish the remote mode registers
 		publishers->SpinPublisher(PUB_REMOTE_MODE);	//1/10 prescaler
 
+		//retrieve timestamp
+		registers->ReadRegister<uint32_t>(REG_TIMEBASE, &time_now, &len);
+
 		//compute CPG steps if CPG is enabled
 		registers->ReadRegister<uint8_t>(REG_CPG_ENABLED, &cpg_enabled, &len);
 		if(cpg_enabled > 0) {
 			//disable the CPG if the remote stopped it
 			uint32_t remote_last_rx;
-			uint32_t time_now;
 			registers->ReadRegister<uint32_t>(REG_REMOTE_LAST_RX, &remote_last_rx, &len);
-			registers->ReadRegister<uint32_t>(REG_TIMEBASE, &time_now, &len);
 			if((time_now-remote_last_rx > REMOTE_TIMEOUT_MS) && (cpg_enabled == 1)) {
 				cpg_enabled = 0;
 				registers->WriteRegister<uint8_t>(REG_CPG_ENABLED, &cpg_enabled);
@@ -594,6 +604,14 @@ static void UserTask(void *argument) {
 		else {
 			leds->SetLED(LED_USER2, GPIO_PIN_RESET);
 		}
-		osDelay(10);
+
+		//Sleep to get desired loop time
+		if(time_now >= time_next) {
+			osDelay(1);
+		}
+		else {
+			osDelay(time_next-time_now);
+		}
+		time_next += LOOP_TIME_MS;
 	}
 }
