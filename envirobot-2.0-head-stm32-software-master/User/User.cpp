@@ -108,7 +108,7 @@ public:
 private:
 	void ReceiveUINT8(SubscriberInput information, const uint8_t* data) {
 		if(information.register_.address == REG_ALERT_WATER) {
-			uint8_t already_alert = 0;
+			static uint8_t already_alert = 0;
 			if(*data == 1 && already_alert == 0) {
 				already_alert = 1;
 				leds->SetLED(LED_USER3, GPIO_PIN_SET);

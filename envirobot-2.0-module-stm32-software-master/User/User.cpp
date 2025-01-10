@@ -65,6 +65,7 @@ void User::AddOSThreads(void) {
 }
 
 // ===== User Part ===== //
+//maximum number of modules supported by the robot
 #define MODULE_NUMBER				4
 
 // == Register map == //
@@ -88,37 +89,49 @@ public:
 	}
 private:
 	void ReceiveINT8(SubscriberInput information, const int8_t* data) {
-		//received setpoints register
+		//if setpoints register update received
 		if(information.register_.address == REG_CPG_SETPOINTS) {
-			uint8_t module_address;
-			uint16_t length;
+			//local variables for register reading
+			static uint8_t module_address;
+			static uint8_t remote_mode;
+			static int8_t setpoint;
+			static uint16_t length;
+			//retrieve the module ID
 			registers->ReadRegister<uint8_t>(REG_COM_ADDRESS, &module_address, &length);
-			if(*data == 1 && module_address != UNKNOWN) {
+			//check that the robot is activated
+			registers->ReadRegister<uint8_t>(REG_REMOTE_MODE, &remote_mode, &length);
+			if(remote_mode == 1 && module_address != UNKNOWN) {
 				leds->SetLED(LED_USER2, GPIO_PIN_SET);
 				//store the setpoint for this module
-				int8_t setpoint = data[module_address-2];
+				setpoint = data[module_address-2];	//-2 because 0x00 is CM4 and 0x01 is STM32 head
 				registers->WriteRegister<int8_t>(REG_CPG_SETPOINT, &setpoint);
+				//apply the angle to the motor
 				controller->MoveTo((float)setpoint);
 			}
 		}
 	}
 	void ReceiveUINT8(SubscriberInput information, const uint8_t* data) {
-		//received remote mode register
+		//if remote mode register update received
 		if(information.register_.address == REG_REMOTE_MODE) {
-			uint8_t module_address;
-			uint16_t length;
+			static uint8_t module_address;
+			static uint8_t remote_mode;
+			static uint16_t length;
+			//retrieve the module ID
 			registers->ReadRegister<uint8_t>(REG_COM_ADDRESS, &module_address, &length);
 			//check that an ID was assigned to the module before enabling the motor
 			if(*data == 1 && module_address != UNKNOWN) {
 				leds->SetLED(LED_USER1, GPIO_PIN_SET);
-				//controller->ActivateBridge();
-				//controller->ActivateController();
+				controller->ActivateBridge();
+				controller->ActivateController();
 			}
 			else {
 				leds->SetLED(LED_USER1, GPIO_PIN_RESET);
-				//controller->DeactivateBridge();
-				//controller->DeactivateController();
+				leds->SetLED(LED_USER2, GPIO_PIN_RESET);
+				controller->DeactivateBridge();
+				controller->DeactivateController();
 			}
+			remote_mode = *data;
+			registers->WriteRegister<uint8_t>(REG_REMOTE_MODE, &remote_mode);
 		}
 	}
 	Registers* registers;
@@ -127,7 +140,7 @@ private:
 };
 
 static void UserTask(void *argument) {
-	// == retrieving class instances == //
+	// == retrieving framework class instances == //
 	class_instances* class_instances_pointer = (class_instances*)argument;
 	Registers* registers = class_instances_pointer->registers;
 	MasterSubscribers* subscribers = class_instances_pointer->subscribers;
@@ -141,11 +154,13 @@ static void UserTask(void *argument) {
 	Servomotors* servomotors = class_instances_pointer->servomotors;
 
 	// == Registers == //
+	//register published by the head containing all joint angles
 	static int8_t reg_cpg_setpoints[MODULE_NUMBER];
 	registers->AddRegister<int8_t>(REG_CPG_SETPOINTS);
 	registers->SetRegisterAsArray(REG_CPG_SETPOINTS, MODULE_NUMBER);
 	registers->AddRegisterPointer<int8_t>(REG_CPG_SETPOINTS, reg_cpg_setpoints);
 
+	//register containing the setpoint for this module
 	static int8_t reg_cpg_setpoint = 0;
 	registers->AddRegister<int8_t>(REG_CPG_SETPOINT);
 	registers->SetRegisterAsSingle(REG_CPG_SETPOINT);
@@ -184,24 +199,8 @@ static void UserTask(void *argument) {
 	controller->trajectory_generator.SetTrajectoryMode(TRAJECTORY_STEP);
 
 	for(;;) {
-		/*
-		uint8_t module_id;
-		uint16_t length;
-		//Check that an ID was assigned to the module
-		registers->ReadRegister<uint8_t>(REG_COM_ADDRESS, &module_id, &length);
-		if(module_id != UNKNOWN && reg_remote_mode==1) {
-			//controller->MoveTo((float)reg_cpg_setpoints[module_id-2]);
-		}
-		*/
+		//publish the water alert register at 1 Hz
 		publishers->SpinPublisher(PUB_ALERT_WATER);
 		osDelay(1000);
-		/*
-		leds->SetLED(LED_USER3, GPIO_PIN_SET);
-		//controller->MoveTo(0.0f);
-		osDelay(1000);
-		leds->SetLED(LED_USER3, GPIO_PIN_RESET);
-		//controller->MoveTo(20.0f);
-		osDelay(1000);
-		*/
 	}
 }
