@@ -78,7 +78,7 @@ void User::AddOSThreads(void) {
 
 // == Publisher/Subscriber == //
 #define SUB_GENERAL			0x00
-#define PUB_ALERT_WATER		0x02
+#define PUB_ALERT_WATER		0x15
 
 class SubGeneral: public Subscriber {
 public:
