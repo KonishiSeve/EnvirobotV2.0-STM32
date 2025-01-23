@@ -46860,49 +46860,49 @@ Disassembly of section .text:
  801da40:	f000 fa56 	bl	801def0 <__cxa_guard_release>
  801da44:	f44f 447f 	mov.w	r4, #65280	@ 0xff00
  801da48:	4a2c      	ldr	r2, [pc, #176]	@ (801dafc <_ZL8UserTaskPv+0x178>)
- 801da4a:	2100      	movs	r1, #0
+ 801da4a:	2120      	movs	r1, #32
  801da4c:	4638      	mov	r0, r7
  801da4e:	f7ff fab7 	bl	801cfc0 <_ZN17MasterSubscribers13AddSubscriberEhP10Subscriber>
  801da52:	f8ad 4000 	strh.w	r4, [sp]
  801da56:	9b00      	ldr	r3, [sp, #0]
  801da58:	f44f 62a0 	mov.w	r2, #1280	@ 0x500
- 801da5c:	2100      	movs	r1, #0
+ 801da5c:	2120      	movs	r1, #32
  801da5e:	4638      	mov	r0, r7
  801da60:	f7ff f8e7 	bl	801cc32 <_ZN17MasterSubscribers25SubscribeToRemoteRegisterEht19SubscriberInterface>
  801da64:	f8ad 4004 	strh.w	r4, [sp, #4]
  801da68:	9b01      	ldr	r3, [sp, #4]
  801da6a:	f44f 62c0 	mov.w	r2, #1536	@ 0x600
- 801da6e:	2100      	movs	r1, #0
+ 801da6e:	2120      	movs	r1, #32
  801da70:	4638      	mov	r0, r7
  801da72:	f7ff f8de 	bl	801cc32 <_ZN17MasterSubscribers25SubscribeToRemoteRegisterEht19SubscriberInterface>
- 801da76:	2100      	movs	r1, #0
+ 801da76:	2120      	movs	r1, #32
  801da78:	4638      	mov	r0, r7
  801da7a:	f7fe fdc4 	bl	801c606 <_ZN17MasterSubscribers18ActivateSubscriberEh>
- 801da7e:	2102      	movs	r1, #2
+ 801da7e:	2120      	movs	r1, #32
  801da80:	4628      	mov	r0, r5
  801da82:	f7fa f84b 	bl	8017b1c <_ZN10Publishers12AddPublisherEh>
  801da86:	2201      	movs	r2, #1
- 801da88:	2102      	movs	r1, #2
+ 801da88:	2120      	movs	r1, #32
  801da8a:	4628      	mov	r0, r5
  801da8c:	f7f9 fa83 	bl	8016f96 <_ZN10Publishers21SetPublisherPrescalerEht>
  801da90:	2200      	movs	r2, #0
- 801da92:	2102      	movs	r1, #2
+ 801da92:	2120      	movs	r1, #32
  801da94:	4628      	mov	r0, r5
  801da96:	f7f9 fd35 	bl	8017504 <_ZN10Publishers15LinkToInterfaceEhh>
  801da9a:	23ff      	movs	r3, #255	@ 0xff
  801da9c:	2200      	movs	r2, #0
- 801da9e:	2102      	movs	r1, #2
+ 801da9e:	2120      	movs	r1, #32
  801daa0:	4628      	mov	r0, r5
  801daa2:	f7f9 fb55 	bl	8017150 <_ZN10Publishers17SetPublishAddressEhhh>
  801daa6:	f44f 62e0 	mov.w	r2, #1792	@ 0x700
- 801daaa:	2102      	movs	r1, #2
+ 801daaa:	2120      	movs	r1, #32
  801daac:	4628      	mov	r0, r5
  801daae:	f7f9 fca1 	bl	80173f4 <_ZN10Publishers8AddTopicEht>
  801dab2:	f44f 62e0 	mov.w	r2, #1792	@ 0x700
- 801dab6:	2102      	movs	r1, #2
+ 801dab6:	2120      	movs	r1, #32
  801dab8:	4628      	mov	r0, r5
  801daba:	f7f9 fb0f 	bl	80170dc <_ZN10Publishers13ActivateTopicEht>
- 801dabe:	2102      	movs	r1, #2
+ 801dabe:	2120      	movs	r1, #32
  801dac0:	4628      	mov	r0, r5
  801dac2:	f7f9 fa56 	bl	8016f72 <_ZN10Publishers17ActivatePublisherEh>
  801dac6:	2200      	movs	r2, #0
@@ -46913,7 +46913,7 @@ Disassembly of section .text:
  801dad2:	4640      	mov	r0, r8
  801dad4:	f7ff fc5e 	bl	801d394 <_ZN19TrajectoryGenerator17SetTrajectoryModeEh>
  801dad8:	4628      	mov	r0, r5
- 801dada:	2102      	movs	r1, #2
+ 801dada:	2120      	movs	r1, #32
  801dadc:	f7fa fa18 	bl	8017f10 <_ZN10Publishers13SpinPublisherEh>
  801dae0:	f44f 707a 	mov.w	r0, #1000	@ 0x3e8
  801dae4:	f7ed fb33 	bl	800b14e <osDelay>

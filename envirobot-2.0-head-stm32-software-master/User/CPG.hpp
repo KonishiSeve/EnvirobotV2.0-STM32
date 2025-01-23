@@ -1,3 +1,10 @@
+/*
+ * CPG.hpp
+ *
+ *  Created on: Jan 21, 2025
+ *      Author: konishi
+ */
+
 #pragma once
 #include <stdint.h>
 //defines the max number of modules

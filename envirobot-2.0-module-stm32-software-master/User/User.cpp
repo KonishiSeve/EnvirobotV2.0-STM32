@@ -64,21 +64,24 @@ void User::AddOSThreads(void) {
 	osThreadNew(UserTask, &class_instances_argument, &UserTask_attributes);
 }
 
-// ===== User Part ===== //
+/* ========== USER CODE ============= */
+/* ========== USER CODE ============= */
+/* ========== USER CODE ============= */
+
 //maximum number of modules supported by the robot
 #define MODULE_NUMBER				4
 
 // == Register map == //
 #define REG_CPG_SETPOINTS			0x0500
-#define REG_CPG_SETPOINT			0x0503	//setpoint for this module only
+#define REG_CPG_SETPOINT			0x0503
 
 #define REG_REMOTE_MODE				0x0600
 
 #define REG_ALERT_WATER				0x0700
 
 // == Publisher/Subscriber == //
-#define SUB_GENERAL			0x00
-#define PUB_ALERT_WATER		0x15
+#define SUB_GENERAL			0x20
+#define PUB_ALERT_WATER		0x20
 
 class SubGeneral: public Subscriber {
 public:
@@ -98,7 +101,7 @@ private:
 			static uint16_t length;
 			//retrieve the module ID
 			registers->ReadRegister<uint8_t>(REG_COM_ADDRESS, &module_address, &length);
-			//check that the robot is activated
+			//check that the robot is activated and the module has a valid ID
 			registers->ReadRegister<uint8_t>(REG_REMOTE_MODE, &remote_mode, &length);
 			if(remote_mode == 1 && module_address != UNKNOWN) {
 				leds->SetLED(LED_USER2, GPIO_PIN_SET);
@@ -154,25 +157,29 @@ static void UserTask(void *argument) {
 	Servomotors* servomotors = class_instances_pointer->servomotors;
 
 	// == Registers == //
+	// = REG_CPG_SETPOINTS
 	//register published by the head containing all joint angles
 	static int8_t reg_cpg_setpoints[MODULE_NUMBER];
 	registers->AddRegister<int8_t>(REG_CPG_SETPOINTS);
 	registers->SetRegisterAsArray(REG_CPG_SETPOINTS, MODULE_NUMBER);
 	registers->AddRegisterPointer<int8_t>(REG_CPG_SETPOINTS, reg_cpg_setpoints);
 
+	// = REG_CPG_SETPOINT
 	//register containing the setpoint for this module
 	static int8_t reg_cpg_setpoint = 0;
 	registers->AddRegister<int8_t>(REG_CPG_SETPOINT);
 	registers->SetRegisterAsSingle(REG_CPG_SETPOINT);
 	registers->AddRegisterPointer<int8_t>(REG_CPG_SETPOINT, &reg_cpg_setpoint);
 
+	// = REG_REMOTE_MODE
 	//defines if the remote started the robot
 	static uint8_t reg_remote_mode = 0;
 	registers->AddRegister<uint8_t>(REG_REMOTE_MODE);
 	registers->SetRegisterAsSingle(REG_REMOTE_MODE);
 	registers->AddRegisterPointer<uint8_t>(REG_REMOTE_MODE, &reg_remote_mode);
 
-	//set to 1 if there is a water leak detected
+	// = REG_ALERT_WATER
+	//set to 1 if there is a water leak detected, published at 1Hz on CANFD1
 	static uint8_t reg_alert_water = 0;
 	registers->AddRegister<uint8_t>(REG_ALERT_WATER);
 	registers->SetRegisterAsSingle(REG_ALERT_WATER);
@@ -194,7 +201,7 @@ static void UserTask(void *argument) {
 	publishers->ActivateTopic(PUB_ALERT_WATER, REG_ALERT_WATER);
 	publishers->ActivatePublisher(PUB_ALERT_WATER);
 
-	// == Motor Controller == //
+	// == Motor Controller setup == //
 	controller->SelectInputFilter(POSITION_MODE, OUTPUT_MOTOR_POSITION_FILTER);
 	controller->trajectory_generator.SetTrajectoryMode(TRAJECTORY_STEP);
 

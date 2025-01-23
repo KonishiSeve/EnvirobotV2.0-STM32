@@ -1,12 +1,12 @@
-../User/CPG.cpp:36:6:void CPG::step(int8_t*, float)	112	static
-../User/CPG.cpp:87:6:void CPG::reset()	0	static
-../User/CPG.cpp:105:6:void CPG::set_frequency(float)	0	static
-../User/CPG.cpp:109:6:void CPG::set_direction(float)	0	static
-../User/CPG.cpp:113:6:void CPG::set_amplc(float)	0	static
-../User/CPG.cpp:117:6:void CPG::set_amplh(float)	0	static
-../User/CPG.cpp:126:6:void CPG::set_coupling_strength(float)	0	static
-../User/CPG.cpp:130:6:void CPG::set_a_r(float)	0	static
-../User/CPG.cpp:135:6:void CPG::update_matrices()	28	static
-../User/CPG.cpp:9:6:void CPG::init(uint8_t, float, float, float, float, float, float, float)	8	static
-../User/CPG.cpp:98:6:void CPG::set_number_modules(uint8_t)	8	static
-../User/CPG.cpp:121:6:void CPG::set_nwave(float)	0	static
+../User/CPG.cpp:43:6:void CPG::step(int8_t*, float)	112	static
+../User/CPG.cpp:94:6:void CPG::reset()	0	static
+../User/CPG.cpp:112:6:void CPG::set_frequency(float)	0	static
+../User/CPG.cpp:116:6:void CPG::set_direction(float)	0	static
+../User/CPG.cpp:120:6:void CPG::set_amplc(float)	0	static
+../User/CPG.cpp:124:6:void CPG::set_amplh(float)	0	static
+../User/CPG.cpp:133:6:void CPG::set_coupling_strength(float)	0	static
+../User/CPG.cpp:137:6:void CPG::set_a_r(float)	0	static
+../User/CPG.cpp:142:6:void CPG::update_matrices()	28	static
+../User/CPG.cpp:16:6:void CPG::init(uint8_t, float, float, float, float, float, float, float)	8	static
+../User/CPG.cpp:105:6:void CPG::set_number_modules(uint8_t)	8	static
+../User/CPG.cpp:128:6:void CPG::set_nwave(float)	0	static

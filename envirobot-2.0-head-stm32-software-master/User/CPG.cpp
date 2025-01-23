@@ -1,3 +1,10 @@
+/*
+ * CPG.cpp
+ *
+ *  Created on: Jan 21, 2025
+ *      Author: konishi
+ */
+
 #include "CPG.hpp"
 #include <stdlib.h>
 #include <stdio.h>

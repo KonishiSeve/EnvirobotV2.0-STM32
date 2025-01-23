@@ -106,9 +106,8 @@ void User::AddOSThreads(void) {
 #define PUB_REMOTE_MODE		0x11
 #define PUB_CPG_PARAM		0x12
 #define PUB_CPG_FAST		0x13
-#define PUB_CPG_ENABLED		0x14
-#define SUB_GENERAL			0x10
 
+#define SUB_GENERAL			0x10
 class SubGeneral: public Subscriber {
 public:
 	SubGeneral(Registers* registers_, LEDS* leds_) {
@@ -150,47 +149,34 @@ static void UserTask(void *argument) {
 
 
 	// === CPG Registers Setup === //
-	// = stores the output of the CPG (joint angles in degree), published on CANFD1
+	// = REG_CPG_SETPOINTS
+	//stores the output of the CPG (joint angles in degree), published on CANFD1
 	static int8_t reg_cpg_setpoints[MODULE_NUMBER];
 	registers->AddRegister<int8_t>(REG_CPG_SETPOINTS);
 	registers->SetRegisterAsArray(REG_CPG_SETPOINTS, MODULE_NUMBER);
 	registers->AddRegisterPointer<int8_t>(REG_CPG_SETPOINTS, reg_cpg_setpoints);
 
-	// = enables/disables the computation of CPG steps
+	// = REG_CPG_ENABLED
+	//enables/disables the computation of CPG steps
+	// 0: disabled, 1: enabled by remote, 0x02-0xFF: enabled by user through client
 	static uint8_t reg_cpg_enabled = 0;
 	registers->AddRegister<uint8_t>(REG_CPG_ENABLED);
 	registers->SetRegisterAsSingle(REG_CPG_ENABLED);
-	registers->AddWriteCallback<uint8_t>(REG_CPG_ENABLED, argument,
-		[](void* context , uint16_t register_ID , uint8_t* input , uint16_t length) -> bool {
-		//context and variables
-		class_instances* class_instances_pointer = (class_instances*)context;
-		Publishers* publishers = class_instances_pointer->publishers;
-		//notify the CM4 of the change
-		publishers->SpinPublisher(PUB_CPG_ENABLED);
-		return true;
-	});
 	registers->AddRegisterPointer<uint8_t>(REG_CPG_ENABLED, &reg_cpg_enabled);
 
-	// = write only register, to reset the CPG states
-	static uint8_t reg_cpg_reset = 1;
+	// = REG_CPG_RESET
+	//write only register, to reset the CPG states
 	registers->AddRegister<uint8_t>(REG_CPG_RESET);
 	registers->SetRegisterAsSingle(REG_CPG_RESET);
 	registers->AddWriteCallback<uint8_t>(REG_CPG_RESET, argument,
 		[](void* context , uint16_t register_ID , uint8_t* input , uint16_t length) -> bool {
-		//context and variables
-		class_instances* class_instances_pointer = (class_instances*)context;
-		Publishers* publishers = class_instances_pointer->publishers;
 		//change the CPG model parameter
 		cpg.reset();
-		//notify the CM4
-		publishers->ActivateTopic(PUB_CPG_PARAM, REG_CPG_RESET);
-		publishers->SpinPublisher(PUB_CPG_PARAM);
-		publishers->DeactivateTopic(PUB_CPG_PARAM, REG_CPG_RESET);
 		return true;
 	});
-	registers->AddRegisterPointer<uint8_t>(REG_CPG_RESET, &reg_cpg_reset);
 
-	// = CPG frequency register
+	// = REG_CPG_FREQUENCY
+	//CPG frequency register
 	static float reg_cpg_frequency = 1;
 	registers->AddRegister<float>(REG_CPG_FREQUENCY);
 	registers->SetRegisterAsSingle(REG_CPG_FREQUENCY);
@@ -209,7 +195,8 @@ static void UserTask(void *argument) {
 	});
 	registers->AddRegisterPointer<float>(REG_CPG_FREQUENCY, &reg_cpg_frequency);
 
-	// = CPG direction register
+	// = REG_CPG_DIRECTION
+	//CPG direction register
 	static float reg_cpg_direction = 0;
 	registers->AddRegister<float>(REG_CPG_DIRECTION);
 	registers->SetRegisterAsSingle(REG_CPG_DIRECTION);
@@ -235,7 +222,8 @@ static void UserTask(void *argument) {
 	});
 	registers->AddRegisterPointer<float>(REG_CPG_DIRECTION, &reg_cpg_direction);
 
-	// = CPG amplc register
+	// = REG_CPG_AMPLC
+	//CPG amplc register
 	static float reg_cpg_amplc = 0.2;
 	registers->AddRegister<float>(REG_CPG_AMPLC);
 	registers->SetRegisterAsSingle(REG_CPG_AMPLC);
@@ -261,7 +249,8 @@ static void UserTask(void *argument) {
 	});
 	registers->AddRegisterPointer<float>(REG_CPG_AMPLC, &reg_cpg_amplc);
 
-	// = CPG amplh register
+	// = REG_CPG_AMPLH
+	//CPG amplh register
 	static float reg_cpg_amplh = 0.2;
 	registers->AddRegister<float>(REG_CPG_AMPLH);
 	registers->SetRegisterAsSingle(REG_CPG_AMPLH);
@@ -287,7 +276,8 @@ static void UserTask(void *argument) {
 	});
 	registers->AddRegisterPointer<float>(REG_CPG_AMPLH, &reg_cpg_amplh);
 
-	// = CPG nwave register
+	// = REG_CPG_NWAVE
+	//CPG nwave register
 	static float reg_cpg_nwave = 1;
 	registers->AddRegister<float>(REG_CPG_NWAVE);
 	registers->SetRegisterAsSingle(REG_CPG_NWAVE);
@@ -306,7 +296,8 @@ static void UserTask(void *argument) {
 	});
 	registers->AddRegisterPointer<float>(REG_CPG_NWAVE, &reg_cpg_nwave);
 
-	// = CPG coupling strength register
+	// = REG_CPG_COUPLING_STRENGTH
+	//CPG coupling strength register
 	static float reg_cpg_coupling_strength = 50;
 	registers->AddRegister<float>(REG_CPG_COUPLING_STRENGTH);
 	registers->SetRegisterAsSingle(REG_CPG_COUPLING_STRENGTH);
@@ -325,7 +316,8 @@ static void UserTask(void *argument) {
 	});
 	registers->AddRegisterPointer<float>(REG_CPG_COUPLING_STRENGTH, &reg_cpg_coupling_strength);
 
-	// = CPG a_r register
+	// = REG_CPG_A_R
+	//CPG a_r register
 	static float reg_cpg_a_r = 10;
 	registers->AddRegister<float>(REG_CPG_A_R);
 	registers->SetRegisterAsSingle(REG_CPG_A_R);
@@ -344,25 +336,30 @@ static void UserTask(void *argument) {
 	});
 	registers->AddRegisterPointer<float>(REG_CPG_A_R, &reg_cpg_a_r);
 
-	// = CPG MAX direction
+	// = REG_CPG_DIRECTION_MAX
+	//multiplied by the remote horizontal joystick position to get the CPG direction
 	static float reg_cpg_direction_max = 1.0;
 	registers->AddRegister<float>(REG_CPG_DIRECTION_MAX);
 	registers->SetRegisterAsSingle(REG_CPG_DIRECTION_MAX);
 	registers->AddRegisterPointer<float>(REG_CPG_DIRECTION_MAX, &reg_cpg_direction_max);
 
-	// = CPG MAX amplc
+	// = REG_CPG_AMPLC_MAX
+	//multiplied by the remote vertical joystick position to get the CPG amplc
 	static float reg_cpg_amplc_max = 0.2;
 	registers->AddRegister<float>(REG_CPG_AMPLC_MAX);
 	registers->SetRegisterAsSingle(REG_CPG_AMPLC_MAX);
 	registers->AddRegisterPointer<float>(REG_CPG_AMPLC_MAX, &reg_cpg_amplc_max);
 
-	// = CPG MAX amplh
+	// = REG_CPG_AMPLH_MAX
+	//multiplied by the remote vertical joystick position to get the CPG amplh
 	static float reg_cpg_amplh_max = 0.2;
 	registers->AddRegister<float>(REG_CPG_AMPLH_MAX);
 	registers->SetRegisterAsSingle(REG_CPG_AMPLH_MAX);
 	registers->AddRegisterPointer<float>(REG_CPG_AMPLH_MAX, &reg_cpg_amplh_max);
 
+
 	// === Radio Remote Registers Setup === //
+	// = REG_REMOTE_MODE
 	//The remote writes 1 to it to start the robot and 0 to stop it (for the "ENVIROBOT" profile)
 	static uint8_t reg_remote_mode = 0;
 	registers->AddRegister<uint8_t>(REG_REMOTE_MODE);
@@ -380,13 +377,15 @@ static void UserTask(void *argument) {
 	});
 	registers->AddRegisterPointer<uint8_t>(REG_REMOTE_MODE, &reg_remote_mode);
 
-	//Not used on the "ENVIROBOT" profile
+	//Not used on the "ENVIROBOT" profile, leftover from the "EnvirobotCPG" profile
 	static uint8_t reg_remote_elt_nb = MODULE_NUMBER;
 	registers->AddRegister<uint8_t>(REG_REMOTE_ELT_NB);
 	registers->SetRegisterAsSingle(REG_REMOTE_ELT_NB);
 	registers->AddRegisterPointer<uint8_t>(REG_REMOTE_ELT_NB, &reg_remote_elt_nb);
 
-	//The remote writes a "speed" variable to this register, we use it to retrieve the up-down axis value of the joystick
+	// = REG_REMOTE_SPEED
+	// The remote writes a self-computed amplitude CPG parameter to this register
+	// we use it to retrieve the vertical axis value of the joystick and compute amplc and amplh values
 	registers->AddRegister<uint8_t>(REG_REMOTE_SPEED);
 	registers->SetRegisterAsSingle(REG_REMOTE_SPEED);
 	registers->SetRegisterPermissions(REG_REMOTE_SPEED, WRITE_PERMISSION);
@@ -402,7 +401,7 @@ static void UserTask(void *argument) {
 		static float cpg_ampl_new;
 		static float cpg_ampl;
 		static uint16_t len;
-		//save the timestamp
+		//save the timestamp of the received radio packet (used for timeout)
 		registers->ReadRegister<uint32_t>(REG_TIMEBASE, &timestamp, &len);
 		registers->WriteRegister<uint32_t>(REG_REMOTE_LAST_RX, &timestamp, len);
 		//enable the CPG (if not already)
@@ -430,8 +429,7 @@ static void UserTask(void *argument) {
 		return true;
 	});
 
-
-	//The remote writes a "frequency" variable to this register, only 2 values exist (0 or 10 depending on the speed)
+	//The remote writes a self-computed frequency CPG parameter to this register
 	//This is used as a dummy register since the remote writes to it but the values have no use to us
 	uint8_t reg_remote_frequency;
 	registers->AddRegister<uint8_t>(REG_REMOTE_FREQUENCY);
@@ -439,7 +437,9 @@ static void UserTask(void *argument) {
 	registers->AddRegisterPointer<uint8_t>(REG_REMOTE_FREQUENCY, &reg_remote_frequency);
 	registers->SetRegisterPermissions(REG_REMOTE_FREQUENCY, WRITE_PERMISSION);
 
-	//The remote writes a "direction" variable to this register, we use it to retrieve the left-right axis value of the joystick
+	// = REG_REMOTE_DIRECTION
+	// The remote writes a self-computed direction CPG parameter to this register
+	// we use it to retrieve the horizontal axis value of the joystick and compute a new direction value
 	registers->AddRegister<int8_t>(REG_REMOTE_DIRECTION);
 	registers->SetRegisterAsSingle(REG_REMOTE_DIRECTION);
 	registers->SetRegisterPermissions(REG_REMOTE_DIRECTION, WRITE_PERMISSION);
@@ -476,6 +476,7 @@ static void UserTask(void *argument) {
 		return true;
 	});
 
+	// = REG_REMOTE_LAST_RX
 	//stores the last time (from the timebase register) a direction or speed was received from the remote
 	//used to turn the CPG on and off by switching the gait mode (walking/swimming) with remote
 	static uint32_t reg_remote_last_rx = 0;
@@ -484,12 +485,14 @@ static void UserTask(void *argument) {
 	registers->AddRegisterPointer<uint32_t>(REG_REMOTE_LAST_RX, &reg_remote_last_rx);
 
 	// === Alert Registers Setup === //
+	// = REG_ALERT_WATER
 	//Contains the number of the module where there is a water leak (or 0 if no leak)
 	static uint8_t reg_alert_water = 0;
 	registers->AddRegister<uint8_t>(REG_ALERT_WATER);
 	registers->SetRegisterAsSingle(REG_ALERT_WATER);
 	registers->AddRegisterPointer<uint8_t>(REG_ALERT_WATER, &reg_alert_water);
 
+	// = REG_ALERT_WATER_RADIO
 	//contains the same information as the reg_alert_water register but the 3 MSB keep a constant value
 	//content: (0x654321ZZ) ZZ being the reg_alert_water register content
 	//allows the Radio PC client to read it while the remote is running and be sure that the received packet is the correct one
@@ -510,6 +513,7 @@ static void UserTask(void *argument) {
 	publishers->ActivatePublisher(PUB_CPG_SETPOINTS);
 
 	// = Mode publisher: publish the state of the robot (if the remote started it or not)
+	//modules use it to enable or disable their motor controllers
 	publishers->AddPublisher(PUB_REMOTE_MODE);
 	publishers->SetPublisherPrescaler(PUB_REMOTE_MODE, 10); //publish at ~10Hz
 	publishers->LinkToInterface(PUB_REMOTE_MODE, CANFD1);
@@ -518,13 +522,12 @@ static void UserTask(void *argument) {
 	publishers->ActivateTopic(PUB_REMOTE_MODE, REG_REMOTE_MODE);
 	publishers->ActivatePublisher(PUB_REMOTE_MODE);
 
-	// = Robot state and CPG parameters publisher
+	// = CPG parameters publisher to notify the CM4 of changes
 	publishers->AddPublisher(PUB_CPG_PARAM);
 	publishers->SetPublisherPrescaler(PUB_CPG_PARAM, 1); //publish when there is a change
 	publishers->LinkToInterface(PUB_CPG_PARAM, UART_CM4);
 	publishers->SetPublishAddress(PUB_CPG_PARAM, UART_CM4, ALL);
 	publishers->AddTopic(PUB_CPG_PARAM, REG_REMOTE_MODE);
-	publishers->AddTopic(PUB_CPG_PARAM, REG_CPG_RESET);
 	publishers->AddTopic(PUB_CPG_PARAM, REG_CPG_FREQUENCY);
 	publishers->AddTopic(PUB_CPG_PARAM, REG_CPG_DIRECTION);
 	publishers->AddTopic(PUB_CPG_PARAM, REG_CPG_AMPLC);
@@ -534,15 +537,8 @@ static void UserTask(void *argument) {
 	publishers->AddTopic(PUB_CPG_PARAM, REG_CPG_A_R);
 	publishers->ActivatePublisher(PUB_CPG_PARAM);
 
-	// = Publisher to update the CPG enabled state on the CM4
-	publishers->AddPublisher(PUB_CPG_ENABLED);
-	publishers->SetPublisherPrescaler(PUB_CPG_ENABLED, 1); //publish when there is a change
-	publishers->LinkToInterface(PUB_CPG_ENABLED, UART_CM4);
-	publishers->SetPublishAddress(PUB_CPG_ENABLED, UART_CM4, ALL);
-	publishers->AddTopic(PUB_CPG_ENABLED, REG_CPG_ENABLED);
-	publishers->ActivatePublisher(PUB_CPG_ENABLED);
-
-	// = Remote updates
+	// = CPG parameters publisher to notify the CM4 of changes (when the radio remote does the change)
+	// the topics are kept enabled because the remote changes the parameters very quickly
 	publishers->AddPublisher(PUB_CPG_FAST);
 	publishers->SetPublisherPrescaler(PUB_CPG_FAST, 1); //publish when there is a change
 	publishers->LinkToInterface(PUB_CPG_FAST, UART_CM4);
@@ -577,10 +573,10 @@ static void UserTask(void *argument) {
 	uint32_t time_next = time_now + LOOP_TIME_MS;
 
 	for(;;) {
-		//publish the remote mode registers
-		publishers->SpinPublisher(PUB_REMOTE_MODE);	//1/10 prescaler
+		//publish the remote mode registers at 1Hz
+		publishers->SpinPublisher(PUB_REMOTE_MODE);
 
-		//robot is started from the remote
+		//check if robot is started
 		registers->ReadRegister<uint8_t>(REG_REMOTE_MODE, &remote_mode, &len);
 		if(remote_mode == 1 && remote_mode_last == 0) {
 			leds->SetLED(LED_USER1, GPIO_PIN_SET);
@@ -600,9 +596,10 @@ static void UserTask(void *argument) {
 		//compute CPG steps if CPG is enabled
 		registers->ReadRegister<uint8_t>(REG_CPG_ENABLED, &cpg_enabled, &len);
 		if(cpg_enabled > 0) {
-			//disable the CPG if the remote stopped it
+			//disable the CPG if the remote is in walking mode (no packets received in the last REMOTE_TIMEOUT_MS miLliseconds)
 			uint32_t remote_last_rx;
 			registers->ReadRegister<uint32_t>(REG_REMOTE_LAST_RX, &remote_last_rx, &len);
+			//only apply the timeout if the CPG was enabled by the remote (REG_CPG_ENABLED = 1)
 			if((time_now-remote_last_rx > REMOTE_TIMEOUT_MS) && (cpg_enabled == 1)) {
 				cpg_enabled = 0;
 				registers->WriteRegister<uint8_t>(REG_CPG_ENABLED, &cpg_enabled);
@@ -613,7 +610,7 @@ static void UserTask(void *argument) {
 				for(uint32_t j=0;j<(LOOP_TIME_MS/CPG_STEPSIZE_MS);j++) {
 					cpg.step(setpoints, CPG_STEPSIZE_MS);
 				}
-				//publish the setpoints
+				//publish the setpoints (100Hz)
 				registers->WriteRegister<int8_t>(REG_CPG_SETPOINTS, setpoints, MODULE_NUMBER);
 				publishers->SpinPublisher(PUB_CPG_SETPOINTS);
 			}
